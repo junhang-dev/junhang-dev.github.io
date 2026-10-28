@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ui, type Lang } from '../data/posts';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+const alt = lang === 'en' ? '/about/' : '/en/about/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Junhang Lee',
+  alternateName: '이준행',
+  url: Astro.site!.href,
+  sameAs: ['https://github.com/junhang-dev'],
+  jobTitle: lang === 'ko' ? '산업 AI 엔지니어' : 'Industrial AI Engineer',
+  knowsAbout: ['Industrial AI', 'Physical AI', 'MLOps', 'Refining and Petrochemical Plants'],
+};
+---
+
+<BaseLayout title="About" description={t.aboutBio} lang={lang} alt={alt} activeNav="about" jsonLd={jsonLd}>
+  <style>
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    p {
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--grey700);
+      margin: 0 0 16px;
+    }
+    .notice {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--grey50);
+      border-radius: 14px;
+      font-size: 15px;
+      color: var(--grey600);
+    }
+  </style>
+
+  <div class="wrap">
+    <h1>{t.aboutName}</h1>
+    <p>{t.aboutBio}</p>
+    <div class="notice">{t.aboutNotice}</div>
+  </div>
+</BaseLayout>

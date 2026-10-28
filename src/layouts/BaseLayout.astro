@@ -1,38 +1,59 @@
 ---
+import { ui, type Lang } from '../data/posts';
+
 interface Props {
   title: string;
   description?: string;
+  lang?: Lang;
+  /** 반대 언어 버전의 경로 (예: /en/about/) */
+  alt: string;
   activeNav?: 'home' | 'about';
+  type?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>;
 }
 
-const {
-  title,
-  description = '이준행의 기술 블로그',
-  activeNav = 'home',
-} = Astro.props;
+const { title, description, lang = 'ko', alt, activeNav = 'home', type = 'website', jsonLd } = Astro.props;
+
+const t = ui[lang];
+const prefix = lang === 'en' ? '/en' : '';
+const site = Astro.site!;
+const canonical = new URL(Astro.url.pathname, site).href;
+const altUrl = new URL(alt, site).href;
+const koUrl = lang === 'ko' ? canonical : altUrl;
+const enUrl = lang === 'en' ? canonical : altUrl;
+const desc = description || t.siteDescription;
+const fullTitle = `${title} | junhang.dev`;
+const koHref = lang === 'ko' ? Astro.url.pathname : alt;
+const enHref = lang === 'en' ? Astro.url.pathname : alt;
 ---
 
 <!doctype html>
-<html lang="ko" data-lang="ko">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | junhang.dev</title>
-    <meta name="description" content={description} />
-    <meta property="og:title" content={`${title} | junhang.dev`} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="ko" href={koUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={koUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="junhang.dev" />
+    <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'ko' ? 'en_US' : 'ko_KR'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <script is:inline>
-      (function () {
-        var saved = localStorage.getItem('site-lang') || 'ko';
-        document.documentElement.setAttribute('data-lang', saved);
-        document.documentElement.setAttribute('lang', saved);
-      })();
-    </script>
     <style is:global>
       :root {
         --grey900: #191f28;
@@ -66,15 +87,12 @@ const {
         -webkit-font-smoothing: antialiased;
         word-break: keep-all;
       }
+      html[lang='en'] body {
+        word-break: normal;
+      }
       a {
         color: inherit;
         text-decoration: none;
-      }
-      html[data-lang='ko'] .lang-en {
-        display: none !important;
-      }
-      html[data-lang='en'] .lang-ko {
-        display: none !important;
       }
       header.nav {
         position: sticky;
@@ -126,20 +144,14 @@ const {
         border-radius: 999px;
         margin-left: 4px;
       }
-      .lang-btn {
-        border: 0;
-        background: transparent;
-        font-family: inherit;
+      .nav-links .lang-switch a {
         font-size: 12px;
         font-weight: 700;
         color: var(--grey600);
         padding: 4px 10px;
         border-radius: 999px;
-        cursor: pointer;
-        transition: all 0.15s ease;
       }
-      html[data-lang='ko'] .lang-btn[data-set-lang='ko'],
-      html[data-lang='en'] .lang-btn[data-set-lang='en'] {
+      .nav-links .lang-switch a.current {
         background: #ffffff;
         color: var(--blue500);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -163,19 +175,16 @@ const {
   <body>
     <header class="nav">
       <div class="inner">
-        <a class="logo" href="/">
+        <a class="logo" href={`${prefix}/`}>
           junhang<span>.dev</span>
         </a>
         <nav class="nav-links">
-          <a href="/" class={activeNav === 'home' ? 'active' : ''}>
-            <span class="lang-ko">아티클</span>
-            <span class="lang-en">Articles</span>
-          </a>
-          <a href="/about" class={activeNav === 'about' ? 'active' : ''}>About</a>
+          <a href={`${prefix}/`} class={activeNav === 'home' ? 'active' : ''}>{t.articles}</a>
+          <a href={`${prefix}/about/`} class={activeNav === 'about' ? 'active' : ''}>About</a>
           <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub</a>
-          <div class="lang-switch" role="group" aria-label="Language switch">
-            <button type="button" class="lang-btn" data-set-lang="ko">KO</button>
-            <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <a href={koHref} hreflang="ko" lang="ko" class={lang === 'ko' ? 'current' : ''}>KO</a>
+            <a href={enHref} hreflang="en" lang="en" class={lang === 'en' ? 'current' : ''}>EN</a>
           </div>
         </nav>
       </div>
@@ -191,17 +200,5 @@ const {
         <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">github.com/junhang-dev</a>
       </div>
     </footer>
-
-    <script is:inline>
-      document.querySelectorAll('.lang-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var target = btn.getAttribute('data-set-lang');
-          localStorage.setItem('site-lang', target);
-          document.documentElement.setAttribute('data-lang', target);
-          document.documentElement.setAttribute('lang', target);
-          window.dispatchEvent(new CustomEvent('langchange', { detail: target }));
-        });
-      });
-    </script>
   </body>
 </html>

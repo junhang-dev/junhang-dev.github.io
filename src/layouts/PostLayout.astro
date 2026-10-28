@@ -1,12 +1,46 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { ui } from '../data/posts';
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings = [] } = Astro.props;
+const lang = frontmatter.lang === 'en' ? 'en' : 'ko';
+const t = ui[lang];
+const toc = headings.filter((h: { depth: number }) => h.depth === 2 || h.depth === 3);
+const isoDate = String(frontmatter.date).replaceAll('.', '-');
+const site = Astro.site!;
+const url = new URL(Astro.url.pathname, site).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: frontmatter.title,
+  description: frontmatter.subtitle,
+  inLanguage: lang === 'ko' ? 'ko-KR' : 'en-US',
+  datePublished: isoDate,
+  dateModified: isoDate,
+  mainEntityOfPage: url,
+  articleSection: frontmatter.category,
+  author: {
+    '@type': 'Person',
+    name: 'Junhang Lee',
+    alternateName: '이준행',
+    url: site.href,
+    sameAs: ['https://github.com/junhang-dev'],
+  },
+  publisher: { '@type': 'Person', name: 'Junhang Lee', url: site.href },
+};
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.subtitle} activeNav="home">
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.subtitle}
+  lang={lang}
+  alt={frontmatter.alt}
+  activeNav="home"
+  type="article"
+  jsonLd={jsonLd}
+>
   <style is:global>
-    /* toss.tech/article/53545 inspired 2-column layout (Content + Right Sticky TOC) */
     .article-shell {
       max-width: 1080px;
       margin: 0 auto;
@@ -162,8 +196,6 @@ const { frontmatter } = Astro.props;
       border-radius: 5px;
       font-size: 0.9em;
     }
-
-    /* Share & Footer Actions */
     .post-actions {
       margin-top: 56px;
       padding-top: 28px;
@@ -194,8 +226,6 @@ const { frontmatter } = Astro.props;
       color: var(--blue500);
       background: var(--blue50);
     }
-
-    /* Right Sticky Table of Contents (toss.tech style) */
     .article-toc-aside {
       position: sticky;
       top: 96px;
@@ -206,7 +236,6 @@ const { frontmatter } = Astro.props;
       font-size: 12.5px;
       font-weight: 700;
       color: var(--grey500);
-      text-transform: uppercase;
       letter-spacing: 0.4px;
       margin-bottom: 12px;
     }
@@ -226,8 +255,7 @@ const { frontmatter } = Astro.props;
       font-weight: 500;
       transition: color 0.15s ease;
     }
-    .toc-list a:hover,
-    .toc-list a.active {
+    .toc-list a:hover {
       color: var(--blue500);
       font-weight: 700;
     }
@@ -240,74 +268,43 @@ const { frontmatter } = Astro.props;
     <div>
       <section class="post-hero">
         {frontmatter.category && <div class="post-category">{frontmatter.category}</div>}
-        <h1 class="post-title">
-          <span class="lang-ko">{frontmatter.title}</span>
-          <span class="lang-en">{frontmatter.title_en || frontmatter.title}</span>
-        </h1>
-        {frontmatter.subtitle && (
-          <p class="post-subtitle">
-            <span class="lang-ko">{frontmatter.subtitle}</span>
-            <span class="lang-en">{frontmatter.subtitle_en || frontmatter.subtitle}</span>
-          </p>
-        )}
+        <h1 class="post-title">{frontmatter.title}</h1>
+        {frontmatter.subtitle && <p class="post-subtitle">{frontmatter.subtitle}</p>}
         <div class="post-meta">
           <div>
-            <strong class="lang-ko">이준행</strong>
-            <strong class="lang-en">Junhang Lee</strong>
-            <span> · {frontmatter.date}</span>
+            <strong>{t.author}</strong>
+            <span> · <time datetime={isoDate}>{frontmatter.date}</time></span>
           </div>
         </div>
       </section>
 
-      <article class="post-body" id="post-content">
+      <article class="post-body">
         <slot />
       </article>
 
       <div class="post-actions">
-        <button type="button" class="share-btn" id="copy-link-btn">
-          <span class="lang-ko">🔗 아티클 링크 복사</span>
-          <span class="lang-en">🔗 Copy Article Link</span>
-        </button>
+        <button type="button" class="share-btn" id="copy-link-btn" data-copied={t.copied}>{t.copy}</button>
       </div>
     </div>
 
-    <aside class="article-toc-aside" aria-label="Table of contents">
-      <div class="toc-title">
-        <span class="lang-ko">목차</span>
-        <span class="lang-en">On this page</span>
-      </div>
-      <ul class="toc-list" id="toc-list"></ul>
+    <aside class="article-toc-aside" aria-label={t.toc}>
+      <div class="toc-title">{t.toc}</div>
+      <ul class="toc-list">
+        {toc.map((h: { depth: number; slug: string; text: string }) => (
+          <li class={h.depth === 3 ? 'toc-h3' : ''}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
     </aside>
   </div>
 
   <script is:inline>
-    function buildTOC() {
-      var lang = document.documentElement.getAttribute('data-lang') || 'ko';
-      var container = document.querySelector('#post-content .lang-' + lang) || document.getElementById('post-content');
-      var tocList = document.getElementById('toc-list');
-      if (!container || !tocList) return;
-      tocList.innerHTML = '';
-      var headings = container.querySelectorAll('h2, h3');
-      headings.forEach(function (h, idx) {
-        if (!h.id) h.id = 'sec-' + lang + '-' + idx;
-        var li = document.createElement('li');
-        if (h.tagName.toLowerCase() === 'h3') li.className = 'toc-h3';
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-    }
-    buildTOC();
-    window.addEventListener('langchange', buildTOC);
-
     var copyBtn = document.getElementById('copy-link-btn');
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
         navigator.clipboard.writeText(window.location.href);
-        var lang = document.documentElement.getAttribute('data-lang') || 'ko';
-        copyBtn.textContent = lang === 'en' ? '✓ Link Copied!' : '✓ 링크가 복사되었습니다';
+        copyBtn.textContent = copyBtn.getAttribute('data-copied');
       });
     }
   </script>
