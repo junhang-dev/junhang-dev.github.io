@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FAF6F0"/>
+  
+  <!-- Main Title -->
+  <text x="640" y="68" text-anchor="middle" font-size="36" font-weight="800" fill="#232B2E" letter-spacing="-0.5">Model Deployment: Shadow Testing vs A/B Testing</text>
+  
+  <!-- Center Divider -->
+  <line x1="640" y1="115" x2="640" y2="670" stroke="#DFD8CE" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- ================= LEFT SIDE: SHADOW TESTING ================= -->
+  <text x="320" y="132" text-anchor="middle" font-size="28" font-weight="800" fill="#1E2629">Shadow Testing</text>
+  <text x="320" y="168" text-anchor="middle" font-size="22" font-weight="600" fill="#4A5559">(Zero Customer Impact: Hidden Test)</text>
+
+  <!-- User Request Icon -->
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="105" height="90" rx="14" fill="#DCEAF7" stroke="#2C3539" stroke-width="3"/>
+    <text x="52" y="42" text-anchor="middle" font-size="26">👤</text>
+    <text x="52" y="70" text-anchor="middle" font-size="14" font-weight="800" fill="#1E2629">Live User</text>
+  </g>
+
+  <!-- Split Arrows -->
+  <path d="M155,290 L225,245" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="230,242 218,243 224,253" fill="#2C3539"/>
+  
+  <path d="M155,320 L225,365" stroke="#7A868C" stroke-width="3" stroke-dasharray="6,5" fill="none"/>
+  <polygon points="230,368 224,357 218,367" fill="#7A868C"/>
+  <text x="185" y="372" text-anchor="middle" font-size="12" font-weight="800" fill="#5A666B">Copy (Mirror)</text>
+
+  <!-- Production Model v1 -->
+  <g transform="translate(235, 200)">
+    <rect x="0" y="0" width="175" height="80" rx="12" fill="#D5ECE4" stroke="#2C3539" stroke-width="3"/>
+    <text x="87" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#1E2629">Production Model v1</text>
+    <text x="87" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#2B6B55">(100% Real Traffic)</text>
+  </g>
+
+  <!-- Shadow Model v2 -->
+  <g transform="translate(235, 325)">
+    <rect x="0" y="0" width="175" height="85" rx="12" fill="#EAE6DF" stroke="#2C3539" stroke-width="3" stroke-dasharray="7,4"/>
+    <text x="87" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#374247">👻 Shadow Model v2</text>
+    <text x="87" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#5C666B">(Mirrored Traffic)</text>
+    <text x="87" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#6E4436">Silent Evaluation</text>
+  </g>
+
+  <!-- Output Arrows -->
+  <path d="M415,240 L465,240" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="470,240 460,233 460,247" fill="#2C3539"/>
+
+  <path d="M415,368 L465,368" stroke="#7A868C" stroke-width="3" stroke-dasharray="6,5" fill="none"/>
+  <polygon points="470,368 460,361 460,375" fill="#7A868C"/>
+
+  <!-- Prod Output to User -->
+  <g transform="translate(475, 205)">
+    <rect x="0" y="0" width="120" height="70" rx="12" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="60" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#1E4D3B">✓ Sent to User</text>
+    <text x="60" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#2B6B55">(Safe Response)</text>
+  </g>
+
+  <!-- Shadow Output Logged Only (Not shown to user!) -->
+  <g transform="translate(475, 325)">
+    <rect x="0" y="0" width="120" height="85" rx="12" fill="#F9E0DB" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="60" y="28" text-anchor="middle" font-size="13" font-weight="800" fill="#8C2816">🚫 NOT Shown</text>
+    <text x="60" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#8C2816">to Customer!</text>
+    <text x="60" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#4A5559">📊 Logged to S3</text>
+  </g>
+
+  <!-- Left Badges -->
+  <g transform="translate(55, 455)">
+    <rect x="0" y="0" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Zero Customer Risk</text>
+    <text x="126" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">(Output Hidden from User)</text>
+
+    <rect x="272" y="0" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Duplicates Live Traffic</text>
+    <text x="398" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">(Mirrors Real Requests)</text>
+
+    <rect x="0" y="92" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Checks Latency &amp; Errors</text>
+    <text x="126" y="146" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">Before Going Live</text>
+
+    <rect x="272" y="92" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">SageMaker Shadow</text>
+    <text x="398" y="146" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">Variant (Managed)</text>
+  </g>
+
+
+  <!-- ================= RIGHT SIDE: A/B TESTING ================= -->
+  <text x="960" y="132" text-anchor="middle" font-size="28" font-weight="800" fill="#1E2629">A/B Testing (ProductionVariants)</text>
+  <text x="960" y="168" text-anchor="middle" font-size="22" font-weight="600" fill="#4A5559">(Traffic Weight Split: Real User Reaction)</text>
+
+  <!-- Traffic Router Box -->
+  <g transform="translate(685, 250)">
+    <rect x="0" y="0" width="125" height="105" rx="14" fill="#DCEAF7" stroke="#2C3539" stroke-width="3"/>
+    <text x="62" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">Single Endpoint</text>
+    <text x="62" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#2E4A66">Variant Weight</text>
+    <text x="62" y="82" text-anchor="middle" font-size="18" font-weight="800" fill="#1E2629">80% : 20%</text>
+  </g>
+
+  <!-- Split Arrows Right -->
+  <path d="M810,280 L875,242" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="880,240 868,241 874,251" fill="#2C3539"/>
+
+  <path d="M810,325 L875,365" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="880,368 874,357 868,367" fill="#2C3539"/>
+
+  <!-- Variant A (80%) -->
+  <g transform="translate(885, 200)">
+    <rect x="0" y="0" width="175" height="80" rx="12" fill="#DCEAF7" stroke="#2C3539" stroke-width="3"/>
+    <text x="87" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#1E2629">Variant A (80%)</text>
+    <text x="87" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#2E4A66">Current Recommender</text>
+  </g>
+
+  <!-- Variant B (20%) -->
+  <g transform="translate(885, 325)">
+    <rect x="0" y="0" width="175" height="80" rx="12" fill="#FBE4D8" stroke="#2C3539" stroke-width="3"/>
+    <text x="87" y="34" text-anchor="middle" font-size="16" font-weight="800" fill="#1E2629">Variant B (20%)</text>
+    <text x="87" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#6E4436">New Recommender</text>
+  </g>
+
+  <!-- Output Arrows Right -->
+  <path d="M1065,240 L1105,240" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="1110,240 1100,233 1100,247" fill="#2C3539"/>
+
+  <path d="M1065,365 L1105,365" stroke="#2C3539" stroke-width="3" fill="none"/>
+  <polygon points="1110,365 1100,358 1100,372" fill="#2C3539"/>
+
+  <!-- Real Users See Both & Measure Conversion -->
+  <g transform="translate(1115, 200)">
+    <rect x="0" y="0" width="120" height="205" rx="14" fill="#D5ECE4" stroke="#2C3539" stroke-width="3"/>
+    <text x="60" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">👥 Real Users</text>
+    <text x="60" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#2B6B55">See Actual</text>
+    <text x="60" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#2B6B55">Results!</text>
+    <line x1="16" y1="98" x2="104" y2="98" stroke="#2C3539" stroke-width="2"/>
+    <text x="60" y="126" text-anchor="middle" font-size="13" font-weight="800" fill="#1E2629">📈 Compare KPI:</text>
+    <text x="60" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#2B6B55">• Click Rate (CTR)</text>
+    <text x="60" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#2B6B55">• Revenue / Sales</text>
+  </g>
+
+  <!-- Right Badges -->
+  <g transform="translate(695, 455)">
+    <rect x="0" y="0" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Splits Live Traffic</text>
+    <text x="126" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#2E4A66">(InitialVariantWeight)</text>
+
+    <rect x="272" y="0" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Users See Both Models</text>
+    <text x="398" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#2E4A66">(80% See A, 20% See B)</text>
+
+    <rect x="0" y="92" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Measures Business KPI</text>
+    <text x="126" y="146" text-anchor="middle" font-size="15" font-weight="600" fill="#2E4A66">(Clicks, Purchases, Revenue)</text>
+
+    <rect x="272" y="92" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Single Endpoint</text>
+    <text x="398" y="146" text-anchor="middle" font-size="15" font-weight="600" fill="#2E4A66">Multiple ProductionVariants</text>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FAF6F0"/>
+  
+  <!-- Main Title -->
+  <text x="640" y="68" text-anchor="middle" font-size="35" font-weight="800" fill="#232B2E" letter-spacing="-0.5">Drone Defect Inspection: Boosting Recall &amp; Fixing Imbalance</text>
+  
+  <!-- Center Divider -->
+  <line x1="640" y1="115" x2="640" y2="670" stroke="#DFD8CE" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- ================= LEFT SIDE: THRESHOLD & F-BETA (RECALL PRIORITY) ================= -->
+  <text x="320" y="132" text-anchor="middle" font-size="27" font-weight="800" fill="#1E2629">1. Threshold Tuning &amp; F2-Score</text>
+  <text x="320" y="168" text-anchor="middle" font-size="21" font-weight="600" fill="#4A5559">("절대 보수 대상을 놓치면 안 됨 = Recall 최우선!")</text>
+
+  <!-- Drone Scanning Crack Visual -->
+  <g transform="translate(55, 205)">
+    <rect x="0" y="0" width="530" height="205" rx="16" fill="#FFFFFF" stroke="#2C3539" stroke-width="3"/>
+    
+    <!-- Drone Box -->
+    <rect x="22" y="24" width="145" height="155" rx="12" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="94" y="68" text-anchor="middle" font-size="34">🚁</text>
+    <text x="94" y="105" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">드론 현장 촬영</text>
+    <text x="94" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#2E4A66">정상: 99% / 균열: 1%</text>
+    <text x="94" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#8C2816">놓치면 대형 사고(FN)!</text>
+
+    <!-- Threshold Slider Explanation -->
+    <rect x="188" y="24" width="320" height="72" rx="10" fill="#F9E0DB" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="348" y="50" text-anchor="middle" font-size="15" font-weight="800" fill="#8C2816">📉 결정 임계값 낮추기 (0.5 ➔ 0.2)</text>
+    <text x="348" y="74" text-anchor="middle" font-size="13" font-weight="700" fill="#4A5559">"조금만 의심스러워도(20%) 일단 불량으로 잡아라!"</text>
+
+    <!-- Result of lowering threshold -->
+    <rect x="188" y="108" width="320" height="72" rx="10" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="348" y="135" text-anchor="middle" font-size="15" font-weight="800" fill="#1E4D3B">✅ 결과: Recall(재현율) 대폭 상승! (FN ➔ 0)</text>
+    <text x="348" y="158" text-anchor="middle" font-size="13" font-weight="700" fill="#2B6B55">(오탐 FP가 조금 늘어나도 사람이 재확인하면 OK!)</text>
+  </g>
+
+  <!-- Left Badges -->
+  <g transform="translate(55, 455)">
+    <rect x="0" y="0" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Lower Threshold (0.5➔0.2)</text>
+    <text x="126" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">(Maximizes Recall / Sensitivity)</text>
+
+    <rect x="272" y="0" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Minimize False Negative</text>
+    <text x="398" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#3B5249">(절대 진짜 불량을 놓치지 않음)</text>
+
+    <rect x="0" y="92" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">F2-Score (β &gt; 1)</text>
+    <text x="126" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#2E4A66">Recall에 Precision보다 2배 가중치</text>
+
+    <rect x="272" y="92" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">PR-AUC Curve</text>
+    <text x="398" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#2E4A66">임계값 전체의 소수 클래스 성능</text>
+  </g>
+
+
+  <!-- ================= RIGHT SIDE: TRAINING TIME IMBALANCE FIXES ================= -->
+  <text x="960" y="132" text-anchor="middle" font-size="27" font-weight="800" fill="#1E2629">2. Training Fixes: SMOTE vs Weighting</text>
+  <text x="960" y="168" text-anchor="middle" font-size="21" font-weight="600" fill="#4A5559">("보수 필요한 사진이 너무 적을 때 학습시키는 법")</text>
+
+  <!-- Method A: SMOTE Oversampling -->
+  <g transform="translate(685, 205)">
+    <rect x="0" y="0" width="255" height="205" rx="16" fill="#DCEAF7" stroke="#2C3539" stroke-width="3"/>
+    <text x="127" y="34" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">🧬 SMOTE (데이터 증강)</text>
+    <rect x="18" y="50" width="219" height="82" rx="10" fill="#FFFFFF" stroke="#2C3539" stroke-width="2"/>
+    <text x="127" y="78" text-anchor="middle" font-size="14" font-weight="800" fill="#2E4A66">소수 클래스(불량) 샘플 사이를</text>
+    <text x="127" y="100" text-anchor="middle" font-size="14" font-weight="800" fill="#2E4A66">k-NN 보간하여 인공 합성!</text>
+    <text x="127" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="#5A666B">(단순 복제 Overfitting 방지)</text>
+    <text x="127" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#1E2629">Data-Level Solution</text>
+    <text x="127" y="184" text-anchor="middle" font-size="13" font-weight="600" fill="#374247">SageMaker Data Wrangler 내장</text>
+  </g>
+
+  <!-- Method B: Class Weight / scale_pos_weight -->
+  <g transform="translate(965, 205)">
+    <rect x="0" y="0" width="260" height="205" rx="16" fill="#FBE4D8" stroke="#2C3539" stroke-width="3"/>
+    <text x="130" y="34" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">⚖️ scale_pos_weight (가중치)</text>
+    <rect x="18" y="50" width="224" height="82" rx="10" fill="#FFFFFF" stroke="#2C3539" stroke-width="2"/>
+    <text x="130" y="78" text-anchor="middle" font-size="14" font-weight="800" fill="#8C2816">"불량 1개 놓치면 벌점 100배!"</text>
+    <text x="130" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#5C4038">Loss Function에 비대칭 페널티</text>
+    <text x="130" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="#5A666B">(= Negative 개수 / Positive 개수)</text>
+    <text x="130" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#1E2629">Algorithm-Level Solution</text>
+    <text x="130" y="184" text-anchor="middle" font-size="13" font-weight="600" fill="#374247">XGBoost / Focal Loss 파라미터</text>
+  </g>
+
+  <!-- Right Badges -->
+  <g transform="translate(695, 455)">
+    <rect x="0" y="0" width="252" height="72" rx="36" fill="#DCEAF7" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">SMOTE Oversampling</text>
+    <text x="126" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#2E4A66">(Synthesizes Minority Data)</text>
+
+    <rect x="272" y="0" width="252" height="72" rx="36" fill="#FBE4D8" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="32" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">scale_pos_weight</text>
+    <text x="398" y="54" text-anchor="middle" font-size="15" font-weight="600" fill="#6E4436">(XGBoost Imbalance Parameter)</text>
+
+    <rect x="0" y="92" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="126" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Focal Loss</text>
+    <text x="126" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#3B5249">객체 탐지(드론 사진) 불균형 손실함수</text>
+
+    <rect x="272" y="92" width="252" height="72" rx="36" fill="#D5ECE4" stroke="#2C3539" stroke-width="2.8"/>
+    <text x="398" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#1E2629">Stratified K-Fold</text>
+    <text x="398" y="146" text-anchor="middle" font-size="14" font-weight="600" fill="#3B5249">불량 비율 유지하며 Train/Val 분할</text>
+  </g>
+</svg>

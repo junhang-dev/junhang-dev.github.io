@@ -1,0 +1,184 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: 'home' | 'series' | 'concepts' | 'about';
+}
+
+const {
+  title,
+  description = '세상의 디지털 서비스와 플랜트 Physical AI의 이면을 해부하는 엔지니어링 아카이브',
+  activeNav = 'home',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | junhang.dev</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | junhang.dev`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <style is:global>
+      :root {
+        --grey900: #191f28;
+        --grey800: #333d4b;
+        --grey700: #4e5968;
+        --grey600: #6b7684;
+        --grey500: #8b95a1;
+        --grey300: #d1d6db;
+        --grey200: #e5e8eb;
+        --grey100: #f2f4f6;
+        --grey50: #f9fafb;
+        --blue500: #3182f6;
+        --blue600: #1b64da;
+        --blue50: #e8f3ff;
+        --mint: #dff5ee;
+        --peach: #fde8dc;
+        --lilac: #ebe7fb;
+        --butter: #fff4d1;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--grey900);
+        font-family:
+          'Toss Product Sans',
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Apple SD Gothic Neo',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        word-break: keep-all;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header.nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--grey100);
+      }
+      header.nav .inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        height: 64px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--grey900);
+        letter-spacing: -0.4px;
+      }
+      .logo-badge {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue500);
+        background: var(--blue50);
+        padding: 3px 8px;
+        border-radius: 999px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-links a {
+        font-size: 15px;
+        color: var(--grey600);
+        font-weight: 600;
+        padding: 6px 2px;
+        transition: color 0.15s ease;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--blue500);
+      }
+      footer.site-footer {
+        border-top: 1px solid var(--grey100);
+        background: var(--grey50);
+        padding: 48px 24px;
+        margin-top: 96px;
+      }
+      footer.site-footer .inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 24px;
+        color: var(--grey600);
+        font-size: 14px;
+      }
+      footer.site-footer strong {
+        color: var(--grey900);
+      }
+      .footer-links {
+        display: flex;
+        gap: 16px;
+      }
+      .footer-links a:hover {
+        color: var(--blue500);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="inner">
+        <a class="logo" href="/">
+          <span>이면 해부학</span>
+          <span class="logo-badge">junhang.dev</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/" class={activeNav === 'home' ? 'active' : ''}>아티클</a>
+          <a href="/concepts" class={activeNav === 'concepts' ? 'active' : ''}>개념 카드 (24쌍)</a>
+          <a href="/about" class={activeNav === 'about' ? 'active' : ''}>About</a>
+          <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <div>
+          <strong>이면 해부학 · junhang.dev</strong>
+          <p style="margin: 6px 0 0;">
+            세상의 디지털 서비스와 플랜트 Physical AI의 아키텍처 Trade-off를 해부합니다.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="/">아티클</a>
+          <a href="/concepts">개념 카드</a>
+          <a href="/about">이준행 소개</a>
+          <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

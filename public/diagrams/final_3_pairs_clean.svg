@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#FAF6F0"/>
+  
+  <!-- Main Title -->
+  <text x="640" y="62" text-anchor="middle" font-size="34" font-weight="800" fill="#232B2E" letter-spacing="-0.5">Final 3 Confusion Pairs (#22 ~ #24): Complete the 24 Set!</text>
+
+  <!-- ================= CARD #22 (LEFT COLUMN) ================= -->
+  <g transform="translate(45, 100)">
+    <rect x="0" y="0" width="375" height="575" rx="18" fill="#D5ECE4" stroke="#2C3539" stroke-width="3"/>
+    <rect x="0" y="0" width="375" height="64" rx="18" fill="#2C3539"/>
+    <text x="187" y="40" text-anchor="middle" font-size="21" font-weight="800" fill="#FFFFFF">#22. Titan Embeddings v1 vs v2</text>
+
+    <!-- v1 Box -->
+    <rect x="22" y="88" width="331" height="125" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="120" text-anchor="middle" font-size="18" font-weight="800" fill="#5A666B">Titan Embeddings v1 (구형)</text>
+    <text x="187" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#8C2816">• 1,536 차원 고정 (줄일 수 없음!)</text>
+    <text x="187" y="176" text-anchor="middle" font-size="14" font-weight="600" fill="#4A5559">• 벡터 DB 메모리/스토리지 비용 비쌈</text>
+
+    <!-- Arrow Down -->
+    <text x="187" y="242" text-anchor="middle" font-size="26" font-weight="800" fill="#1E4D3B">⬇️ 차원 다이어트!</text>
+
+    <!-- v2 Box -->
+    <rect x="22" y="260" width="331" height="165" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="3"/>
+    <text x="187" y="294" text-anchor="middle" font-size="19" font-weight="800" fill="#1E4D3B">🌟 Titan Text Embeddings v2</text>
+    <text x="187" y="326" text-anchor="middle" font-size="16" font-weight="800" fill="#B8331A">1024 ➔ 512 ➔ 256 차원 축소!</text>
+    <text x="187" y="356" text-anchor="middle" font-size="14" font-weight="700" fill="#232B2E">• 정확도 99% 유지하며</text>
+    <text x="187" y="380" text-anchor="middle" font-size="14" font-weight="800" fill="#1E4D3B">• 벡터 DB 비용 50~75% 즉시 절감!</text>
+    <text x="187" y="404" text-anchor="middle" font-size="13" font-weight="600" fill="#4A5559">(Matryoshka 마트료시카 임베딩)</text>
+
+    <!-- Clue Pill -->
+    <rect x="22" y="455" width="331" height="92" rx="16" fill="#FAF6F0" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="486" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">🎯 시험 단서 (Planted Clue):</text>
+    <text x="187" y="512" text-anchor="middle" font-size="14" font-weight="700" fill="#2B6B55">"벡터 DB 저장 비용 절감을 위해</text>
+    <text x="187" y="532" text-anchor="middle" font-size="14" font-weight="700" fill="#2B6B55">임베딩 차원(Dimension)을 512/256으로 축소"</text>
+  </g>
+
+  <!-- ================= CARD #23 (CENTER COLUMN) ================= -->
+  <g transform="translate(452, 100)">
+    <rect x="0" y="0" width="375" height="575" rx="18" fill="#DCEAF7" stroke="#2C3539" stroke-width="3"/>
+    <rect x="0" y="0" width="375" height="64" rx="18" fill="#2C3539"/>
+    <text x="187" y="40" text-anchor="middle" font-size="21" font-weight="800" fill="#FFFFFF">#23. Clarify (SHAP) vs Monitor</text>
+
+    <!-- Clarify Box -->
+    <rect x="22" y="88" width="331" height="190" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="3"/>
+    <text x="187" y="122" text-anchor="middle" font-size="19" font-weight="800" fill="#1E2629">🔍 SageMaker Clarify</text>
+    <text x="187" y="152" text-anchor="middle" font-size="16" font-weight="800" fill="#2E4A66">1. 설명 가능성 (Explainability = SHAP)</text>
+    <text x="187" y="176" text-anchor="middle" font-size="13" font-weight="600" fill="#4A5559">"왜 대출 거절됐나? (소득 60%, 신용 30% 기여)"</text>
+    <text x="187" y="208" text-anchor="middle" font-size="16" font-weight="800" fill="#8C2816">2. 편향성 탐지 (Pre/Post-training Bias)</text>
+    <text x="187" y="232" text-anchor="middle" font-size="13" font-weight="600" fill="#4A5559">"특정 성별/인종에게 불리하게 예측하는가?"</text>
+    <text x="187" y="258" text-anchor="middle" font-size="13" font-weight="800" fill="#1E4D3B">• Feature Attribution Drift 감시!</text>
+
+    <!-- vs Model Monitor -->
+    <rect x="22" y="298" width="331" height="127" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="330" text-anchor="middle" font-size="18" font-weight="800" fill="#5A666B">📈 Model Monitor (Data/Quality)</text>
+    <text x="187" y="360" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5559">• 입력 통계 분포 변화 (Data Drift)</text>
+    <text x="187" y="386" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5559">• 예측 정확도/F1 하락 (Model Quality)</text>
+
+    <!-- Clue Pill -->
+    <rect x="22" y="455" width="331" height="92" rx="16" fill="#FAF6F0" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="486" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">🎯 시험 단서 (Planted Clue):</text>
+    <text x="187" y="512" text-anchor="middle" font-size="14" font-weight="700" fill="#2E4A66">"SHAP 값, 피처 중요도(Feature Attribution),</text>
+    <text x="187" y="532" text-anchor="middle" font-size="14" font-weight="700" fill="#2E4A66">모델 설명 가능성(Explainability), 편향(Bias)"</text>
+  </g>
+
+  <!-- ================= CARD #24 (RIGHT COLUMN) ================= -->
+  <g transform="translate(860, 100)">
+    <rect x="0" y="0" width="375" height="575" rx="18" fill="#FBE4D8" stroke="#2C3539" stroke-width="3"/>
+    <rect x="0" y="0" width="375" height="64" rx="18" fill="#2C3539"/>
+    <text x="187" y="40" text-anchor="middle" font-size="21" font-weight="800" fill="#FFFFFF">#24. Kinesis Streams vs Firehose</text>
+
+    <!-- Data Streams Box -->
+    <rect x="22" y="88" width="331" height="160" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="122" text-anchor="middle" font-size="18" font-weight="800" fill="#1E2629">⚡ Kinesis Data Streams (KDS)</text>
+    <text x="187" y="152" text-anchor="middle" font-size="15" font-weight="800" fill="#8C2816">• 진짜 실시간! (&lt; 70ms 밀리초 지연)</text>
+    <text x="187" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5559">• 커스텀 실시간 소비 앱 (Flink / Lambda)</text>
+    <text x="187" y="204" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5559">• 데이터 최대 365일 보관 &amp; 재재생(Replay)</text>
+
+    <!-- Data Firehose Box -->
+    <rect x="22" y="268" width="331" height="160" rx="12" fill="#FFFFFF" stroke="#2C3539" stroke-width="3"/>
+    <text x="187" y="302" text-anchor="middle" font-size="18" font-weight="800" fill="#1E4D3B">🚒 Kinesis Data Firehose</text>
+    <text x="187" y="332" text-anchor="middle" font-size="15" font-weight="800" fill="#2B6B55">• 준실시간 (Near Real-Time: 60초 버퍼)</text>
+    <text x="187" y="358" text-anchor="middle" font-size="14" font-weight="800" fill="#1E2629">• S3 / Redshift / OpenSearch로 자동 배달!</text>
+    <text x="187" y="384" text-anchor="middle" font-size="14" font-weight="700" fill="#4A5559">• 즉석에서 CSV/JSON ➔ Parquet 자동 변환!</text>
+    <text x="187" y="408" text-anchor="middle" font-size="13" font-weight="700" fill="#6E4436">• 100% 서버리스 (최소 운영 오버헤드)</text>
+
+    <!-- Clue Pill -->
+    <rect x="22" y="455" width="331" height="92" rx="16" fill="#FAF6F0" stroke="#2C3539" stroke-width="2.5"/>
+    <text x="187" y="486" text-anchor="middle" font-size="15" font-weight="800" fill="#1E2629">🎯 시험 단서 (Planted Clue):</text>
+    <text x="187" y="512" text-anchor="middle" font-size="14" font-weight="700" fill="#6E4436">"스트리밍 데이터를 코드 없이 S3에 Parquet로</text>
+    <text x="187" y="532" text-anchor="middle" font-size="14" font-weight="700" fill="#6E4436">자동 변환 및 적재 = Data Firehose!"</text>
+  </g>
+</svg>

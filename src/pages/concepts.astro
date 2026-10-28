@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const cards = [
+  {
+    title: '플랜트 Physical AI 5단계 통합 청사진',
+    desc: 'Physical Edge(로봇/드론) ➔ 2-Track 파이프라인 ➔ Data Flywheel ➔ Agentic Brain & SAP PM 연동',
+    img: '/diagrams/physical_ai_blueprint_clean.svg',
+    tag: 'EP.07 Physical AI',
+  },
+  {
+    title: '드론/배관 결함 판독: Recall 최우선과 클래스 불균형',
+    desc: '결함 놓침(FN) 비용이 압도적인 환경에서의 임계값 설계와 PR-AUC 평가 지표',
+    img: '/diagrams/drone_recall_imbalance_clean.svg',
+    tag: 'EP.01 & EP.05',
+  },
+  {
+    title: 'ROC-AUC vs PR-AUC',
+    desc: '사기 탐지(FDS)나 설비 이상처럼 극단적 불균형 데이터에서 왜 PR-AUC를 봐야 하는가',
+    img: '/diagrams/roc_vs_prauc_clean.svg',
+    tag: 'EP.01 토스 FDS',
+  },
+  {
+    title: 'Online vs Offline Feature Store',
+    desc: '밀리초 단위 실시간 추론(DynamoDB/Redis)과 대규모 배치 학습(S3/Athena)의 이중 구조',
+    img: '/diagrams/feature_store_clean_v2_1793081353057.jpg',
+    tag: 'EP.02 배민 ETA',
+  },
+  {
+    title: 'Data Drift vs Concept Drift',
+    desc: '입력 분포 자체가 변하는 현상 vs 입력과 정답 사이의 관계(법칙)가 변하는 현상',
+    img: '/diagrams/data_vs_concept_drift_clean_1793080941651.jpg',
+    tag: 'EP.02 & EP.04',
+  },
+  {
+    title: 'Hybrid Search & Rerank',
+    desc: '키워드(BM25)와 시맨틱 벡터 검색 결합 후 Cross-Encoder 리랭킹으로 정밀도 극대화',
+    img: '/diagrams/hybrid_rerank_clean_v2_1793079209192.jpg',
+    tag: 'EP.03 & EP.06',
+  },
+  {
+    title: 'Shadow 배포 vs A/B 테스트',
+    desc: '사고가 용납되지 않는 플랜트·로봇 제어에서 실제 반영 없이 안전하게 검증하는 Shadow 모드',
+    img: '/diagrams/shadow_vs_ab_clean.svg',
+    tag: 'EP.04 & EP.07',
+  },
+  {
+    title: 'Ground Truth vs Amazon A2I (Human-in-the-Loop)',
+    desc: '학습 전 대량 라벨링 구축 vs 운영 중 저신뢰 추론 건만 현업 전문가가 실시간 검수하는 루프',
+    img: '/diagrams/groundtruth_vs_a2i_clean.svg',
+    tag: 'EP.05 & EP.07',
+  },
+  {
+    title: 'Knowledge Bases(단순 조회) vs Bedrock Agents(행동 실행)',
+    desc: '문서 검색·요약을 넘어 SAP 보수 작업요청서 생성 및 승인(Return of Control)까지 수행하는 에이전트',
+    img: '/diagrams/kb_vs_agents_clean_v2_1793079697112.jpg',
+    tag: 'EP.06 & EP.07',
+  },
+  {
+    title: 'Async Inference vs Batch Transform',
+    desc: '도크에 복귀한 드론 대용량 영상을 큐 기반으로 처리하고 유휴 시 0으로 축소(Scale-to-Zero)',
+    img: '/diagrams/async_batch_clean_1790996256165.jpg',
+    tag: 'EP.07 Physical AI',
+  },
+];
+---
+
+<BaseLayout title="개념 카드 아카이브" activeNav="concepts">
+  <style>
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .head h1 {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 0 0 10px;
+      letter-spacing: -0.6px;
+    }
+    .head p {
+      font-size: 17px;
+      color: var(--grey700);
+      margin: 0 0 36px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      border: 1px solid var(--grey200);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-img {
+      background: var(--grey50);
+      padding: 16px;
+      border-bottom: 1px solid var(--grey100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+    .card-body {
+      padding: 20px 24px 24px;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue500);
+      background: var(--blue50);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .card-body p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--grey600);
+      line-height: 1.55;
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="head">
+      <h1>개념 카드 아카이브</h1>
+      <p>
+        AWS MLA-C02와 프로덕션 MLOps에서 가장 헷갈리는 핵심 개념 쌍을 파스텔 다이어그램과 실제 서비스 사례로 정리한 시각 노트입니다.
+      </p>
+    </div>
+
+    <div class="grid">
+      {cards.map((c) => (
+        <div class="card">
+          <div class="card-img">
+            <img src={c.img} alt={c.title} loading="lazy" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">{c.tag}</span>
+            <h3>{c.title}</h3>
+            <p>{c.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
