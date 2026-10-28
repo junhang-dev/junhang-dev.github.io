@@ -2,94 +2,42 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About — 이준행 (Junhang Lee)" activeNav="about">
+<BaseLayout title="About" activeNav="about">
   <style>
     .wrap {
-      max-width: 780px;
+      max-width: 720px;
       margin: 0 auto;
       padding: 56px 24px;
     }
-    .profile-card {
-      background: var(--grey50);
-      border: 1px solid var(--grey200);
-      border-radius: 24px;
-      padding: 36px;
-      margin-bottom: 40px;
-    }
-    .profile-card h1 {
-      margin: 0 0 8px;
+    h1 {
+      margin: 0 0 12px;
       font-size: 30px;
       font-weight: 800;
+      letter-spacing: -0.5px;
     }
-    .role {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--blue500);
-      margin-bottom: 16px;
-    }
-    .bio {
+    p {
       font-size: 16.5px;
       line-height: 1.75;
-      color: var(--grey800);
-      margin: 0;
-    }
-    h2 {
-      font-size: 22px;
-      font-weight: 800;
-      margin: 40px 0 16px;
-    }
-    .ref-card {
-      border: 1px solid var(--grey200);
-      border-radius: 18px;
-      padding: 24px;
-      margin-bottom: 16px;
-    }
-    .ref-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-    .ref-card p {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.65;
       color: var(--grey700);
+      margin: 0 0 16px;
+    }
+    .notice {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--grey50);
+      border-radius: 14px;
+      font-size: 15px;
+      color: var(--grey600);
     }
   </style>
 
   <div class="wrap">
-    <div class="profile-card">
-      <h1>이준행 (Junhang Lee)</h1>
-      <div class="role">Industrial & Production AI Engineer · Forward Deployed AI Architect</div>
-      <p class="bio">
-        정유·석유화학 플랜트 현장의 도메인 지식과 클라우드·프로덕션 AI 아키텍처를 연결하는 5년 차 엔지니어입니다.
-        현장의 진짜 제약 조건(보안, 레거시 ERP, 물리적 지연, 안전성) 위에서 실제로 작동하고 비즈니스 가치를 내는 AI 시스템을 설계합니다.
-      </p>
-    </div>
-
-    <h2>주요 프로덕션 레퍼런스</h2>
-
-    <div class="ref-card">
-      <h3>1. 설비투자 유사 견적 탐색 AI 에이전트 (리드타임 90% 단축)</h3>
-      <p>
-        불확실한 블랙박스 단가 예측 대신 '원본 근거 기반 유사 계약 탐색'으로 문제를 재정의했습니다.
-        Neo4j Graph RAG의 유지보수·지연시간 한계를 검증 후 과감히 폐기하고, 문서 구조 보존 JSON 청킹 + Hybrid Search/Rerank + LangGraph 멀티턴 역질문 + 기간계 원본 1:1 Citation & ACL 가드레일로 구축했습니다.
-      </p>
-    </div>
-
-    <div class="ref-card">
-      <h3>2. 1,000개 공정 센서 실시간 수율 최적화 (연간 6.6억 원 순이익)</h3>
-      <p>
-        배관 흐름에 따른 물리적 지연(Dead-time)을 반영한 Rolling Window 피처 엔지니어링과 LightGBM 모델을 구축하고,
-        SHAP(XAI) 기반 실시간 운전 가이드를 제공하여 숙련 보드 운전원들의 신뢰와 현장 수용성을 이끌어냈습니다.
-      </p>
-    </div>
-
-    <div class="ref-card">
-      <h3>3. 배관 방사선(RT) 비파괴검사 4만 장 AI 자동 판독 (리드타임 90% 단축)</h3>
-      <p>
-        결함 놓침(FN) 방지를 위해 재현율(Recall) 최우선 임계값을 설계하고, OpenCV ROI 크롭 및 DeepLabv3+ 세그멘테이션 모델을 사내 기간계 REST API와 연동하여 Human-in-the-Loop 검수 워크플로우를 완성했습니다.
-      </p>
+    <h1>이준행 (Junhang Lee)</h1>
+    <p>
+      정유·석유화학 플랜트 현장의 도메인과 디지털·AI 엔지니어링을 연결하는 일을 하고 있습니다.
+    </p>
+    <div class="notice">
+      상세 포트폴리오 및 이력 소개는 업데이트 예정입니다.
     </div>
   </div>
 </BaseLayout>

@@ -2,12 +2,12 @@
 interface Props {
   title: string;
   description?: string;
-  activeNav?: 'home' | 'series' | 'concepts' | 'about';
+  activeNav?: 'home' | 'about';
 }
 
 const {
   title,
-  description = '세상의 디지털 서비스와 플랜트 Physical AI의 이면을 해부하는 엔지니어링 아카이브',
+  description = '이준행의 기술 블로그',
   activeNav = 'home',
 } = Astro.props;
 ---
@@ -40,10 +40,6 @@ const {
         --blue500: #3182f6;
         --blue600: #1b64da;
         --blue50: #e8f3ff;
-        --mint: #dff5ee;
-        --peach: #fde8dc;
-        --lilac: #ebe7fb;
-        --butter: #fff4d1;
       }
       * {
         box-sizing: border-box;
@@ -75,30 +71,22 @@ const {
         border-bottom: 1px solid var(--grey100);
       }
       header.nav .inner {
-        max-width: 1040px;
+        max-width: 980px;
         margin: 0 auto;
-        height: 64px;
+        height: 60px;
         padding: 0 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
       .logo {
-        display: flex;
-        align-items: center;
-        gap: 8px;
         font-weight: 800;
         font-size: 18px;
         color: var(--grey900);
         letter-spacing: -0.4px;
       }
-      .logo-badge {
-        font-size: 12px;
-        font-weight: 700;
+      .logo span {
         color: var(--blue500);
-        background: var(--blue50);
-        padding: 3px 8px;
-        border-radius: 999px;
       }
       .nav-links {
         display: flex;
@@ -118,29 +106,17 @@ const {
       }
       footer.site-footer {
         border-top: 1px solid var(--grey100);
-        background: var(--grey50);
-        padding: 48px 24px;
+        padding: 36px 24px;
         margin-top: 96px;
       }
       footer.site-footer .inner {
-        max-width: 1040px;
+        max-width: 980px;
         margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        gap: 24px;
-        color: var(--grey600);
-        font-size: 14px;
-      }
-      footer.site-footer strong {
-        color: var(--grey900);
-      }
-      .footer-links {
-        display: flex;
-        gap: 16px;
-      }
-      .footer-links a:hover {
-        color: var(--blue500);
+        align-items: center;
+        color: var(--grey500);
+        font-size: 13.5px;
       }
     </style>
   </head>
@@ -148,14 +124,12 @@ const {
     <header class="nav">
       <div class="inner">
         <a class="logo" href="/">
-          <span>이면 해부학</span>
-          <span class="logo-badge">junhang.dev</span>
+          junhang<span>.dev</span>
         </a>
         <nav class="nav-links">
           <a href="/" class={activeNav === 'home' ? 'active' : ''}>아티클</a>
-          <a href="/concepts" class={activeNav === 'concepts' ? 'active' : ''}>개념 카드 (24쌍)</a>
           <a href="/about" class={activeNav === 'about' ? 'active' : ''}>About</a>
-          <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub</a>
         </nav>
       </div>
     </header>
@@ -166,18 +140,8 @@ const {
 
     <footer class="site-footer">
       <div class="inner">
-        <div>
-          <strong>이면 해부학 · junhang.dev</strong>
-          <p style="margin: 6px 0 0;">
-            세상의 디지털 서비스와 플랜트 Physical AI의 아키텍처 Trade-off를 해부합니다.
-          </p>
-        </div>
-        <div class="footer-links">
-          <a href="/">아티클</a>
-          <a href="/concepts">개념 카드</a>
-          <a href="/about">이준행 소개</a>
-          <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">GitHub</a>
-        </div>
+        <span>© Junhang Lee</span>
+        <a href="https://github.com/junhang-dev" target="_blank" rel="noopener">github.com/junhang-dev</a>
       </div>
     </footer>
   </body>
