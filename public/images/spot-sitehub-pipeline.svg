@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif">
+  <rect width="880" height="320" rx="16" fill="#f9fafb" stroke="#e5e8eb" stroke-width="1"/>
+  
+  <!-- Zone 1: Field Edge -->
+  <rect x="24" y="28" width="248" height="264" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1"/>
+  <rect x="40" y="44" width="110" height="24" rx="6" fill="#e8f3ff"/>
+  <text x="95" y="60" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">1. 현장 순찰 (Field Edge)</text>
+  
+  <text x="44" y="96" font-size="14.5" font-weight="700" fill="#191f28">Spot + 센서 페이로드</text>
+  <text x="44" y="118" font-size="12.5" fill="#4e5968">• 열화상 · 광학 줌(게이지) · 음향 센서</text>
+  <text x="44" y="138" font-size="12.5" fill="#4e5968">• 사전 지정 경로(Autowalk) 자율 주행</text>
+  <text x="44" y="158" font-size="12.5" fill="#4e5968">• 음영 구역 내 로봇 로컬 버퍼 저장</text>
+
+  <rect x="44" y="184" width="208" height="88" rx="10" fill="#f2f4f6"/>
+  <text x="60" y="210" font-size="13" font-weight="700" fill="#333d4b">Spot Dock (충전 도크 복귀)</text>
+  <text x="60" y="232" font-size="12" fill="#4e5968">• 임무 종료 후 도킹 &amp; 자동 충전</text>
+  <text x="60" y="250" font-size="12" fill="#1b64da" font-weight="600">• 사내 무선망으로 회차 데이터 일괄 동기화</text>
+
+  <!-- Arrow 1 -->
+  <line x1="272" y1="160" x2="308" y2="160" stroke="#8b95a1" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="308,155 316,160 308,165" fill="#8b95a1"/>
+
+  <!-- Zone 2: On-Premise OT/IT -->
+  <rect x="316" y="28" width="264" height="264" rx="12" fill="#ffffff" stroke="#3182f6" stroke-width="1.5"/>
+  <rect x="332" y="44" width="154" height="24" rx="6" fill="#e8f3ff"/>
+  <text x="409" y="60" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">2. 공장 내부망 (On-Premise)</text>
+
+  <text x="336" y="96" font-size="14.5" font-weight="700" fill="#191f28">Site Hub (전용 온프레미스 서버)</text>
+  <text x="336" y="118" font-size="12.5" fill="#4e5968">• 외부 클라우드 반출 없이 사내망 내 처리</text>
+  <text x="336" y="138" font-size="12.5" fill="#4e5968">• Orbit 관제 엔진 구동 (일정·맵·데이터 통합)</text>
+
+  <rect x="336" y="162" width="224" height="110" rx="10" fill="#f9fafb" stroke="#e5e8eb"/>
+  <text x="352" y="186" font-size="13" font-weight="700" fill="#333d4b">Spot Extensions (분석 컨테이너)</text>
+  <text x="352" y="208" font-size="12" fill="#4e5968">• 게이지 수치 OCR 판독 / 열화상 임계값 비교</text>
+  <text x="352" y="226" font-size="12" fill="#4e5968">• 촬영 지점 ➔ 설비 ID(Asset Tag) 매핑</text>
+  <text x="352" y="246" font-size="12" fill="#1b64da" font-weight="600">• 정상 데이터는 보관, 이상 징후만 이벤트 추출</text>
+
+  <!-- Arrow 2 -->
+  <line x1="580" y1="160" x2="616" y2="160" stroke="#8b95a1" stroke-width="1.5"/>
+  <polygon points="616,155 624,160 616,165" fill="#8b95a1"/>
+
+  <!-- Zone 3: Enterprise System -->
+  <rect x="624" y="28" width="232" height="264" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1"/>
+  <rect x="640" y="44" width="140" height="24" rx="6" fill="#f2f4f6"/>
+  <text x="710" y="60" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">3. 기간계 연동 (Enterprise)</text>
+
+  <text x="644" y="96" font-size="14.5" font-weight="700" fill="#191f28">REST API / Webhook 연동</text>
+  <text x="644" y="118" font-size="12.5" fill="#4e5968">• 원본 대용량 영상은 Site Hub에 유지</text>
+  <text x="644" y="138" font-size="12.5" fill="#4e5968">• 가벼운 JSON 메타데이터 + 스냅샷 URL 전송</text>
+
+  <rect x="644" y="162" width="192" height="110" rx="10" fill="#f2f4f6"/>
+  <text x="660" y="186" font-size="13" font-weight="700" fill="#333d4b">설비 관리 시스템 (SAP PM / Twin)</text>
+  <text x="660" y="208" font-size="12" fill="#4e5968">• 설비별 온도·압력 추이 자동 기록</text>
+  <text x="660" y="226" font-size="12" fill="#4e5968">• 디지털 트윈(Woodside FUSE 등) 동기화</text>
+  <text x="660" y="246" font-size="12" fill="#333d4b" font-weight="600">• 엔지니어 검토 후 보수 작업요청 발행</text>
+</svg>
