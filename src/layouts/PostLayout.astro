@@ -301,6 +301,14 @@ const jsonLd = {
   </div>
 
   <script is:inline>
+    // 본문 내 모든 외부 링크 및 출처 링크는 새 탭으로 열리도록 설정
+    document.querySelectorAll('.post-body a').forEach(function (link) {
+      if (!link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+
     var copyBtn = document.getElementById('copy-link-btn');
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
