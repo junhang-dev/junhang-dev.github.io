@@ -1,56 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif">
-  <rect width="880" height="320" rx="16" fill="#f9fafb" stroke="#e5e8eb" stroke-width="1"/>
-  
-  <!-- Zone 1: Field Edge -->
-  <rect x="24" y="28" width="248" height="264" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1"/>
-  <rect x="40" y="44" width="110" height="24" rx="6" fill="#e8f3ff"/>
-  <text x="95" y="60" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">1. 현장 순찰 (Field Edge)</text>
-  
-  <text x="44" y="96" font-size="14.5" font-weight="700" fill="#191f28">Spot + 센서 페이로드</text>
-  <text x="44" y="118" font-size="12.5" fill="#4e5968">• 열화상 · 광학 줌(게이지) · 음향 센서</text>
-  <text x="44" y="138" font-size="12.5" fill="#4e5968">• 사전 지정 경로(Autowalk) 자율 주행</text>
-  <text x="44" y="158" font-size="12.5" fill="#4e5968">• 음영 구역 내 로봇 로컬 버퍼 저장</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="430" rx="22" fill="#f2f4f6"/>
 
-  <rect x="44" y="184" width="208" height="88" rx="10" fill="#f2f4f6"/>
-  <text x="60" y="210" font-size="13" font-weight="700" fill="#333d4b">Spot Dock (충전 도크 복귀)</text>
-  <text x="60" y="232" font-size="12" fill="#4e5968">• 임무 종료 후 도킹 &amp; 자동 충전</text>
-  <text x="60" y="250" font-size="12" fill="#1b64da" font-weight="600">• 사내 무선망으로 회차 데이터 일괄 동기화</text>
+  <!-- Main Title -->
+  <text x="48" y="56" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">플랜트 로봇 데이터 파이프라인 한눈에 보기</text>
+
+  <!-- Row 1 Label -->
+  <text x="48" y="98" font-size="14.5" font-weight="700" fill="#333d4b">현장 수집과 도크 동기화</text>
+
+  <!-- Box 1: Spot Robot -->
+  <rect x="48" y="114" width="210" height="96" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="153" y="154" font-size="16.5" font-weight="800" fill="#191f28" text-anchor="middle">Spot 자율 순찰</text>
+  <text x="153" y="180" font-size="13.5" fill="#6b7684" text-anchor="middle">열화상·게이지·음향 로컬 저장</text>
 
   <!-- Arrow 1 -->
-  <line x1="272" y1="160" x2="308" y2="160" stroke="#8b95a1" stroke-width="1.5" stroke-dasharray="4 3"/>
-  <polygon points="308,155 316,160 308,165" fill="#8b95a1"/>
+  <line x1="258" y1="162" x2="322" y2="162" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M316 156 L325 162 L316 168" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="291" y="148" font-size="12" fill="#6b7684" text-anchor="middle">임무 종료</text>
 
-  <!-- Zone 2: On-Premise OT/IT -->
-  <rect x="316" y="28" width="264" height="264" rx="12" fill="#ffffff" stroke="#3182f6" stroke-width="1.5"/>
-  <rect x="332" y="44" width="154" height="24" rx="6" fill="#e8f3ff"/>
-  <text x="409" y="60" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">2. 공장 내부망 (On-Premise)</text>
+  <!-- Box 2: Spot Dock & On-Premise Site Hub (Blue Highlight) -->
+  <rect x="328" y="114" width="544" height="96" rx="12" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
+  <text x="356" y="150" font-size="17" font-weight="800" fill="#1b64da">Site Hub (온프레미스 서버)</text>
+  <text x="568" y="150" font-size="13.5" fill="#4e5968">외부 클라우드 반출 없는 공장 내부망 처리</text>
+  <text x="356" y="180" font-size="13.5" fill="#4e5968">Spot Dock 도킹 시 사내 무선망으로 회차 데이터 일괄 수집 · Orbit 관제 구동</text>
 
-  <text x="336" y="96" font-size="14.5" font-weight="700" fill="#191f28">Site Hub (전용 온프레미스 서버)</text>
-  <text x="336" y="118" font-size="12.5" fill="#4e5968">• 외부 클라우드 반출 없이 사내망 내 처리</text>
-  <text x="336" y="138" font-size="12.5" fill="#4e5968">• Orbit 관제 엔진 구동 (일정·맵·데이터 통합)</text>
+  <!-- Vertical Dashed Connector -->
+  <line x1="600" y1="210" x2="600" y2="262" stroke="#3182f6" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <path d="M594 256 L600 265 L606 256" fill="none" stroke="#3182f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="616" y="236" font-size="12.5" fill="#4e5968">원본 미디어는 내부 보관,</text>
+  <text x="616" y="253" font-size="12.5" fill="#4e5968">점검 지점별 분석 실행</text>
 
-  <rect x="336" y="162" width="224" height="110" rx="10" fill="#f9fafb" stroke="#e5e8eb"/>
-  <text x="352" y="186" font-size="13" font-weight="700" fill="#333d4b">Spot Extensions (분석 컨테이너)</text>
-  <text x="352" y="208" font-size="12" fill="#4e5968">• 게이지 수치 OCR 판독 / 열화상 임계값 비교</text>
-  <text x="352" y="226" font-size="12" fill="#4e5968">• 촬영 지점 ➔ 설비 ID(Asset Tag) 매핑</text>
-  <text x="352" y="246" font-size="12" fill="#1b64da" font-weight="600">• 정상 데이터는 보관, 이상 징후만 이벤트 추출</text>
+  <!-- Row 2 Label -->
+  <text x="48" y="252" font-size="14.5" font-weight="700" fill="#333d4b">사내 분석과 기간계 실행</text>
+
+  <!-- Box 3: Plant Master Mapping -->
+  <rect x="48" y="268" width="210" height="118" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="153" y="314" font-size="16.5" font-weight="800" fill="#191f28" text-anchor="middle">설비 마스터 기준</text>
+  <text x="153" y="340" font-size="13.5" fill="#6b7684" text-anchor="middle">설비 ID (Asset Tag) ·</text>
+  <text x="153" y="360" font-size="13.5" fill="#6b7684" text-anchor="middle">과거 운전 이력 기준값</text>
 
   <!-- Arrow 2 -->
-  <line x1="580" y1="160" x2="616" y2="160" stroke="#8b95a1" stroke-width="1.5"/>
-  <polygon points="616,155 624,160 616,165" fill="#8b95a1"/>
+  <line x1="258" y1="327" x2="322" y2="327" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M316 321 L325 327 L316 333" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="291" y="313" font-size="12" fill="#6b7684" text-anchor="middle">기준 매핑</text>
 
-  <!-- Zone 3: Enterprise System -->
-  <rect x="624" y="28" width="232" height="264" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1"/>
-  <rect x="640" y="44" width="140" height="24" rx="6" fill="#f2f4f6"/>
-  <text x="710" y="60" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">3. 기간계 연동 (Enterprise)</text>
+  <!-- Box 4: Spot Extensions & Webhook (Blue Highlight) -->
+  <rect x="328" y="268" width="320" height="118" rx="12" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
+  <text x="356" y="302" font-size="16.5" font-weight="800" fill="#1b64da">Spot Extensions &amp; API</text>
+  <text x="356" y="328" font-size="13.5" fill="#4e5968">게이지 수치 판독 · 열화상 오탐 필터링</text>
+  <line x1="356" y1="344" x2="620" y2="344" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="356" y="368" font-size="13.5" font-weight="600" fill="#1b64da">이상 징후만 JSON + 스냅샷 URL 발송</text>
 
-  <text x="644" y="96" font-size="14.5" font-weight="700" fill="#191f28">REST API / Webhook 연동</text>
-  <text x="644" y="118" font-size="12.5" fill="#4e5968">• 원본 대용량 영상은 Site Hub에 유지</text>
-  <text x="644" y="138" font-size="12.5" fill="#4e5968">• 가벼운 JSON 메타데이터 + 스냅샷 URL 전송</text>
+  <!-- Arrow 3 -->
+  <line x1="648" y1="327" x2="696" y2="327" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M690 321 L699 327 L690 333" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <rect x="644" y="162" width="192" height="110" rx="10" fill="#f2f4f6"/>
-  <text x="660" y="186" font-size="13" font-weight="700" fill="#333d4b">설비 관리 시스템 (SAP PM / Twin)</text>
-  <text x="660" y="208" font-size="12" fill="#4e5968">• 설비별 온도·압력 추이 자동 기록</text>
-  <text x="660" y="226" font-size="12" fill="#4e5968">• 디지털 트윈(Woodside FUSE 등) 동기화</text>
-  <text x="660" y="246" font-size="12" fill="#333d4b" font-weight="600">• 엔지니어 검토 후 보수 작업요청 발행</text>
+  <!-- Box 5: Enterprise SAP / Digital Twin -->
+  <rect x="702" y="268" width="170" height="118" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="787" y="314" font-size="16.5" font-weight="800" fill="#191f28" text-anchor="middle">설비 관리 시스템</text>
+  <text x="787" y="340" font-size="13.5" fill="#6b7684" text-anchor="middle">SAP PM 보수 알림 ·</text>
+  <text x="787" y="360" font-size="13.5" fill="#6b7684" text-anchor="middle">디지털 트윈 동기화</text>
 </svg>

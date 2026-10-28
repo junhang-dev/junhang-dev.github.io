@@ -4,22 +4,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const posts = [
   {
     category: 'Industrial AI',
-    title: '제조·플랜트 현장의 Physical AI, 실제로는 어디까지 와 있을까?',
-    summary: '시연 영상 너머, 로봇이 찍은 데이터가 플랜트 보안망을 거쳐 실제 설비 점검 업무로 이어지기까지의 구조',
+    title_ko: '제조·플랜트 현장의 Physical AI, 실제로는 어디까지 와 있을까?',
+    title_en: 'Where Does Physical AI Actually Stand in Industrial Plants?',
+    summary_ko: '시연 영상 너머, 로봇이 찍은 데이터가 플랜트 보안망을 거쳐 실제 설비 점검 업무로 이어지기까지의 구조',
+    summary_en: 'Beyond demo videos — how field robot telemetry crosses plant security boundaries to trigger real maintenance workflows',
     date: '2026.10.28',
     href: '/posts/01-physical-ai-in-plants',
   },
   {
     category: 'Essay',
-    title: '5년 차 엔지니어의 회고, 그리고 기록의 시작',
-    summary: '정유·석유화학 플랜트 현장에서 디지털과 AI를 다루며 느낀 점과 앞으로의 공부 기록',
+    title_ko: '5년 차 엔지니어의 회고, 그리고 기록의 시작',
+    title_en: 'A 5-Year Retrospective, and Why I Started Writing Here',
+    summary_ko: '정유·석유화학 플랜트 현장에서 디지털과 AI를 다루며 느낀 점과 앞으로의 공부 기록',
+    summary_en: 'Reflections on building digital and AI systems inside oil and petrochemical plants, and notes for what comes next',
     date: '2026.10.28',
     href: '/posts/00-prologue',
   },
 ];
 ---
 
-<BaseLayout title="아티클" activeNav="home">
+<BaseLayout title="Articles" activeNav="home">
   <style>
     .container {
       max-width: 980px;
@@ -95,17 +99,31 @@ const posts = [
   <div class="container">
     <div class="page-header">
       <h1>junhang.dev</h1>
-      <p>디지털 서비스의 구조와 산업 현장의 AI 엔지니어링을 공부하고 기록합니다.</p>
+      <p class="lang-ko">디지털 서비스의 구조와 산업 현장의 AI 엔지니어링을 공부하고 기록합니다.</p>
+      <p class="lang-en">Engineering notes on digital service architectures and production AI in industrial plants.</p>
     </div>
 
-    <div class="section-label">전체 아티클</div>
+    <div class="section-label">
+      <span class="lang-ko">전체 아티클</span>
+      <span class="lang-en">All Articles</span>
+    </div>
     <div class="article-list">
       {posts.map((post) => (
         <a class="article-item" href={post.href}>
           <div class="article-cat">{post.category}</div>
-          <h2 class="article-title">{post.title}</h2>
-          <p class="article-summary">{post.summary}</p>
-          <div class="article-meta">이준행 · {post.date}</div>
+          <h2 class="article-title">
+            <span class="lang-ko">{post.title_ko}</span>
+            <span class="lang-en">{post.title_en}</span>
+          </h2>
+          <p class="article-summary">
+            <span class="lang-ko">{post.summary_ko}</span>
+            <span class="lang-en">{post.summary_en}</span>
+          </p>
+          <div class="article-meta">
+            <span class="lang-ko">이준행</span>
+            <span class="lang-en">Junhang Lee</span>
+            <span> · {post.date}</span>
+          </div>
         </a>
       ))}
     </div>

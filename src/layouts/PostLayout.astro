@@ -6,10 +6,28 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout title={frontmatter.title} description={frontmatter.subtitle} activeNav="home">
   <style is:global>
-    .post-hero {
-      max-width: 720px;
+    /* toss.tech/article/53545 inspired 2-column layout (Content + Right Sticky TOC) */
+    .article-shell {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 56px 24px 0;
+      padding: 56px 24px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 700px) 240px;
+      justify-content: space-between;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .article-shell {
+        grid-template-columns: minmax(0, 700px);
+        justify-content: center;
+      }
+      .article-toc-aside {
+        display: none;
+      }
+    }
+    .post-hero {
+      margin-bottom: 36px;
     }
     .post-category {
       display: inline-block;
@@ -19,26 +37,31 @@ const { frontmatter } = Astro.props;
       margin-bottom: 12px;
     }
     h1.post-title {
-      font-size: 36px;
-      line-height: 1.35;
+      font-size: 38px;
+      line-height: 1.32;
       font-weight: 800;
       letter-spacing: -0.8px;
       margin: 0 0 14px;
       color: var(--grey900);
     }
+    @media (max-width: 640px) {
+      h1.post-title {
+        font-size: 29px;
+      }
+    }
     .post-subtitle {
       font-size: 18px;
       line-height: 1.6;
       color: var(--grey600);
-      margin: 0 0 28px;
+      margin: 0 0 24px;
     }
     .post-meta {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
       font-size: 14px;
       color: var(--grey500);
-      padding-bottom: 28px;
+      padding-bottom: 24px;
       border-bottom: 1px solid var(--grey100);
     }
     .post-meta strong {
@@ -46,26 +69,27 @@ const { frontmatter } = Astro.props;
       font-weight: 600;
     }
     article.post-body {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
       font-size: 17px;
-      line-height: 1.85;
+      line-height: 1.8;
       color: var(--grey800);
+      letter-spacing: -0.1px;
     }
     article.post-body h2 {
-      font-size: 24px;
-      line-height: 1.42;
+      font-size: 25px;
+      line-height: 1.4;
       color: var(--grey900);
       font-weight: 800;
       letter-spacing: -0.4px;
-      margin: 52px 0 16px;
+      margin: 56px 0 16px;
+      scroll-margin-top: 84px;
     }
     article.post-body h3 {
-      font-size: 19px;
+      font-size: 19.5px;
+      line-height: 1.45;
       color: var(--grey900);
       font-weight: 700;
-      margin: 34px 0 12px;
+      margin: 36px 0 12px;
+      scroll-margin-top: 84px;
     }
     article.post-body p {
       margin: 0 0 22px;
@@ -85,19 +109,19 @@ const { frontmatter } = Astro.props;
       margin: 0 0 24px;
     }
     article.post-body li {
-      margin: 6px 0;
+      margin: 7px 0;
     }
     article.post-body hr {
       border: 0;
       border-top: 1px solid var(--grey100);
-      margin: 44px 0;
+      margin: 48px 0;
     }
     article.post-body blockquote {
       margin: 28px 0;
       padding: 18px 22px;
       background: var(--grey50);
       border-left: 3px solid var(--blue500);
-      border-radius: 8px;
+      border-radius: 10px;
       color: var(--grey700);
       font-size: 16px;
     }
@@ -105,22 +129,22 @@ const { frontmatter } = Astro.props;
       margin-bottom: 0;
     }
     article.post-body figure {
-      margin: 32px 0;
+      margin: 34px 0;
     }
     article.post-body figure img,
     article.post-body img {
       width: 100%;
       height: auto;
-      border-radius: 14px;
+      border-radius: 16px;
       border: 1px solid var(--grey200);
       display: block;
     }
     article.post-body figcaption {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 13.5px;
       color: var(--grey500);
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     article.post-body pre {
       padding: 18px 20px;
@@ -138,20 +162,153 @@ const { frontmatter } = Astro.props;
       border-radius: 5px;
       font-size: 0.9em;
     }
+
+    /* Share & Footer Actions */
+    .post-actions {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--grey100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--grey200);
+      background: #ffffff;
+      color: var(--grey700);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .share-btn:hover {
+      border-color: var(--blue500);
+      color: var(--blue500);
+      background: var(--blue50);
+    }
+
+    /* Right Sticky Table of Contents (toss.tech style) */
+    .article-toc-aside {
+      position: sticky;
+      top: 96px;
+      padding-left: 16px;
+      border-left: 1px solid var(--grey200);
+    }
+    .toc-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--grey500);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 12px;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .toc-list a {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: var(--grey500);
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .toc-list a:hover,
+    .toc-list a.active {
+      color: var(--blue500);
+      font-weight: 700;
+    }
+    .toc-list li.toc-h3 {
+      padding-left: 10px;
+    }
   </style>
 
-  <section class="post-hero">
-    {frontmatter.category && <div class="post-category">{frontmatter.category}</div>}
-    <h1 class="post-title">{frontmatter.title}</h1>
-    {frontmatter.subtitle && <p class="post-subtitle">{frontmatter.subtitle}</p>}
-    <div class="post-meta">
-      <strong>이준행</strong>
-      <span>·</span>
-      <span>{frontmatter.date}</span>
-    </div>
-  </section>
+  <div class="article-shell">
+    <div>
+      <section class="post-hero">
+        {frontmatter.category && <div class="post-category">{frontmatter.category}</div>}
+        <h1 class="post-title">
+          <span class="lang-ko">{frontmatter.title}</span>
+          <span class="lang-en">{frontmatter.title_en || frontmatter.title}</span>
+        </h1>
+        {frontmatter.subtitle && (
+          <p class="post-subtitle">
+            <span class="lang-ko">{frontmatter.subtitle}</span>
+            <span class="lang-en">{frontmatter.subtitle_en || frontmatter.subtitle}</span>
+          </p>
+        )}
+        <div class="post-meta">
+          <div>
+            <strong class="lang-ko">이준행</strong>
+            <strong class="lang-en">Junhang Lee</strong>
+            <span> · {frontmatter.date}</span>
+          </div>
+        </div>
+      </section>
 
-  <article class="post-body">
-    <slot />
-  </article>
+      <article class="post-body" id="post-content">
+        <slot />
+      </article>
+
+      <div class="post-actions">
+        <button type="button" class="share-btn" id="copy-link-btn">
+          <span class="lang-ko">🔗 아티클 링크 복사</span>
+          <span class="lang-en">🔗 Copy Article Link</span>
+        </button>
+      </div>
+    </div>
+
+    <aside class="article-toc-aside" aria-label="Table of contents">
+      <div class="toc-title">
+        <span class="lang-ko">목차</span>
+        <span class="lang-en">On this page</span>
+      </div>
+      <ul class="toc-list" id="toc-list"></ul>
+    </aside>
+  </div>
+
+  <script is:inline>
+    function buildTOC() {
+      var lang = document.documentElement.getAttribute('data-lang') || 'ko';
+      var container = document.querySelector('#post-content .lang-' + lang) || document.getElementById('post-content');
+      var tocList = document.getElementById('toc-list');
+      if (!container || !tocList) return;
+      tocList.innerHTML = '';
+      var headings = container.querySelectorAll('h2, h3');
+      headings.forEach(function (h, idx) {
+        if (!h.id) h.id = 'sec-' + lang + '-' + idx;
+        var li = document.createElement('li');
+        if (h.tagName.toLowerCase() === 'h3') li.className = 'toc-h3';
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+    }
+    buildTOC();
+    window.addEventListener('langchange', buildTOC);
+
+    var copyBtn = document.getElementById('copy-link-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(window.location.href);
+        var lang = document.documentElement.getAttribute('data-lang') || 'ko';
+        copyBtn.textContent = lang === 'en' ? '✓ Link Copied!' : '✓ 링크가 복사되었습니다';
+      });
+    }
+  </script>
 </BaseLayout>
