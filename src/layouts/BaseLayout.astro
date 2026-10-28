@@ -23,6 +23,7 @@ const koUrl = lang === 'ko' ? canonical : altUrl;
 const enUrl = lang === 'en' ? canonical : altUrl;
 const desc = description || t.siteDescription;
 const fullTitle = `${title} | junhang.dev`;
+const ogImage = new URL('/og-default.png', site).href;
 const koHref = lang === 'ko' ? Astro.url.pathname : alt;
 const enHref = lang === 'en' ? Astro.url.pathname : alt;
 ---
@@ -46,9 +47,13 @@ const enHref = lang === 'en' ? Astro.url.pathname : alt;
     <meta property="og:site_name" content="junhang.dev" />
     <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
     <meta property="og:locale:alternate" content={lang === 'ko' ? 'en_US' : 'ko_KR'} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <link
       rel="stylesheet"

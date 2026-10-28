@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect width="920" height="390" rx="22" fill="#f2f4f6"/>
+  <rect x="28" y="24" width="864" height="342" rx="16" fill="#ffffff"/>
+
+  <text x="64" y="68" font-size="20" font-weight="800" fill="#191f28" letter-spacing="-0.4">Why a plain temperature threshold makes operators mute alerts</text>
+  <text x="64" y="92" font-size="13.5" fill="#6b7684">Field noise (dashed) overlaps with real anomalies (solid). Separating them takes per-asset history.</text>
+
+  <line x1="64" y1="120" x2="92" y2="120" stroke="#9e3b24" stroke-width="2.2" stroke-dasharray="5 4"/>
+  <text x="100" y="124" font-size="13" fill="#333d4b" font-weight="600">Field noise (steam, solar glare)</text>
+
+  <line x1="360" y1="120" x2="388" y2="120" stroke="#1b64da" stroke-width="2.5"/>
+  <text x="396" y="124" font-size="13" fill="#333d4b" font-weight="600">Real anomaly (bearing wear, damaged insulation)</text>
+
+  <rect x="610" y="148" width="210" height="142" fill="#eaf2fe"/>
+
+  <line x1="96" y1="290" x2="836" y2="290" stroke="#d1d6db" stroke-width="1.5"/>
+  <text x="56" y="225" font-size="12.5" fill="#6b7684" transform="rotate(-90 56 225)" text-anchor="middle">Detection frequency (conceptual)</text>
+  <text x="108" y="314" font-size="12.5" fill="#6b7684">Low</text>
+  <text x="800" y="314" font-size="12.5" fill="#6b7684">High</text>
+  <text x="466" y="326" font-size="13.5" font-weight="600" fill="#333d4b" text-anchor="middle">Anomaly confidence (reading + deviation from asset history)</text>
+
+  <path d="M 105 288 C 180 284, 230 218, 315 218 C 400 218, 490 278, 660 289 L 820 289" fill="rgba(158,59,36,0.07)" stroke="#9e3b24" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <path d="M 180 289 C 360 287, 480 265, 560 245 C 630 225, 675 162, 725 162 C 765 162, 795 205, 820 235" fill="none" stroke="#1b64da" stroke-width="2.6"/>
+
+  <line x1="370" y1="148" x2="370" y2="290" stroke="#8b95a1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="370" y="140" font-size="13" font-weight="700" fill="#4e5968" text-anchor="middle">Plain temperature threshold</text>
+
+  <rect x="200" y="156" width="156" height="46" rx="8" fill="#ffffff" stroke="#e5e8eb" stroke-width="1"/>
+  <text x="278" y="175" font-size="11.5" font-weight="700" fill="#9e3b24" text-anchor="middle">False alarms flood in,</text>
+  <text x="278" y="192" font-size="11.5" font-weight="700" fill="#9e3b24" text-anchor="middle">driving alert fatigue</text>
+
+  <line x1="610" y1="148" x2="610" y2="290" stroke="#1b64da" stroke-width="2"/>
+  <text x="610" y="140" font-size="13" font-weight="800" fill="#1b64da" text-anchor="middle">Context-aware threshold</text>
+
+  <text x="715" y="256" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">Auto-create SAP</text>
+  <text x="715" y="272" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">notification zone</text>
+</svg>

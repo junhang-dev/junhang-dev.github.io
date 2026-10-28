@@ -39,7 +39,7 @@ First, dense steel pipe racks create severe wireless dead zones. Second, corpora
 Boston Dynamics' production architecture addresses this by standardizing on **local robot buffering + Spot Dock batch synchronization + an on-premise server appliance (`Site Hub`)**.
 
 <figure>
-  <img src="/images/spot-sitehub-pipeline.svg" alt="Plant robot data pipeline overview" />
+  <img src="/images/spot-sitehub-pipeline.en.svg" alt="Plant robot data pipeline overview" />
   <figcaption>Figure 2. End-to-end on-premise data pipeline reconstructed from Boston Dynamics Orbit &amp; Site Hub deployment documentation</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Getting data onto an internal server is only half the battle. In industrial moni
 Outdoor process units are full of venting steam, shifting shadows, and solar glare. A naive thermal threshold (e.g., alerting whenever a pixel exceeds 80°C) will flood maintenance planners with false alarms until they turn notifications off entirely.
 
 <figure>
-  <img src="/images/alarm-threshold-concept.svg" alt="Naive temperature threshold vs contextual filter threshold" />
+  <img src="/images/alarm-threshold-concept.en.svg" alt="Naive temperature threshold vs contextual filter threshold" />
   <figcaption>Figure 3. Separating field noise (steam, solar reflection) from true mechanical degradation by combining raw readings with historical asset baselines</figcaption>
 </figure>
 

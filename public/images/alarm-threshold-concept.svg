@@ -44,8 +44,6 @@
   <text x="610" y="140" font-size="13" font-weight="800" fill="#1b64da" text-anchor="middle">문맥 기반 필터 임계값</text>
 
   <!-- Adoption Label inside Blue Zone -->
-  <text x="715" y="172" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">기간계(SAP) 알림</text>
-  <text x="715" y="188" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">자동 발행 구간</text>
-  <line x1="650" y1="198" x2="780" y2="198" stroke="#1b64da" stroke-width="1.5"/>
-  <path d="M774 194 L781 198 L774 202" fill="none" stroke="#1b64da" stroke-width="1.5"/>
+  <text x="715" y="256" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">기간계(SAP) 알림</text>
+  <text x="715" y="272" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">자동 발행 구간</text>
 </svg>

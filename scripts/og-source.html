@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- og-default.png 생성용 원본. 수정 후 아래 명령으로 다시 만듭니다.
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+  --window-size=1200,630 --virtual-time-budget=6000 \
+  --screenshot=public/og-default.png scripts/og-source.html -->
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: #f2f4f6; font-family: Pretendard, -apple-system, sans-serif; position: relative; overflow: hidden; }
+  .card { position: absolute; inset: 48px; background: #fff; border-radius: 36px; padding: 72px 80px; }
+  .logo { font-size: 40px; font-weight: 800; color: #191f28; letter-spacing: -1px; }
+  .logo span { color: #3182f6; }
+  h1 { font-size: 66px; line-height: 1.28; font-weight: 800; color: #191f28; letter-spacing: -2px; margin-top: 76px; }
+  h1 em { font-style: normal; color: #3182f6; }
+  p { font-size: 28px; color: #6b7684; margin-top: 30px; }
+  .dots { position: absolute; right: 80px; top: 72px; display: flex; gap: 12px; }
+  .dots i { width: 22px; height: 22px; border-radius: 50%; display: block; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">junhang<span>.dev</span></div>
+    <div class="dots"><i style="background:#e8f3ff"></i><i style="background:#3182f6"></i><i style="background:#d6e4ff"></i></div>
+    <h1>디지털 서비스의 구조와<br /><em>산업 현장의 AI</em> 엔지니어링</h1>
+    <p>Engineering notes on production AI in industrial plants</p>
+  </div>
+</body>
+</html>

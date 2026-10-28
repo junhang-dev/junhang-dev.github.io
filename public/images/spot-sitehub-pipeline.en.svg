@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <rect width="920" height="430" rx="22" fill="#f2f4f6"/>
+
+  <text x="48" y="56" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">Plant Robot Data Pipeline at a Glance</text>
+
+  <text x="48" y="98" font-size="14.5" font-weight="700" fill="#333d4b">Field capture and dock sync</text>
+
+  <rect x="48" y="114" width="210" height="96" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="153" y="146" font-size="16.5" font-weight="800" fill="#191f28" text-anchor="middle">Autonomous Patrol</text>
+  <text x="153" y="170" font-size="13" fill="#6b7684" text-anchor="middle">Thermal, gauge, acoustic</text>
+  <text x="153" y="188" font-size="13" fill="#6b7684" text-anchor="middle">captured and stored onboard</text>
+
+  <line x1="258" y1="162" x2="322" y2="162" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M316 156 L325 162 L316 168" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="291" y="148" font-size="12" fill="#6b7684" text-anchor="middle">Docked</text>
+
+  <rect x="328" y="114" width="544" height="96" rx="12" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
+  <text x="356" y="146" font-size="17" font-weight="800" fill="#1b64da">Site Hub (on-premise server)</text>
+  <text x="356" y="170" font-size="13.5" fill="#4e5968">Raw data stays inside the plant network, with no cloud egress</text>
+  <text x="356" y="190" font-size="13.5" fill="#4e5968">Bulk sync at the dock · Orbit fleet management</text>
+
+  <line x1="600" y1="210" x2="600" y2="262" stroke="#3182f6" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <path d="M594 256 L600 265 L606 256" fill="none" stroke="#3182f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="616" y="236" font-size="12.5" fill="#4e5968">Raw media stays inside,</text>
+  <text x="616" y="253" font-size="12.5" fill="#4e5968">analysis runs per inspection point</text>
+
+  <text x="48" y="252" font-size="14.5" font-weight="700" fill="#333d4b">Analysis and enterprise actions</text>
+
+  <rect x="48" y="268" width="210" height="118" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="153" y="314" font-size="16.5" font-weight="800" fill="#191f28" text-anchor="middle">Plant Master Data</text>
+  <text x="153" y="340" font-size="13" fill="#6b7684" text-anchor="middle">Asset ID (tag) ·</text>
+  <text x="153" y="360" font-size="13" fill="#6b7684" text-anchor="middle">historical baselines</text>
+
+  <line x1="258" y1="327" x2="322" y2="327" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M316 321 L325 327 L316 333" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="291" y="313" font-size="12" fill="#6b7684" text-anchor="middle">Mapped</text>
+
+  <rect x="328" y="268" width="320" height="118" rx="12" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
+  <text x="356" y="302" font-size="16.5" font-weight="800" fill="#1b64da">Spot Extensions &amp; API</text>
+  <text x="356" y="328" font-size="13" fill="#4e5968">Gauge OCR · thermal false-alarm filter</text>
+  <line x1="356" y1="344" x2="620" y2="344" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="356" y="368" font-size="13" font-weight="600" fill="#1b64da">Anomalies only: JSON + snapshot URL</text>
+
+  <line x1="648" y1="327" x2="696" y2="327" stroke="#4e5968" stroke-width="1.6"/>
+  <path d="M690 321 L699 327 L690 333" fill="none" stroke="#4e5968" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="702" y="268" width="170" height="118" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="787" y="314" font-size="15.5" font-weight="800" fill="#191f28" text-anchor="middle">Maintenance System</text>
+  <text x="787" y="340" font-size="13" fill="#6b7684" text-anchor="middle">SAP PM notification ·</text>
+  <text x="787" y="360" font-size="13" fill="#6b7684" text-anchor="middle">digital twin sync</text>
+</svg>

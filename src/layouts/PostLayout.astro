@@ -19,6 +19,7 @@ const jsonLd = {
   datePublished: isoDate,
   dateModified: isoDate,
   mainEntityOfPage: url,
+  image: new URL('/og-default.png', site).href,
   articleSection: frontmatter.category,
   author: {
     '@type': 'Person',
