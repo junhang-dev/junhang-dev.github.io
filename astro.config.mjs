@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // 커스텀 도메인(junhang.dev)을 연결하면 site 값만 바꾸면 됩니다.
 export default defineConfig({
@@ -14,6 +16,8 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       theme: 'github-light',
     },

@@ -1,48 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow-grey-en" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4e5968"/>
+    </marker>
+    <marker id="arrow-blue-en" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3182f6"/>
+    </marker>
+    <marker id="arrow-dark-en" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#191f28"/>
+    </marker>
+  </defs>
+
   <!-- Outer Card Background -->
-  <rect width="920" height="440" rx="22" fill="#f2f4f6"/>
+  <rect width="920" height="460" rx="22" fill="#f2f4f6"/>
 
   <!-- Main Title -->
   <text x="48" y="52" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">Dual Feature Store Architecture for Delivery ETA Prediction</text>
   <text x="48" y="78" font-size="13.5" fill="#6b7684">How long-term offline statistics and live streaming telemetry merge inside a unified inference engine</text>
 
-  <!-- Left: Offline Batch Path (Grey Box) -->
-  <rect x="48" y="104" width="370" height="210" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
-  <rect x="64" y="120" width="136" height="26" rx="6" fill="#f2f4f6"/>
-  <text x="132" y="137" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">OFFLINE BATCH</text>
+  <!-- Left: Offline Batch Path (White Card) -->
+  <rect x="48" y="104" width="395" height="236" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="122" width="136" height="26" rx="6" fill="#f2f4f6"/>
+  <text x="136" y="139" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">OFFLINE BATCH</text>
 
-  <text x="64" y="172" font-size="16" font-weight="800" fill="#191f28">Batch Feature Pipeline</text>
-  <text x="64" y="196" font-size="13" fill="#6b7684">Data Lakehouse · High-throughput aggregation (Polars / Spark)</text>
+  <text x="68" y="174" font-size="16" font-weight="800" fill="#191f28">Batch Feature Pipeline</text>
+  <text x="68" y="196" font-size="13" fill="#6b7684">Data Lakehouse · High-throughput aggregation (Polars / Spark)</text>
 
-  <line x1="64" y1="214" x2="398" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+  <line x1="68" y1="214" x2="423" y2="214" stroke="#e5e8eb" stroke-width="1"/>
 
-  <text x="64" y="240" font-size="13.5" font-weight="700" fill="#333d4b">Historical Baseline Features</text>
-  <text x="64" y="264" font-size="12.5" fill="#6b7684">• 7-day rolling average prep time per restaurant by time-of-day</text>
-  <text x="64" y="286" font-size="12.5" fill="#6b7684">• Menu complexity baseline (single item vs composite bundle)</text>
+  <text x="68" y="240" font-size="13.5" font-weight="700" fill="#333d4b">Historical Baseline Features (Past 7 Days)</text>
+  <text x="68" y="266" font-size="12.5" fill="#6b7684">• Friday evening prep duration per merchant by hour</text>
+  <text x="68" y="290" font-size="12.5" fill="#6b7684">• Menu complexity weight (single item vs combo meals)</text>
+  <text x="68" y="314" font-size="12.5" fill="#6b7684">• Kitchen capacity and baseline throughput profile</text>
 
-  <!-- Right: Online Streaming Path (Blue Highlight Box) -->
-  <rect x="442" y="104" width="430" height="210" rx="14" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
-  <rect x="458" y="120" width="156" height="26" rx="6" fill="#d0e2fe"/>
-  <text x="536" y="137" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">ONLINE STREAMING</text>
+  <!-- Right: Online Streaming Path (Blue Highlight Card) -->
+  <rect x="463" y="104" width="409" height="236" rx="14" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
+  <rect x="483" y="122" width="156" height="26" rx="6" fill="#d0e2fe"/>
+  <text x="561" y="139" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">ONLINE STREAMING</text>
 
-  <text x="458" y="172" font-size="16" font-weight="800" fill="#1b64da">Real-time Feature Pipeline</text>
-  <text x="458" y="196" font-size="13" fill="#4e5968">Event Streaming (Kafka) → Low-latency In-memory (Redis)</text>
+  <text x="483" y="174" font-size="16" font-weight="800" fill="#1b64da">Real-time Feature Pipeline</text>
+  <text x="483" y="196" font-size="13" fill="#4e5968">Event Streaming (Kafka) → Low-latency In-memory (Redis)</text>
 
-  <line x1="458" y1="214" x2="852" y2="214" stroke="#bfd7ff" stroke-width="1"/>
+  <line x1="483" y1="214" x2="852" y2="214" stroke="#bfd7ff" stroke-width="1"/>
 
-  <text x="458" y="240" font-size="13.5" font-weight="700" fill="#1b64da">Live Field Telemetry Features</text>
-  <text x="458" y="264" font-size="12.5" fill="#333d4b">• OSRM real-road transit distance and current route travel time</text>
-  <text x="458" y="286" font-size="12.5" fill="#333d4b">• Restaurant pending order backlog in last 30m &amp; courier density</text>
+  <text x="483" y="240" font-size="13.5" font-weight="700" fill="#1b64da">Live Field Telemetry Features (Past 1 Hour)</text>
+  <text x="483" y="266" font-size="12.5" fill="#333d4b">• OSRM real-road transit distance &amp; wet weather deceleration</text>
+  <text x="483" y="290" font-size="12.5" fill="#333d4b">• Active unfinished tickets and pickup queue in last 30 min</text>
+  <text x="483" y="314" font-size="12.5" fill="#333d4b">• Idle courier fleet density available within 1 km radius</text>
 
-  <!-- Connectors to ML Prediction Service -->
-  <line x1="233" y1="314" x2="233" y2="344" stroke="#4e5968" stroke-width="1.6"/>
-  <line x1="657" y1="314" x2="657" y2="344" stroke="#3182f6" stroke-width="1.6"/>
-  <line x1="233" y1="344" x2="410" y2="344" stroke="#4e5968" stroke-width="1.6"/>
-  <line x1="657" y1="344" x2="510" y2="344" stroke="#3182f6" stroke-width="1.6"/>
-  <line x1="460" y1="344" x2="460" y2="362" stroke="#191f28" stroke-width="1.6"/>
-  <path d="M454 358 L460 366 L466 358" fill="none" stroke="#191f28" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Clean Converging Flow Lines -->
+  <!-- Left out -->
+  <path d="M 245 340 L 245 366 Q 245 374 255 374 L 435 374" fill="none" stroke="#4e5968" stroke-width="1.8"/>
+  <!-- Right out -->
+  <path d="M 667 340 L 667 366 Q 667 374 657 374 L 485 374" fill="none" stroke="#3182f6" stroke-width="1.8"/>
+  <!-- Center Down into Box -->
+  <line x1="460" y1="374" x2="460" y2="394" stroke="#191f28" stroke-width="2" marker-end="url(#arrow-dark-en)"/>
 
   <!-- Bottom: Low-Latency ML Prediction Service -->
-  <rect x="48" y="366" width="824" height="52" rx="12" fill="#ffffff" stroke="#191f28" stroke-width="1.4"/>
-  <text x="460" y="398" font-size="15" font-weight="800" fill="#191f28" text-anchor="middle">Low-Latency Inference Engine → Combined Output: "Estimated Arrival: 60 min"</text>
+  <rect x="48" y="398" width="824" height="48" rx="12" fill="#ffffff" stroke="#191f28" stroke-width="1.5"/>
+  <text x="460" y="428" font-size="15" font-weight="800" fill="#191f28" text-anchor="middle">Low-Latency Inference Engine → Combined Output: "Estimated Arrival: 60 min"</text>
 </svg>

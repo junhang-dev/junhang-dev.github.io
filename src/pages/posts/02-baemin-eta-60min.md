@@ -11,6 +11,11 @@ date: "2026.10.29"
 
 ## 도입: "48분 만에 왔는데, 왜 60분이라고 했을까?"
 
+<figure>
+  <img src="/images/rainy-delivery.jpg" alt="빗속을 달리는 배달 오토바이와 도시의 비 오는 밤 풍경" loading="lazy" />
+  <figcaption>Photo: 빗속을 뚫고 달리는 배달 라이더 (출처: <a href="https://unsplash.com/photos/scooter-rider-in-heavy-rain-on-a-city-street-PtDEHmdL7ik" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
+</figure>
+
 비가 내리기 시작하는 금요일 저녁, 배달의민족 앱을 켜면 평소 "30~40분"이던 동네 치킨집의 안내 문구가 문득 바뀝니다. **60분 도착 예정**.
 
 배고픈 마음에 주문을 넣고 기다려 보면, 실제 라이더가 초인종을 누르는 시간은 48분 뒤인 경우가 많습니다. 누군가 치킨집 주방에 전화를 걸어 "지금 기름 온도가 몇 도인지, 앞에 주문이 몇 개 밀려 있는지" 물어본 것도 아닌데, 시스템은 어떻게 주방과 도로가 밀릴 것을 미리 알고 60분을 띄웠을까요? 그리고 왜 딱 맞춘 48분이 아니라 '60분'이라는 넉넉한 숫자를 화면에 보여줬을까요?

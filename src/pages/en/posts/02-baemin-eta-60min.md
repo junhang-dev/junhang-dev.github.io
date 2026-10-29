@@ -11,6 +11,11 @@ date: "2026.10.29"
 
 ## Introduction: "It Took 48 Minutes, So Why Did It Say 60?"
 
+<figure>
+  <img src="/images/rainy-delivery.jpg" alt="A delivery scooter riding through heavy rain on a city street" loading="lazy" />
+  <figcaption>Photo: A courier riding through a heavy downpour on urban streets (Source: <a href="https://unsplash.com/photos/scooter-rider-in-heavy-rain-on-a-city-street-PtDEHmdL7ik" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
+</figure>
+
 On a rainy Friday evening, opening a food delivery app like Baemin (or UberEats / DoorDash) reveals an immediate shift. The neighborhood chicken joint that usually promises "30 to 40 minutes" suddenly displays a blunt estimate: **"Estimated Arrival: 60 min"**.
 
 Hungry and impatient, you place the order. Yet when the courier actually rings the doorbell, only 48 minutes have passed. Nobody called the restaurant's kitchen to ask, *"What is the oil temperature right now, and how many tickets are in front of this order?"* How did the platform anticipate bottlenecks in both the kitchen and the streets to display 60 minutes in advance? And why did it present a generous 60-minute window rather than the exact 48 minutes?
