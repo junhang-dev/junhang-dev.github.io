@@ -119,7 +119,7 @@ In a plant, ML feature stores are not used to maintain target product specificat
 * In response, plant controllers do not perform 10ms-scale inference lookups. Rather, to reach target specs rapidly, they follow a control loop that **deliberately inputs aggressive initial energy to trigger a prompt reaction, observes downstream sensor feedback, and gradually throttles back to achieve smooth settling and stabilization**.
 * In continuous units such as distillation columns, where operating baselines are strictly established, control adjustments (such as reflux ratios or reboiler duties) propagate through vapor-liquid equilibrium profiles almost immediately. The primary role of machine learning in such plants is not high-throughput feature stores, but rather **Soft Sensors** (virtual analyzers predicting unmeasured stream qualities in real time) or predictive equipment failure detection.
 
-### ② Why Delivery Platforms Built the "Feature Store Beast"
+### ② Why Delivery Platforms Had to Architect Dual Feature Stores
 An industrial plant is a **'Closed System'** contained within heavy steel piping and pressure vessels, strictly governed by physical and thermodynamic transport equations. Even when transport lag occurs, it remains deterministic and modelable under physical laws.
 
 A food delivery platform, by contrast, operates across sprawling urban street networks—a quintessential **'Open System'**:
