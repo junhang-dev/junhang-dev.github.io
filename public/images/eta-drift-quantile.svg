@@ -1,69 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
   <defs>
-    <marker id="arrow-p85" viewBox="0 0 10 10" refX="5" refY="2" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 8 L 5 0 L 10 8 z" fill="#1b64da"/>
-    </marker>
+    <!-- Pattern for late penalty hatched zone -->
+    <pattern id="hatch-late" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#f43f5e" stroke-width="1.8" stroke-opacity="0.3"/>
+    </pattern>
+    <linearGradient id="curve-fill-rain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3182f6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3182f6" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="curve-fill-clear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b95a1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8b95a1" stop-opacity="0.02"/>
+    </linearGradient>
   </defs>
 
-  <!-- Outer Card Background -->
-  <rect width="920" height="460" rx="22" fill="#f2f4f6"/>
+  <!-- Background -->
+  <rect width="960" height="480" rx="20" fill="#f8fafb"/>
 
-  <!-- Main Title -->
-  <text x="48" y="52" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">우천 시 데이터 드리프트와 분위수 회귀(Quantile)의 안전 마진</text>
-  <text x="48" y="78" font-size="13.5" fill="#6b7684">불확실성이 커진 날, 평균값(P50) 대신 P85를 안내해 지각 리스크(SLA 위반)를 방어하는 원리</text>
+  <!-- Header -->
+  <text x="44" y="44" font-size="20" font-weight="800" fill="#191f28" letter-spacing="-0.3">비대칭 손실(Pinball Loss) 함수와 P85 안전마진 결정 경계</text>
+  <text x="44" y="68" font-size="13" fill="#6b7684">단순 평균(P50)을 택할 때 발생하는 50% 지각 리스크를, 상위 분위수(P85)로 억제하는 비즈니스 의사결정</text>
 
-  <!-- Plot Area -->
-  <rect x="48" y="104" width="824" height="326" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <!-- LEFT PANEL: ASYMMETRIC LOSS FUNCTION (비대칭 손실 비용 곡선) -->
+  <rect x="44" y="92" width="410" height="358" rx="14" fill="#ffffff" stroke="#e5e8eb" stroke-width="1.2"/>
+  <rect x="44" y="92" width="170" height="28" rx="8" fill="#f2f4f6"/>
+  <text x="56" y="111" font-size="12" font-weight="800" fill="#4e5968">1. 비대칭 손실 함수 (비용 곡선)</text>
 
-  <!-- Grid Baseline -->
-  <line x1="88" y1="360" x2="832" y2="360" stroke="#8b95a1" stroke-width="1.5"/>
+  <!-- Axis for Loss Graph -->
+  <line x1="74" y1="380" x2="424" y2="380" stroke="#d1d6db" stroke-width="1.5"/>
+  <line x1="249" y1="140" x2="249" y2="380" stroke="#d1d6db" stroke-width="1.5"/>
 
-  <!-- X Axis Labels (Time in minutes) -->
-  <text x="180" y="386" font-size="12" fill="#8b95a1" text-anchor="middle">20분</text>
-  <text x="310" y="386" font-size="12" fill="#8b95a1" text-anchor="middle">30분</text>
-  <text x="440" y="386" font-size="12" fill="#8b95a1" text-anchor="middle">40분</text>
+  <!-- Zero Error Label (x = 249, y = 380) -->
+  <circle cx="249" cy="380" r="4" fill="#191f28"/>
+  <text x="249" y="400" font-size="12" font-weight="700" fill="#191f28" text-anchor="middle">예측 오차 = 0</text>
+  <text x="249" y="416" font-size="11" fill="#8b95a1" text-anchor="middle">(약속 시간 딱 맞춰 도착)</text>
 
-  <!-- 48 min Tick & Label -->
-  <line x1="540" y1="360" x2="540" y2="368" stroke="#4e5968" stroke-width="1.6"/>
-  <text x="540" y="386" font-size="13" font-weight="800" fill="#4e5968" text-anchor="middle">48분</text>
-  <text x="540" y="404" font-size="11.5" fill="#6b7684" text-anchor="middle">(실제 배달 도착)</text>
+  <!-- Left: Early Delivery (Over-prediction) - Low gentle slope -->
+  <line x1="84" y1="340" x2="249" y2="380" stroke="#3182f6" stroke-width="2.5"/>
+  <text x="140" y="324" font-size="12" font-weight="700" fill="#1b64da">일찍 도착 (과대 예측)</text>
+  <text x="140" y="342" font-size="11" fill="#6b7684">손실 완만 (고객 불만 없음)</text>
+  <text x="140" y="358" font-size="10.5" fill="#8b95a1">기울기 ≈ 1 - q (0.15)</text>
 
-  <!-- 60 min Tick & Label -->
-  <line x1="690" y1="360" x2="690" y2="368" stroke="#1b64da" stroke-width="2"/>
-  <text x="690" y="386" font-size="13.5" font-weight="800" fill="#1b64da" text-anchor="middle">60분</text>
-  <text x="690" y="404" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">(앱 화면 안내 ETA)</text>
+  <!-- Right: Late Delivery (Under-prediction) - Extremely steep slope -->
+  <line x1="249" y1="380" x2="394" y2="150" stroke="#f43f5e" stroke-width="3"/>
+  <text x="320" y="190" font-size="12.5" font-weight="800" fill="#e11d48">지각 도착 (과소 예측)</text>
+  <text x="320" y="210" font-size="11" font-weight="700" fill="#e11d48">비용 급상승 (CS·이탈 폭증)</text>
+  <text x="320" y="228" font-size="10.5" fill="#f43f5e">기울기 ≈ q (0.85)</text>
 
-  <text x="800" y="386" font-size="12" fill="#8b95a1" text-anchor="middle">75분</text>
+  <!-- Callout note inside left panel -->
+  <rect x="64" y="132" width="160" height="52" rx="6" fill="#f9fafb" stroke="#e5e8eb" stroke-width="1"/>
+  <text x="74" y="152" font-size="11.5" font-weight="800" fill="#191f28">Pinball Loss 비대칭성</text>
+  <text x="74" y="170" font-size="11" fill="#6b7684">1분 지각 손실 &gt;&gt; 1분 조기 손실</text>
 
-  <!-- Curve 1: Sunny Day Normal Distribution (Grey, Tight) -->
-  <!-- Peak around 30 min (x=310, y=190) -->
-  <path d="M 140 360 C 220 360, 260 190, 310 190 C 360 190, 400 360, 480 360 Z" fill="#e5e8eb" fill-opacity="0.5"/>
-  <path d="M 140 360 C 220 360, 260 190, 310 190 C 360 190, 400 360, 480 360" fill="none" stroke="#8b95a1" stroke-width="2"/>
-  <text x="310" y="170" font-size="13" font-weight="800" fill="#6b7684" text-anchor="middle">맑은 날 평소 분포 (낮은 분산)</text>
-  <text x="310" y="214" font-size="11.5" fill="#4e5968" text-anchor="middle">평균 30분 내외 수렴</text>
+  <!-- RIGHT PANEL: PROBABILITY DENSITY & DECISION BOUNDARY (확률 밀도 및 결정 경계) -->
+  <rect x="474" y="92" width="442" height="358" rx="14" fill="#ffffff" stroke="#e5e8eb" stroke-width="1.2"/>
+  <rect x="474" y="92" width="180" height="28" rx="8" fill="#e8f3ff"/>
+  <text x="486" y="111" font-size="12" font-weight="800" fill="#1b64da">2. 배달 시간 분포와 의사결정 경계</text>
 
-  <!-- Curve 2: Rainy Friday Distribution (Blue, Wide & Right-shifted) -->
-  <!-- Peak around 48 min (x=540, y=230), long tail up to 810 -->
-  <path d="M 260 360 C 370 360, 450 230, 540 230 C 630 230, 710 360, 810 360 Z" fill="#eaf2fe" fill-opacity="0.7"/>
-  <path d="M 260 360 C 370 360, 450 230, 540 230 C 630 230, 710 360, 810 360" fill="none" stroke="#3182f6" stroke-width="2.5"/>
+  <!-- Time Axis for Right Panel -->
+  <line x1="494" y1="380" x2="896" y2="380" stroke="#d1d6db" stroke-width="1.5"/>
 
-  <!-- P50 Line (Mean/Median: 48 min, x=540) -->
-  <line x1="540" y1="230" x2="540" y2="360" stroke="#4e5968" stroke-width="1.8" stroke-dasharray="4 3"/>
-  <text x="540" y="214" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">P50 (중앙값 48분)</text>
-  <text x="540" y="262" font-size="11.5" fill="#6b7684" text-anchor="middle">단순 평균값 안내 시</text>
-  <text x="540" y="280" font-size="11.5" fill="#e11d48" font-weight="700" text-anchor="middle">50% 고객 지각 경험</text>
+  <!-- Ticks -->
+  <text x="544" y="400" font-size="11.5" fill="#8b95a1" text-anchor="middle">25분</text>
+  <text x="614" y="400" font-size="11.5" fill="#8b95a1" text-anchor="middle">35분</text>
+  <text x="694" y="400" font-size="12" font-weight="800" fill="#4e5968" text-anchor="middle">48분</text>
+  <text x="694" y="416" font-size="11" fill="#4e5968" text-anchor="middle">(실제 배달)</text>
 
-  <!-- P85 Line & Indicator (60 min, x=690) -->
-  <line x1="690" y1="285" x2="690" y2="360" stroke="#1b64da" stroke-width="2.4"/>
-  <!-- Dedicated arrow point at top of P85 line -->
-  <polygon points="690,270 683,286 697,286" fill="#1b64da"/>
-  <text x="690" y="252" font-size="13.5" font-weight="800" fill="#1b64da" text-anchor="middle">P85 안내 (60분)</text>
-  <text x="690" y="312" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">안전 마진 확보</text>
-  <text x="690" y="328" font-size="11" fill="#4e5968" text-anchor="middle">85% 정시 도착 달성</text>
+  <text x="804" y="400" font-size="12.5" font-weight="800" fill="#1b64da" text-anchor="middle">60분</text>
+  <text x="804" y="416" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">(앱 노출 P85)</text>
 
-  <!-- Explanatory Callout Box (Top Right) -->
-  <rect x="545" y="118" width="310" height="74" rx="8" fill="#f8fafb" stroke="#d1d6db" stroke-width="1"/>
-  <text x="560" y="140" font-size="12" font-weight="800" fill="#191f28">비대칭 손실 (Asymmetric Cost)</text>
-  <text x="560" y="160" font-size="11" fill="#4e5968">• 과소 예측(지각): 약속 위반으로 CS 인입 및 이탈 초래</text>
-  <text x="560" y="177" font-size="11" fill="#4e5968">• 보수적 예측: 60분 안내 후 48분 도착은 고객 만족 유지</text>
+  <text x="874" y="400" font-size="11.5" fill="#8b95a1" text-anchor="middle">75분</text>
+
+  <!-- Curve A: Clear Day (Narrow Gray Curve) -->
+  <path d="M 504 380 C 534 380, 554 250, 584 250 C 614 250, 634 380, 664 380 Z" fill="url(#curve-fill-clear)"/>
+  <path d="M 504 380 C 534 380, 554 250, 584 250 C 614 250, 634 380, 664 380" fill="none" stroke="#8b95a1" stroke-width="1.8"/>
+  <text x="584" y="238" font-size="11.5" font-weight="700" fill="#8b95a1" text-anchor="middle">맑은 날 평소 분포</text>
+
+  <!-- Curve B: Rainy Friday (Broad Right-skewed Blue Curve) -->
+  <!-- Peak around 48m (x = 694, y = 265) -->
+  <path d="M 554 380 C 614 380, 654 265, 694 265 C 744 265, 784 380, 874 380 Z" fill="url(#curve-fill-rain)"/>
+  <path d="M 554 380 C 614 380, 654 265, 694 265 C 744 265, 784 380, 874 380" fill="none" stroke="#3182f6" stroke-width="2.5"/>
+
+  <!-- Hatched Area: Late delivery zone if P50 (48m) was served -->
+  <path d="M 694 265 C 744 265, 784 380, 874 380 L 694 380 Z" fill="url(#hatch-late)"/>
+
+  <!-- P50 Cutoff Line and High-Contrast Labeling -->
+  <line x1="694" y1="205" x2="694" y2="380" stroke="#e11d48" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="660" y="172" font-size="11" font-weight="700" fill="#e11d48" text-anchor="middle">평균값(P50) 안내 시</text>
+  <text x="660" y="188" font-size="11.5" font-weight="800" fill="#e11d48" text-anchor="middle">50% 주문 지각 발생</text>
+  <text x="660" y="202" font-size="10.5" fill="#f43f5e" text-anchor="middle">(빗금 영역 = 약속 위반)</text>
+
+  <!-- P85 Cutoff Line (The Decision Boundary at 60m) -->
+  <line x1="804" y1="300" x2="804" y2="380" stroke="#1b64da" stroke-width="2.5"/>
+  <polygon points="804,288 798,300 810,300" fill="#1b64da"/>
+  <text x="816" y="238" font-size="12" font-weight="800" fill="#1b64da" text-anchor="middle">P85 결정 경계 (60분)</text>
+  <text x="816" y="254" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">지각 리스크 15%로 통제</text>
+  <text x="816" y="270" font-size="10.5" fill="#4e5968" text-anchor="middle">48분 도착 시 12분 조기 안도감</text>
+
+  <!-- Top note banner in right panel -->
+  <rect x="494" y="126" width="402" height="30" rx="6" fill="#f9fafb" stroke="#e5e8eb" stroke-width="1"/>
+  <text x="695" y="146" font-size="11" font-weight="700" fill="#333d4b" text-anchor="middle">결론: 불확실성이 큰 날에는 의사결정선을 오른쪽(상위 분위수)으로 이동</text>
 </svg>

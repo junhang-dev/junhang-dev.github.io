@@ -1,62 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
   <defs>
-    <marker id="arrow-grey" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4e5968"/>
+    <!-- Gradients -->
+    <linearGradient id="lane-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3182f6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3182f6" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="lane-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4e5968" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4e5968" stop-opacity="0.02"/>
+    </linearGradient>
+    <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="6" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1 L 5 7 L 9 1 z" fill="#3182f6"/>
     </marker>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrow-right-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3182f6"/>
-    </marker>
-    <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#191f28"/>
     </marker>
   </defs>
 
-  <!-- Outer Card Background -->
-  <rect width="920" height="460" rx="22" fill="#f2f4f6"/>
+  <!-- Background -->
+  <rect width="960" height="480" rx="20" fill="#f8fafb"/>
 
-  <!-- Main Title -->
-  <text x="48" y="52" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">배달 ETA 예측을 위한 Feature Store 이원화 구조</text>
-  <text x="48" y="78" font-size="13.5" fill="#6b7684">과거의 긴 통계(배치)와 지금 당장의 현장 상태(스트리밍)가 하나의 추론 엔진에서 만나는 흐름</text>
+  <!-- Header -->
+  <text x="44" y="44" font-size="20" font-weight="800" fill="#191f28" letter-spacing="-0.3">배달 주문 생애주기와 시공간 피처 주입 타임라인</text>
+  <text x="44" y="68" font-size="13" fill="#6b7684">물리적 사건(주방·도로)이 흘러가는 동안, 시스템이 오프라인 통계와 온라인 스트림을 꽂아 넣는 구조</text>
 
-  <!-- Left: Offline Batch Path (White Card) -->
-  <rect x="48" y="104" width="395" height="236" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
-  <rect x="68" y="122" width="136" height="26" rx="6" fill="#f2f4f6"/>
-  <text x="136" y="139" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">OFFLINE BATCH</text>
+  <!-- LANE 1: PHYSICAL REAL-WORLD TIMELINE (Upper Lane) -->
+  <rect x="44" y="92" width="872" height="152" rx="14" fill="#ffffff" stroke="#e5e8eb" stroke-width="1.2"/>
+  <rect x="44" y="92" width="168" height="28" rx="8" fill="#e8f3ff"/>
+  <text x="56" y="111" font-size="12" font-weight="800" fill="#1b64da">물리적 현장 타임라인</text>
 
-  <text x="68" y="174" font-size="16" font-weight="800" fill="#191f28">배치 피처 파이프라인</text>
-  <text x="68" y="196" font-size="13" fill="#6b7684">데이터 레이크하우스 · 대용량 집계 (Polars / Spark)</text>
+  <!-- Time Progress Bar -->
+  <line x1="72" y1="168" x2="880" y2="168" stroke="#d1d6db" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Milestone 1: Order Placed (t = 0m) -->
+  <circle cx="96" cy="168" r="10" fill="#3182f6" stroke="#ffffff" stroke-width="2.5"/>
+  <text x="96" y="146" font-size="12.5" font-weight="800" fill="#191f28" text-anchor="middle">t = 0분</text>
+  <text x="96" y="196" font-size="13" font-weight="700" fill="#191f28" text-anchor="middle">주문 접수</text>
+  <text x="96" y="214" font-size="11" fill="#8b95a1" text-anchor="middle">고객 결제 완료</text>
 
-  <line x1="68" y1="214" x2="423" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+  <!-- Phase A: Kitchen Cooking (0m -> 20m) -->
+  <rect x="144" y="152" width="220" height="32" rx="6" fill="#e8f3ff" stroke="#3182f6" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="254" y="173" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">주방 조리 대기 (T_prep ≈ 20분)</text>
 
-  <text x="68" y="240" font-size="13.5" font-weight="700" fill="#333d4b">축적된 장기 통계 피처 (과거 7일)</text>
-  <text x="68" y="266" font-size="12.5" fill="#6b7684">• 매장별 금요일 저녁 요일·시간대별 평균 조리 시간</text>
-  <text x="68" y="290" font-size="12.5" fill="#6b7684">• 메뉴 조합별 기본 난이도 (단품 vs 복합 세트 메뉴)</text>
-  <text x="68" y="314" font-size="12.5" fill="#6b7684">• 식당의 기본 생산 한계(Capacity) 프로파일</text>
+  <!-- Milestone 2: Food Ready & Rider Picked (t = 20m) -->
+  <circle cx="400" cy="168" r="8" fill="#ffffff" stroke="#3182f6" stroke-width="3"/>
+  <text x="400" y="146" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">t = 20분</text>
+  <text x="400" y="196" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">조리 완료 · 픽업</text>
+  <text x="400" y="214" font-size="11" fill="#8b95a1" text-anchor="middle">라이더 음식 수령</text>
 
-  <!-- Right: Online Streaming Path (Blue Highlight Card) -->
-  <rect x="463" y="104" width="409" height="236" rx="14" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.5"/>
-  <rect x="483" y="122" width="156" height="26" rx="6" fill="#d0e2fe"/>
-  <text x="561" y="139" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">ONLINE STREAMING</text>
+  <!-- Phase B: Road Transit in Rain (20m -> 48m) -->
+  <rect x="440" y="152" width="260" height="32" rx="6" fill="#f2f4f6" stroke="#8b95a1" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="570" y="173" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">우천 빗길 주행 (T_dropoff ≈ 28분)</text>
 
-  <text x="483" y="174" font-size="16" font-weight="800" fill="#1b64da">실시간 피처 파이프라인</text>
-  <text x="483" y="196" font-size="13" fill="#4e5968">이벤트 브로커 (Kafka) → 인메모리 저장소 (Redis)</text>
+  <!-- Milestone 3: Actual Arrival (t = 48m) -->
+  <circle cx="736" cy="168" r="8" fill="#10b981" stroke="#ffffff" stroke-width="2.5"/>
+  <text x="736" y="146" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">t = 48분</text>
+  <text x="736" y="196" font-size="12.5" font-weight="800" fill="#059669" text-anchor="middle">실제 초인종 도착</text>
+  <text x="736" y="214" font-size="11" fill="#059669" text-anchor="middle">물리적 배달 완료</text>
 
-  <line x1="483" y1="214" x2="852" y2="214" stroke="#bfd7ff" stroke-width="1"/>
+  <!-- Safety Buffer Gap: 48m -> 60m -->
+  <rect x="760" y="156" width="90" height="24" rx="4" fill="#fef2f2" stroke="#f43f5e" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="805" y="172" font-size="11" font-weight="700" fill="#e11d48" text-anchor="middle">+12분 안전 마진</text>
 
-  <text x="483" y="240" font-size="13.5" font-weight="700" fill="#1b64da">지금 당장의 현장 상태 피처 (최근 1시간)</text>
-  <text x="483" y="266" font-size="12.5" fill="#333d4b">• OSRM 실시간 도로망 기준 실제 주행 거리 및 우천 감속</text>
-  <text x="483" y="290" font-size="12.5" fill="#333d4b">• 최근 30분 미완료 주문 수와 라이더 픽업 대기열</text>
-  <text x="483" y="314" font-size="12.5" fill="#333d4b">• 반경 1km 내 배차 가능한 유휴 라이더 밀도</text>
+  <!-- Displayed Milestone: Promised 60m -->
+  <circle cx="868" cy="168" r="9" fill="#1b64da" stroke="#ffffff" stroke-width="2.5"/>
+  <text x="868" y="146" font-size="12" font-weight="800" fill="#1b64da" text-anchor="middle">t = 60분</text>
+  <text x="868" y="196" font-size="12.5" font-weight="800" fill="#1b64da" text-anchor="middle">앱 표기 예정시간</text>
+  <text x="868" y="214" font-size="11" fill="#1b64da" text-anchor="middle">고객 안내 약속 (SLA)</text>
 
-  <!-- Clean Converging Flow Lines -->
-  <!-- Left out -->
-  <path d="M 245 340 L 245 366 Q 245 374 255 374 L 435 374" fill="none" stroke="#4e5968" stroke-width="1.8"/>
-  <!-- Right out -->
-  <path d="M 667 340 L 667 366 Q 667 374 657 374 L 485 374" fill="none" stroke="#3182f6" stroke-width="1.8"/>
-  <!-- Center Down into Box -->
-  <line x1="460" y1="374" x2="460" y2="394" stroke="#191f28" stroke-width="2" marker-end="url(#arrow-dark)"/>
+  <!-- Connectors: Upper timeline to lower data layers -->
+  <line x1="96" y1="232" x2="96" y2="262" stroke="#3182f6" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <line x1="400" y1="232" x2="400" y2="262" stroke="#8b95a1" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <line x1="736" y1="232" x2="736" y2="262" stroke="#10b981" stroke-width="1.6" stroke-dasharray="3 3"/>
 
-  <!-- Bottom: Low-Latency ML Prediction Service -->
-  <rect x="48" y="398" width="824" height="48" rx="12" fill="#ffffff" stroke="#191f28" stroke-width="1.5"/>
-  <text x="460" y="428" font-size="15" font-weight="800" fill="#191f28" text-anchor="middle">초저지연 추론 엔진 (Inference Service) → 결합 예측: "도착 예정 60분"</text>
+  <!-- LANE 2: DATA INJECTION & FEATURE STORE SWIMLANE (Lower Lane) -->
+  <rect x="44" y="262" width="872" height="198" rx="14" fill="#ffffff" stroke="#e5e8eb" stroke-width="1.2"/>
+  <rect x="44" y="262" width="200" height="28" rx="8" fill="#f2f4f6"/>
+  <text x="56" y="281" font-size="12" font-weight="800" fill="#333d4b">시스템 피처 주입 &amp; 계산 흐름</text>
+
+  <!-- Column A: Offline Baseline (Historical Anchor) -->
+  <rect x="64" y="304" width="244" height="138" rx="10" fill="#f9fafb" stroke="#e5e8eb" stroke-width="1"/>
+  <text x="80" y="328" font-size="13" font-weight="800" fill="#4e5968">1. 과거 통계 닻 (Offline)</text>
+  <text x="80" y="352" font-size="11.5" fill="#6b7684">• 최근 7일 금요일 저녁 조리시간</text>
+  <text x="80" y="372" font-size="11.5" fill="#6b7684">• 단품 vs 세트 메뉴 조리 가중치</text>
+  <text x="80" y="392" font-size="11.5" fill="#6b7684">• 해당 식당 기본 CAPA 프로파일</text>
+  <text x="80" y="422" font-size="11" font-weight="700" fill="#4e5968">배치 집계: Polars / Spark</text>
+
+  <!-- Flow Arrow from A to B -->
+  <line x1="316" y1="373" x2="340" y2="373" stroke="#8b95a1" stroke-width="1.6"/>
+  <path d="M336 369 L342 373 L336 377" fill="none" stroke="#8b95a1" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Column B: Live Telemetry (Streaming Delta) -->
+  <rect x="348" y="304" width="270" height="138" rx="10" fill="#eaf2fe" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="364" y="328" font-size="13" font-weight="800" fill="#1b64da">2. 실시간 현장 왜곡 (Online)</text>
+  <text x="364" y="352" font-size="11.5" fill="#333d4b">• OSRM 실도로망 2.4km (하천 우회)</text>
+  <text x="364" y="372" font-size="11.5" fill="#333d4b">• 최근 30분 미완료 대기열 (+15분)</text>
+  <text x="364" y="392" font-size="11.5" fill="#333d4b">• 강수량 15mm/h 주행 감속 계수</text>
+  <text x="364" y="422" font-size="11" font-weight="700" fill="#1b64da">실시간 스트림: Kafka → Redis</text>
+
+  <!-- Flow Arrow from B to C -->
+  <line x1="626" y1="373" x2="650" y2="373" stroke="#3182f6" stroke-width="1.8"/>
+  <path d="M644 368 L652 373 L644 378" fill="none" stroke="#3182f6" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Column C: Quantile Inference (Decision Layer) -->
+  <rect x="658" y="304" width="238" height="138" rx="10" fill="#191f28"/>
+  <text x="674" y="328" font-size="13" font-weight="800" fill="#ffffff">3. 분위수 서빙 (Inference)</text>
+  <text x="674" y="352" font-size="11.5" fill="#d1d6db">• 모델 예측 중앙값 (P50): 48분</text>
+  <text x="674" y="372" font-size="11.5" fill="#d1d6db">• 비대칭 손실(지각 방어) 계산</text>
+  <text x="674" y="392" font-size="11.5" fill="#93c5fd">• P85 분위수 선택: 안전 버퍼 확보</text>
+  <rect x="674" y="408" width="206" height="24" rx="4" fill="#3182f6"/>
+  <text x="777" y="424" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">최종 고객 노출: "60분 도착"</text>
 </svg>
