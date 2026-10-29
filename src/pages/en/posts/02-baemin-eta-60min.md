@@ -16,7 +16,7 @@ date: "2026.10.29"
   <figcaption>Photo: A courier riding through a heavy downpour on urban streets (Source: <a href="https://unsplash.com/photos/scooter-rider-in-heavy-rain-on-a-city-street-PtDEHmdL7ik" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
 </figure>
 
-On a rainy Friday evening, opening a food delivery app like Baemin (or UberEats / DoorDash) reveals an immediate shift. The neighborhood chicken joint that usually promises "30 to 40 minutes" suddenly displays a blunt estimate: **"Estimated Arrival: 60 min"**.
+On a rainy Friday evening, opening a food delivery app like Baemin, Coupang Eats, or UberEats reveals an immediate shift. The neighborhood chicken joint that usually promises "30 to 40 minutes" suddenly displays a blunt estimate: **"Estimated Arrival: 60 min"**.
 
 Hungry and impatient, you place the order. Yet when the courier actually rings the doorbell, only 48 minutes have passed. Nobody called the restaurant's kitchen to ask, *"What is the oil temperature right now, and how many tickets are in front of this order?"* How did the platform anticipate bottlenecks in both the kitchen and the streets to display 60 minutes in advance? And why did it present a generous 60-minute window rather than the exact 48 minutes?
 
@@ -33,6 +33,8 @@ The challenges of managing physical transport delays (dead-time) across kilomete
 Deconstructing total delivery duration ($T_{total}$) yields three distinct operational phases:
 
 $$T_{total} = T_{prep}\text{ (Kitchen prep)} + T_{pickup}\text{ (Courier travel to merchant)} + T_{dropoff}\text{ (Courier transit to customer)}$$
+
+(For bundled multi-order delivery services like Coupang Eats or Baemin Delivery, this equation is further extended by vehicle routing problem algorithms optimizing intermediate drop-off waypoints.)
 
 Even the seemingly straightforward transit leg, $T_{dropoff}$, cannot be solved with planar map coordinates alone. A straight-line distance of 1.5 km between a storefront and an apartment does not mean a courier can ride 1.5 km.
 
@@ -124,7 +126,7 @@ Waiting until a meal is fully boxed before dispatching a courier (pure feedback)
 
 This brings us to an equally critical question:
 
-> *"What if the fryer suddenly broke down, or an unexpected wave of dine-in customers walked in, prompting the merchant to manually mash the [60 min] button on their tablet? Does the algorithm take their word at face value?"*
+> *"What if the fryer suddenly broke down, or an unexpected wave of dine-in customers walked in, prompting the merchant to manually mash the [60 min] button on their Baemin or Coupang Eats tablet? Does the algorithm take their word at face value?"*
 
 In a kitchen devoid of IoT sensors, the sole digital telemetry point revealing hidden ground truth is **the merchant's finger**. Yet human input is rarely unbiased.
 
