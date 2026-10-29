@@ -2,6 +2,21 @@
 // src/pages/posts/<slug>.md (한국어)와 src/pages/en/posts/<slug>.md (영어)를 만듭니다.
 export const posts = [
   {
+    slug: '02-baemin-eta-60min',
+    category: 'Architecture',
+    date: '2026.10.29',
+    ko: {
+      title: '비 오는 금요일 저녁, 배민은 왜 60분을 띄웠을까?',
+      summary:
+        '배달 시간 뒤에서 작동하는 Feature Store 이원화와 데이터 드리프트(Data Drift)',
+    },
+    en: {
+      title: 'Why Did the Food Delivery App Show 60 Minutes on a Rainy Friday?',
+      summary:
+        'Dual Feature Stores, Data Drift, and Quantile Regression Behind Food Delivery ETA',
+    },
+  },
+  {
     slug: '01-physical-ai-in-plants',
     category: 'Industrial AI',
     date: '2026.10.28',

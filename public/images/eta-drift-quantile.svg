@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="440" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title -->
+  <text x="48" y="52" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">우천 시 데이터 드리프트와 분위수 회귀(Quantile)의 안전 마진</text>
+  <text x="48" y="78" font-size="13.5" fill="#6b7684">불확실성이 커진 날, 평균값(P50) 대신 P85를 안내해 지각 리스크(SLA 위반)를 방어하는 원리</text>
+
+  <!-- Plot Area -->
+  <rect x="48" y="104" width="824" height="300" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+
+  <!-- Grid lines -->
+  <line x1="88" y1="340" x2="832" y2="340" stroke="#8b95a1" stroke-width="1.5"/>
+
+  <!-- X Axis Labels (Time in minutes) -->
+  <text x="180" y="364" font-size="12" fill="#8b95a1" text-anchor="middle">20분</text>
+  <text x="310" y="364" font-size="12" fill="#8b95a1" text-anchor="middle">30분</text>
+  <text x="440" y="364" font-size="12" fill="#8b95a1" text-anchor="middle">40분</text>
+  <text x="540" y="364" font-size="12.5" font-weight="700" fill="#4e5968" text-anchor="middle">48분 (실제 배달)</text>
+  <line x1="540" y1="340" x2="540" y2="346" stroke="#4e5968" stroke-width="1.5"/>
+  <text x="700" y="364" font-size="12.5" font-weight="800" fill="#1b64da" text-anchor="middle">60분 (앱 안내 ETA)</text>
+  <line x1="700" y1="340" x2="700" y2="346" stroke="#1b64da" stroke-width="1.5"/>
+  <text x="810" y="364" font-size="12" fill="#8b95a1" text-anchor="middle">75분</text>
+
+  <!-- Curve 1: Sunny Day Normal Distribution (Grey, Tight) -->
+  <!-- Peak around 30 min (x=310) -->
+  <path d="M 120 340 C 210 340, 260 170, 310 170 C 360 170, 410 340, 500 340 Z" fill="#e5e8eb" fill-opacity="0.6"/>
+  <path d="M 120 340 C 210 340, 260 170, 310 170 C 360 170, 410 340, 500 340" fill="none" stroke="#8b95a1" stroke-width="2"/>
+  <text x="310" y="152" font-size="13" font-weight="700" fill="#6b7684" text-anchor="middle">맑은 날 평소 분포 (낮은 분산)</text>
+  <text x="310" y="196" font-size="11.5" fill="#4e5968" text-anchor="middle">평균 30분 내외</text>
+
+  <!-- Curve 2: Rainy Friday Distribution (Blue, Wide & Right-shifted) -->
+  <!-- Peak around 48 min (x=540), long tail up to 75 min -->
+  <path d="M 240 340 C 360 340, 440 210, 540 210 C 640 210, 720 340, 810 340 Z" fill="#eaf2fe" fill-opacity="0.7"/>
+  <path d="M 240 340 C 360 340, 440 210, 540 210 C 640 210, 720 340, 810 340" fill="none" stroke="#3182f6" stroke-width="2.5"/>
+
+  <!-- P50 Line (Mean/Median of Rainy Day: 48 min, x=540) -->
+  <line x1="540" y1="210" x2="540" y2="340" stroke="#4e5968" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <text x="540" y="194" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">P50 (중앙값 48분)</text>
+  <text x="540" y="240" font-size="11" fill="#6b7684" text-anchor="middle">단순 평균 안내 시</text>
+  <text x="540" y="256" font-size="11" fill="#e11d48" font-weight="700" text-anchor="middle">50% 고객 지각 경험</text>
+
+  <!-- P85 Line (Upper Quantile: 60 min, x=700) -->
+  <line x1="700" y1="262" x2="700" y2="340" stroke="#1b64da" stroke-width="2.2"/>
+  <polygon points="700,254 694,264 706,264" fill="#1b64da"/>
+  <text x="700" y="238" font-size="13" font-weight="800" fill="#1b64da" text-anchor="middle">P85 안내 (60분)</text>
+  <text x="700" y="290" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">안전 마진 확보</text>
+  <text x="700" y="306" font-size="11" fill="#4e5968" text-anchor="middle">85% 정시 도착 달성</text>
+
+  <!-- Explanatory Callout Box (Right Top) -->
+  <rect x="575" y="118" width="280" height="66" rx="8" fill="#f8fafb" stroke="#e5e8eb" stroke-width="1"/>
+  <text x="588" y="138" font-size="12" font-weight="800" fill="#191f28">비대칭 손실(Asymmetric Cost)</text>
+  <text x="588" y="156" font-size="11" fill="#4e5968">• 과소 예측(지각): 고객 불만 및 CS 인입 폭증</text>
+  <text x="588" y="172" font-size="11" fill="#4e5968">• 보수적 예측: 60분 안내 후 48분 도착은 만족도 유지</text>
+</svg>
