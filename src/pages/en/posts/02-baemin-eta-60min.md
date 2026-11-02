@@ -141,7 +141,7 @@ This brings us to an equally critical question:
 
 In a kitchen devoid of IoT sensors, the sole digital telemetry point revealing hidden ground truth is **the merchant's finger**. Yet human input is rarely unbiased.
 
-In the upcoming post, **〈[Part 2] When the Merchant Taps [60 min], How Much Does the Algorithm Actually Trust Them?〉**, we will explore the **Human-in-the-loop** architecture that digests manual overrides as live ML features, and the **dispatch jitter optimization** required to minimize both food cooling time and courier street idling.
+In the next post, [〈[Part 2] When the Merchant Taps [60 min], How Much Does the Algorithm Actually Trust Them?〉](/en/posts/03-merchant-prep-jitter/), we will explore the **Human-in-the-loop** architecture that digests manual overrides as live ML features, and the **dispatch jitter optimization** required to minimize both food cooling time and courier street idling.
 
 ---
 

@@ -2,6 +2,21 @@
 // src/pages/posts/<slug>.md (한국어)와 src/pages/en/posts/<slug>.md (영어)를 만듭니다.
 export const posts = [
   {
+    slug: '03-merchant-prep-jitter',
+    category: 'Architecture',
+    date: '2026.11.02',
+    ko: {
+      title: '사장님이 [60분]을 눌렀을 때, 알고리즘은 사장님을 얼마나 믿을까?',
+      summary:
+        '배달 ETA 2부: 휴먼 인 더 루프(HITL), 매장 편향 보정, 그리고 배차 지터(Jitter) 최적화',
+    },
+    en: {
+      title: 'When the Merchant Taps [60 min], How Much Does the Algorithm Actually Trust Them?',
+      summary:
+        'Delivery ETA Part 2: Human-in-the-loop (HITL), Merchant Bias Calibration, and Dispatch Jitter Optimization',
+    },
+  },
+  {
     slug: '02-baemin-eta-60min',
     category: 'Architecture',
     date: '2026.10.29',

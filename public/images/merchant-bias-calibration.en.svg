@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .card-bg { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .card-accent-blue { fill: #ffffff; stroke: #3b82f6; stroke-width: 1.5; rx: 12px; }
+      .card-accent-amber { fill: #ffffff; stroke: #f59e0b; stroke-width: 1.5; rx: 12px; }
+      .card-accent-green { fill: #ffffff; stroke: #10b981; stroke-width: 2; rx: 12px; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #64748b; }
+      .section-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #1e293b; }
+      .card-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 400; fill: #475569; line-height: 1.5; }
+      .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; }
+      .arrow { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 4,4; fill: none; }
+      .arrow-solid { stroke: #3b82f6; stroke-width: 2; fill: none; }
+      .highlight-metric { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 24px; font-weight: 800; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="540" rx="16" class="bg" stroke="#cbd5e1" stroke-width="1" />
+
+  <!-- Header -->
+  <text x="36" y="44" class="title">Merchant Manual Input Calibration Pipeline</text>
+  <text x="36" y="68" class="subtitle">How Bayesian context features debias a merchant's subjective [60 min] button into an objective prep time (38 min)</text>
+
+  <!-- STAGE 1: RAW HUMAN INPUT -->
+  <g transform="translate(36, 100)">
+    <rect width="220" height="280" class="card-accent-amber" filter="url(#shadow)" />
+    <!-- Header Badge -->
+    <rect x="14" y="14" width="90" height="22" rx="4" fill="#fef3c7" />
+    <text x="22" y="29" class="section-label" fill="#b45309">Noisy Input</text>
+    
+    <text x="14" y="60" class="card-title">① Merchant POS Manual Input</text>
+    <text x="14" y="80" class="card-body">The sole digital probe in an IoT-less kitchen</text>
+
+    <!-- POS Button Mock -->
+    <rect x="20" y="100" width="180" height="74" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5" />
+    <text x="110" y="132" text-anchor="middle" class="highlight-metric" fill="#b45309">[60 Min]</text>
+    <text x="110" y="156" text-anchor="middle" font-size="11" font-weight="600" fill="#d97706">Defensive Over-estimation</text>
+
+    <text x="14" y="200" class="card-body" font-weight="500">
+      • Peak rush psychological stress<br/>
+      • Buffer to prevent courier rushing<br/>
+      • <tspan fill="#dc2626" font-weight="700">If trusted blindly:</tspan> Cold food risk
+    </text>
+    
+    <rect x="14" y="248" width="192" height="20" rx="4" fill="#fee2e2" />
+    <text x="110" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">❌ Never Treat as Ground Truth</text>
+  </g>
+
+  <!-- Arrow from Stage 1 to Stage 2 -->
+  <path d="M 256 240 L 296 240" class="arrow-solid" marker-end="url(#arrowhead)" />
+  <text x="276" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">Features</text>
+
+  <!-- STAGE 2: 3 CONTEXT DECODERS -->
+  <g transform="translate(306, 100)">
+    <!-- Decoder 1: Store Bias Profile -->
+    <g transform="translate(0, 0)">
+      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
+      <rect x="12" y="12" width="130" height="18" rx="4" fill="#e0e7ff" />
+      <text x="18" y="25" class="section-label" fill="#4338ca">HISTORICAL BIAS</text>
+      <text x="12" y="48" class="card-title">Store Empirical Bias Profile</text>
+      <text x="12" y="68" class="card-body">Rolling 30d peak: 60m pressed → 38m actual pickup</text>
+      <rect x="206" y="22" width="62" height="24" rx="4" fill="#dbeafe" />
+      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#1d4ed8">Δ -22 min</text>
+    </g>
+
+    <!-- Decoder 2: Kitchen Backlog -->
+    <g transform="translate(0, 98)">
+      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
+      <rect x="12" y="12" width="130" height="18" rx="4" fill="#f1f5f9" />
+      <text x="18" y="25" class="section-label" fill="#475569">LIVE QUEUE STATE</text>
+      <text x="12" y="48" class="card-title">Real-time Kitchen Backlog</text>
+      <text x="12" y="68" class="card-body">Active pending tickets: 3 orders (1 fryer idle)</text>
+      <rect x="206" y="22" width="62" height="24" rx="4" fill="#fef3c7" />
+      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#d97706">+5m delay</text>
+    </g>
+
+    <!-- Decoder 3: Item Complexity -->
+    <g transform="translate(0, 196)">
+      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
+      <rect x="12" y="12" width="130" height="18" rx="4" fill="#f1f5f9" />
+      <text x="18" y="25" class="section-label" fill="#475569">MENU RECIPE CAPA</text>
+      <text x="12" y="48" class="card-title">Order Recipe Complexity</text>
+      <text x="12" y="68" class="card-body">1 Fried Chicken box (Standard fry cycle: 15 min)</text>
+      <rect x="206" y="22" width="62" height="24" rx="4" fill="#ecfdf5" />
+      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#047857">Normal Load</text>
+    </g>
+  </g>
+
+  <!-- Arrows from Decoders to Stage 3 -->
+  <path d="M 586 142 L 626 180" class="arrow-solid" marker-end="url(#arrowhead)" />
+  <path d="M 586 240 L 626 240" class="arrow-solid" marker-end="url(#arrowhead)" />
+  <path d="M 586 338 L 626 300" class="arrow-solid" marker-end="url(#arrowhead)" />
+
+  <!-- STAGE 3: CALIBRATION ENGINE -->
+  <g transform="translate(636, 100)">
+    <rect width="248" height="280" class="card-accent-green" filter="url(#shadow)" />
+    <!-- Header Badge -->
+    <rect x="14" y="14" width="130" height="22" rx="4" fill="#d1fae5" />
+    <text x="22" y="29" class="section-label" fill="#065f46">Bayesian Core</text>
+
+    <text x="14" y="60" class="card-title">② Debias &amp; Calibrated Estimate</text>
+    <text x="14" y="78" class="card-body">True expectation stripped of noise</text>
+
+    <!-- Formula Box -->
+    <rect x="14" y="96" width="220" height="58" rx="6" fill="#f0fdf4" stroke="#a7f3d0" stroke-width="1" />
+    <text x="24" y="118" font-family="monospace" font-size="12" font-weight="700" fill="#065f46">T_prep = T_input + Δ_bias</text>
+    <text x="24" y="138" font-family="monospace" font-size="12" font-weight="700" fill="#047857">       = 60m - 22m</text>
+
+    <!-- Final Calibrated Result -->
+    <rect x="14" y="166" width="220" height="66" rx="8" fill="#10b981" />
+    <text x="124" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#ecfdf5">Model Calibrated Prep Time</text>
+    <text x="124" y="222" text-anchor="middle" class="highlight-metric" fill="#ffffff">38 Min Target</text>
+
+    <rect x="14" y="244" width="220" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" />
+    <text x="124" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">💡 22m defensive buffer purged</text>
+  </g>
+
+  <!-- STAGE 4: DOWNSTREAM ACTION BAR -->
+  <g transform="translate(36, 410)">
+    <rect width="848" height="96" rx="10" fill="#1e293b" />
+    
+    <circle cx="48" cy="48" r="18" fill="#3b82f6" />
+    <path d="M 42 48 L 46 52 L 55 43" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    
+    <text x="82" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      Downstream Dispatch: Emits Calibrated Schedule to Holding Queue
+    </text>
+    <text x="82" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">
+      Purging the merchant's "60m" claim, the scheduler targets <tspan fill="#38bdf8" font-weight="700">"Food Ready at T0 + 38m"</tspan> and dynamically times courier dispatch to eliminate idle waiting
+    </text>
+  </g>
+</svg>
