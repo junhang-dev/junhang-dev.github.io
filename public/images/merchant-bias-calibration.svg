@@ -1,145 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="100%">
   <defs>
     <style>
       .bg { fill: #f8fafc; }
-      .card-bg { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
-      .card-accent-blue { fill: #ffffff; stroke: #3b82f6; stroke-width: 1.5; rx: 12px; }
-      .card-accent-amber { fill: #ffffff; stroke: #f59e0b; stroke-width: 1.5; rx: 12px; }
-      .card-accent-green { fill: #ffffff; stroke: #10b981; stroke-width: 2; rx: 12px; }
-      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 20px; font-weight: 700; fill: #0f172a; }
-      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 13px; font-weight: 400; fill: #64748b; }
-      .section-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-      .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 14px; font-weight: 700; fill: #1e293b; }
-      .card-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 12px; font-weight: 400; fill: #475569; line-height: 1.5; }
-      .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 11px; font-weight: 600; }
-      .arrow { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 4,4; fill: none; }
-      .arrow-solid { stroke: #3b82f6; stroke-width: 2; fill: none; }
-      .highlight-metric { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif; font-size: 24px; font-weight: 800; }
+      .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 14px; }
+      .card-amber { fill: #ffffff; stroke: #f59e0b; stroke-width: 1.5; rx: 14px; }
+      .card-green { fill: #ffffff; stroke: #10b981; stroke-width: 2; rx: 14px; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 800; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 500; fill: #64748b; }
+      .badge-label { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+      .col-title { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #1e293b; }
+      .col-sub { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #64748b; }
+      .metric-large { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 28px; font-weight: 800; }
+      .card-subtext { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #334155; }
     </style>
-    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <filter id="card-shadow" x="-3%" y="-3%" width="106%" height="106%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#3b82f6" />
     </marker>
-    <marker id="arrowhead-slate" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8" />
-    </marker>
-    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.05" />
-    </filter>
   </defs>
 
-  <!-- Canvas Background -->
-  <rect width="920" height="540" rx="16" class="bg" stroke="#cbd5e1" stroke-width="1" />
+  <!-- Background -->
+  <rect width="960" height="420" rx="18" class="bg" stroke="#cbd5e1" stroke-width="1" />
 
   <!-- Header -->
-  <text x="36" y="44" class="title">사장님 수동 입력 편향 보정 파이프라인 (Merchant Bias Calibration)</text>
-  <text x="36" y="68" class="subtitle">센서 없는 골목길 주방의 주관적 [60분] 입력을 3대 물리적 컨텍스트로 보정하여 실제 조리시간(38분)을 추정하는 흐름</text>
+  <text x="44" y="44" class="title">사장님 수동 입력 편향 보정 (Merchant Bias Calibration)</text>
+  <text x="44" y="68" class="subtitle">센서 없는 주방의 주관적 입력을 3대 물리 컨텍스트로 보정하여 실제 조리시간을 도출하는 구조</text>
 
-  <!-- STAGE 1: RAW HUMAN INPUT -->
-  <g transform="translate(36, 100)">
-    <rect width="220" height="280" class="card-accent-amber" filter="url(#shadow)" />
-    <!-- Header Badge -->
-    <rect x="14" y="14" width="90" height="22" rx="4" fill="#fef3c7" />
-    <text x="22" y="29" class="section-label" fill="#b45309">Noisy Input</text>
+  <!-- COLUMN 1: HUMAN INPUT (x: 44, w: 220, h: 290) -->
+  <g transform="translate(44, 96)">
+    <rect width="220" height="290" class="card-amber" filter="url(#card-shadow)" />
     
-    <text x="14" y="60" class="card-title">① 주방 포스기 수동 입력</text>
-    <text x="14" y="80" class="card-body">골목 식당의 유일한 디지털 프로브</text>
-
-    <!-- POS Button Mock -->
-    <rect x="20" y="100" width="180" height="74" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5" />
-    <text x="110" y="132" text-anchor="middle" class="highlight-metric" fill="#b45309">[60분]</text>
-    <text x="110" y="156" text-anchor="middle" font-size="11" font-weight="600" fill="#d97706">사장님 방어적 과다 입력</text>
-
-    <text x="14" y="200" class="card-body" font-weight="500">
-      • 금요일 피크타임 심리적 압박<br/>
-      • 라이더 독촉 방지용 방어 버퍼<br/>
-      • <tspan fill="#dc2626" font-weight="700">그대로 믿을 시:</tspan> 음식 식음 유발
-    </text>
+    <rect x="18" y="18" width="84" height="22" rx="4" fill="#fef3c7" />
+    <text x="26" y="33" class="badge-label" fill="#b45309">Noisy Input</text>
     
-    <rect x="14" y="248" width="192" height="20" rx="4" fill="#fee2e2" />
-    <text x="110" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">❌ Ground Truth로 취급 불가</text>
+    <text x="18" y="66" class="col-title">주방 포스기 수동 입력</text>
+    <text x="18" y="86" class="col-sub">주관적 방어 입력 신호</text>
+
+    <!-- POS Button Display -->
+    <rect x="20" y="110" width="180" height="80" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5" />
+    <text x="110" y="148" text-anchor="middle" class="metric-large" fill="#b45309">[ 60분 ]</text>
+    <text x="110" y="174" text-anchor="middle" font-size="12" font-weight="600" fill="#d97706">피크타임 방어 버퍼</text>
+
+    <!-- Notice Box -->
+    <rect x="18" y="214" width="184" height="52" rx="6" fill="#fee2e2" />
+    <text x="110" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">❌ Ground Truth 신뢰 불가</text>
+    <text x="110" y="252" text-anchor="middle" font-size="11" font-weight="500" fill="#991b1b">그대로 믿을 시 음식 식음 유발</text>
   </g>
 
-  <!-- Arrow from Stage 1 to Stage 2 -->
-  <path d="M 256 240 L 296 240" class="arrow-solid" marker-end="url(#arrowhead)" />
-  <text x="276" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">피처 주입</text>
+  <!-- Flow Connector 1 -> 2 -->
+  <path d="M 264 240 L 306 240" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" />
 
-  <!-- STAGE 2: 3 CONTEXT DECODERS -->
-  <g transform="translate(306, 100)">
-    <!-- Decoder 1: Store Bias Profile -->
+  <!-- COLUMN 2: 3 CONTEXT DECODERS (x: 316, w: 320, h: 290) -->
+  <g transform="translate(316, 96)">
+    <!-- Decoder 1 -->
     <g transform="translate(0, 0)">
-      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
-      <rect x="12" y="12" width="130" height="18" rx="4" fill="#e0e7ff" />
-      <text x="18" y="25" class="section-label" fill="#4338ca">HISTORICAL BIAS</text>
-      <text x="12" y="48" class="card-title">매장 고유 편향 프로파일</text>
-      <text x="12" y="68" class="card-body">최근 30일 피크타임: 60분 입력 시 평균 38분 출고</text>
-      <rect x="206" y="22" width="62" height="24" rx="4" fill="#dbeafe" />
-      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#1d4ed8">Δ -22분</text>
+      <rect width="320" height="86" class="card" filter="url(#card-shadow)" />
+      <rect x="16" y="14" width="108" height="20" rx="4" fill="#e0e7ff" />
+      <text x="22" y="28" class="badge-label" fill="#4338ca">HISTORICAL BIAS</text>
+      
+      <rect x="238" y="14" width="66" height="22" rx="4" fill="#dbeafe" />
+      <text x="271" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#1d4ed8">Δ -22분</text>
+
+      <text x="16" y="54" class="col-title">매장 고유 편향 프로파일</text>
+      <text x="16" y="72" class="card-subtext">30일 통계: 60분 입력 시 평균 38분 출고</text>
     </g>
 
-    <!-- Decoder 2: Kitchen Backlog -->
-    <g transform="translate(0, 98)">
-      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
-      <rect x="12" y="12" width="130" height="18" rx="4" fill="#f1f5f9" />
-      <text x="18" y="25" class="section-label" fill="#475569">LIVE QUEUE STATE</text>
-      <text x="12" y="48" class="card-title">실시간 주방 조리 적체량</text>
-      <text x="12" y="68" class="card-body">현재 미완료 대기 주문: 3건 (화구 여유 1구)</text>
-      <rect x="206" y="22" width="62" height="24" rx="4" fill="#fef3c7" />
-      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#d97706">+5분 지연</text>
+    <!-- Decoder 2 -->
+    <g transform="translate(0, 102)">
+      <rect width="320" height="86" class="card" filter="url(#card-shadow)" />
+      <rect x="16" y="14" width="96" height="20" rx="4" fill="#fef3c7" />
+      <text x="22" y="28" class="badge-label" fill="#b45309">LIVE QUEUE</text>
+
+      <rect x="226" y="14" width="78" height="22" rx="4" fill="#fef3c7" />
+      <text x="265" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">대기 3건</text>
+
+      <text x="16" y="54" class="col-title">실시간 주방 조리 적체량</text>
+      <text x="16" y="72" class="card-subtext">Kafka 이벤트 스트림: 화구 가동률 75%</text>
     </g>
 
-    <!-- Decoder 3: Item Complexity -->
-    <g transform="translate(0, 196)">
-      <rect width="280" height="84" class="card-bg" filter="url(#shadow)" />
-      <rect x="12" y="12" width="130" height="18" rx="4" fill="#f1f5f9" />
-      <text x="18" y="25" class="section-label" fill="#475569">MENU RECIPE CAPA</text>
-      <text x="12" y="48" class="card-title">주문 메뉴 조리 난이도</text>
-      <text x="12" y="68" class="card-body">후라이드 단품 1마리 (표준 튀김 주기: 15분)</text>
-      <rect x="206" y="22" width="62" height="24" rx="4" fill="#ecfdf5" />
-      <text x="237" y="38" text-anchor="middle" class="badge-text" fill="#047857">표준 부하</text>
+    <!-- Decoder 3 -->
+    <g transform="translate(0, 204)">
+      <rect width="320" height="86" class="card" filter="url(#card-shadow)" />
+      <rect x="16" y="14" width="96" height="20" rx="4" fill="#ecfdf5" />
+      <text x="22" y="28" class="badge-label" fill="#047857">RECIPE CAPA</text>
+
+      <rect x="226" y="14" width="78" height="22" rx="4" fill="#ecfdf5" />
+      <text x="265" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">기본 18분</text>
+
+      <text x="16" y="54" class="col-title">주문 메뉴 조리 난이도</text>
+      <text x="16" y="72" class="card-subtext">단품 치킨 1마리 (표준 튀김 주기 준수)</text>
     </g>
   </g>
 
-  <!-- Arrows from Decoders to Stage 3 -->
-  <path d="M 586 142 L 626 180" class="arrow-solid" marker-end="url(#arrowhead)" />
-  <path d="M 586 240 L 626 240" class="arrow-solid" marker-end="url(#arrowhead)" />
-  <path d="M 586 338 L 626 300" class="arrow-solid" marker-end="url(#arrowhead)" />
+  <!-- Flow Connector 2 -> 3 -->
+  <path d="M 636 139 L 680 180" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" />
+  <path d="M 636 241 L 680 241" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" />
+  <path d="M 636 343 L 680 300" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" />
 
-  <!-- STAGE 3: CALIBRATION ENGINE -->
-  <g transform="translate(636, 100)">
-    <rect width="248" height="280" class="card-accent-green" filter="url(#shadow)" />
-    <!-- Header Badge -->
-    <rect x="14" y="14" width="130" height="22" rx="4" fill="#d1fae5" />
-    <text x="22" y="29" class="section-label" fill="#065f46">Bayesian Core</text>
+  <!-- COLUMN 3: CALIBRATED PREP TIME (x: 690, w: 226, h: 290) -->
+  <g transform="translate(690, 96)">
+    <rect width="226" height="290" class="card-green" filter="url(#card-shadow)" />
 
-    <text x="14" y="60" class="card-title">② 편향 보정 &amp; 조리시간 추정</text>
-    <text x="14" y="78" class="card-body">인간의 왜곡을 걷어낸 실측 기대치</text>
+    <rect x="18" y="18" width="104" height="22" rx="4" fill="#d1fae5" />
+    <text x="26" y="33" class="badge-label" fill="#065f46">Bayesian Core</text>
 
-    <!-- Formula Box -->
-    <rect x="14" y="96" width="220" height="58" rx="6" fill="#f0fdf4" stroke="#a7f3d0" stroke-width="1" />
-    <text x="24" y="118" font-family="monospace" font-size="12" font-weight="700" fill="#065f46">T_prep = T_input + Δ_bias</text>
-    <text x="24" y="138" font-family="monospace" font-size="12" font-weight="700" fill="#047857">       = 60분 - 22분</text>
+    <text x="18" y="66" class="col-title">편향 보정 최종 예측</text>
+    <text x="18" y="86" class="col-sub">방어 버퍼(-22분) 삭감</text>
 
-    <!-- Final Calibrated Result -->
-    <rect x="14" y="166" width="220" height="66" rx="8" fill="#10b981" />
-    <text x="124" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#ecfdf5">알고리즘 최종 판단 조리시간</text>
-    <text x="124" y="222" text-anchor="middle" class="highlight-metric" fill="#ffffff">38분 완료 예정</text>
+    <!-- Formula Display -->
+    <rect x="16" y="106" width="194" height="48" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+    <text x="113" y="126" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#15803d">T = 60분 - 22분</text>
+    <text x="113" y="142" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#16a34a">(사장님 입력 - 편향치)</text>
 
-    <rect x="14" y="244" width="220" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" />
-    <text x="124" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">💡 22분 방어 버퍼 제거 (정시 배차 가능)</text>
-  </g>
+    <!-- Result Banner -->
+    <rect x="16" y="166" width="194" height="66" rx="8" fill="#10b981" />
+    <text x="113" y="190" text-anchor="middle" font-size="11" font-weight="600" fill="#ecfdf5">알고리즘 산출 조리시간</text>
+    <text x="113" y="218" text-anchor="middle" class="metric-large" fill="#ffffff">38분</text>
 
-  <!-- STAGE 4: DOWNSTREAM ACTION BAR -->
-  <g transform="translate(36, 410)">
-    <rect width="848" height="96" rx="10" fill="#1e293b" />
-    
-    <circle cx="48" cy="48" r="18" fill="#3b82f6" />
-    <path d="M 42 48 L 46 52 L 55 43" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    
-    <text x="82" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffffff">
-      다운스트림 연결: 배차 대기 큐(Dispatch Holding Queue)에 목표 시각 발행
-    </text>
-    <text x="82" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">
-      사장님의 "60분"을 무시하고, 알고리즘이 산출한 <tspan fill="#38bdf8" font-weight="700">"주문 후 38분 조리 완료"</tspan> 스케줄에 맞춰 라이더 호출 시점을 자동 계산 (지연 배차 트리거)
-    </text>
+    <!-- Action Trigger -->
+    <rect x="16" y="244" width="194" height="30" rx="6" fill="#1e293b" />
+    <text x="113" y="263" text-anchor="middle" font-size="11" font-weight="700" fill="#38bdf8">⚡ 지연 배차 스케줄러 전송</text>
   </g>
 </svg>

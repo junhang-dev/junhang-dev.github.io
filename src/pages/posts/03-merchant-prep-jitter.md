@@ -12,8 +12,8 @@ date: "2026.11.02"
 ## 도입: "센서 하나 없는 주방, 유일한 프로브는 사장님의 손가락"
 
 <figure>
-  <img src="/images/kitchen-rush.jpg" alt="분주하게 돌아가는 레스토랑 주방과 화구 앞에서 요리하는 셰프의 모습" loading="lazy" />
-  <figcaption>Photo: 불길과 주문이 쏟아지는 피크타임 주방 현장 (출처: <a href="https://unsplash.com/photos/1556910103-1c02745aae4d" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
+  <img src="/images/kitchen-rush.jpg" alt="뜨거운 불길 위에서 요리하는 주방 셰프의 프라이팬" loading="lazy" />
+  <figcaption>Photo: 불길과 주문이 쏟아지는 피크타임 주방 현장 (출처: <a href="https://unsplash.com/photos/black-frying-pan-with-fire-581340387417-e188200eb0f0" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
 </figure>
 
 비 내리는 금요일 저녁 7시, 동네 돈가스 전문점 주방은 전쟁터입니다. 튀김기 기름은 쉴 새 없이 끓어오르고, 포스(POS)기에서는 1분 간격으로 "배민원 주문!", "쿠팡이츠 주문!" 알림음이 요란하게 울려 퍼집니다.
@@ -46,7 +46,7 @@ DoorDash와 우아한형제들의 기술 블로그를 살펴보면, 식당 점�
 ### ③ 레이블 오염(Label Bias)과 자가확증 편향의 파멸 루프
 가장 위험한 것은 머신러닝 모델의 학습 파이프라인입니다. 
 
-만약 모델이 *"사장님이 60분을 눌렀고, 실제로 라이더 배차도 60분에 맞춰졌으니, 이 주문의 조리시간 레이블은 60분이다"*라고 학습(Training)해 버리면 어떻게 될까요?
+만약 모델이 <em>"사장님이 60분을 눌렀고, 실제로 라이더 배차도 60분에 맞춰졌으니, 이 주문의 조리시간 레이블은 60분이다"</em>라고 학습(Training)해 버리면 어떻게 될까요?
 
 인간의 비합리적인 방어 기제가 알고리즘의 정답 데이터로 둔갑하고, 모델은 매장의 실제 조리 속도가 아니라 <strong>'사장님의 왜곡된 입력 습관'</strong>을 학습하는 <strong>자가확증 편향(Self-Fulfilling Prophecy)</strong>에 빠집니다.
 

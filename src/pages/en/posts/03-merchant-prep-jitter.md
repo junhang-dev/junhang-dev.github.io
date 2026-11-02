@@ -12,8 +12,8 @@ date: "2026.11.02"
 ## Introduction: "In a Kitchen Without Sensors, the Sole Digital Probe is the Merchant's Finger"
 
 <figure>
-  <img src="/images/kitchen-rush.jpg" alt="A bustling restaurant kitchen with chefs cooking over flaming woks during dinner rush" loading="lazy" />
-  <figcaption>Photo: Peak dinner rush inside a bustling commercial kitchen (Source: <a href="https://unsplash.com/photos/1556910103-1c02745aae4d" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
+  <img src="/images/kitchen-rush.jpg" alt="A chef flambeing vegetables with flames leaping from a frying pan in a commercial kitchen" loading="lazy" />
+  <figcaption>Photo: Cooking over open flame during peak dinner rush (Source: <a href="https://unsplash.com/photos/black-frying-pan-with-fire-581340387417-e188200eb0f0" target="_blank" rel="noopener">Unsplash</a>)</figcaption>
 </figure>
 
 At 7:00 PM on a rainy Friday, a neighborhood tonkatsu restaurant kitchen transforms into a pressure cooker. Deep fryer oil bubbles relentlessly, order tickets pile up along the counter, and the POS tablet emits shrill notifications every sixty seconds: *"New Order Arrived!"*
