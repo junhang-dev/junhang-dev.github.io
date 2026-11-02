@@ -75,7 +75,7 @@ export const ui = {
     copied: '✓ 링크가 복사되었습니다',
     aboutName: '이준행 (Junhang Lee)',
     aboutBio:
-      '기계공학과 정유·석유화학 플랜트 현장 경험을 바탕으로 공정·설비 문제를 데이터와 AI로 해결합니다. 수율 최적화와 공정 이상탐지 프로젝트를 리드·개발했고, HCR CAT 촉매 온도 장기예측 모델은 모델링과 검증을 거쳐 현업에 적용했습니다. RAG 기반 설비투자 검색 에이전트를 구현하고, RT 필름 판독 자동화와 드론 검사 플랫폼도 개발·개선하고 있습니다. Seeq 플랫폼 운영과 데이터 연계, 대시보드·웹 화면 개발까지 맡아 분석 결과가 실제 업무 흐름에 연결되도록 합니다.',
+      '기계공학과 정유·석유화학 플랜트 현장 경험을 바탕으로 공정·설비 문제를 데이터와 AI로 해결합니다. 수율 최적화와 공정 이상탐지 프로젝트를 리드·개발하고, 데이터 기반 분석을 현업에 적용해 왔습니다. RAG 기반 설비투자 검색 에이전트를 구현하고, RT 필름 판독 자동화와 드론 검사 플랫폼도 개발·개선하고 있습니다. Seeq 플랫폼 운영과 데이터 연계, 대시보드·웹 화면 개발까지 맡아 분석 결과가 실제 업무 흐름에 연결되도록 합니다.',
     siteDescription: '이준행의 기술 블로그 — 디지털 서비스 구조와 산업 현장의 AI 엔지니어링',
   },
   en: {
@@ -88,7 +88,7 @@ export const ui = {
     copied: '✓ Link Copied!',
     aboutName: 'Junhang Lee',
     aboutBio:
-      'With a mechanical engineering background and hands-on experience in refinery and petrochemical operations, I apply data and AI to process and equipment challenges. I have led and developed projects in yield optimization and process anomaly detection, and took the HCR CAT catalyst-temperature forecasting model through modeling, validation, and field implementation. I also built a RAG-based agent for equipment-investment search and continue to develop RT film inspection automation and a drone-inspection platform. Alongside project work, I manage the Seeq analytics platform, integrate data, and build dashboards and web interfaces that connect analysis to operational workflows.',
+      'With a mechanical engineering background and hands-on experience in refinery and petrochemical operations, I apply data and AI to process and equipment challenges. I have led projects in process yield optimization and process anomaly detection, bringing data-driven analysis into plant operations. I also built a RAG-based agent for equipment-investment search and continue to develop RT film inspection automation and a drone-inspection platform. Alongside project work, I manage the Seeq analytics platform, integrate data, and build dashboards and web interfaces that connect analysis to operational workflows.',
     siteDescription: "Junhang Lee's engineering blog — digital service architectures and production AI in industrial plants",
   },
 } as const;
