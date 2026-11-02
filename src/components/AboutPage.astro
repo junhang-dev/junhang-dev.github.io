@@ -8,6 +8,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 const alt = lang === 'en' ? '/about/' : '/en/about/';
+const linkedinLabel = lang === 'en' ? 'View my LinkedIn profile' : 'LinkedIn 프로필 보기';
+const linkedinUrl = 'https://www.linkedin.com/in/junhang-lee-884b10348/';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -15,7 +17,7 @@ const jsonLd = {
   name: 'Junhang Lee',
   alternateName: '이준행',
   url: Astro.site!.href,
-  sameAs: ['https://github.com/junhang-dev'],
+  sameAs: ['https://github.com/junhang-dev', linkedinUrl],
   jobTitle: lang === 'ko' ? '산업 AI 엔지니어' : 'Industrial AI Engineer',
   knowsAbout: ['Industrial AI', 'Physical AI', 'MLOps', 'Refining and Petrochemical Plants'],
 };
@@ -40,10 +42,22 @@ const jsonLd = {
       color: var(--grey700);
       margin: 0 0 16px;
     }
+    .profile-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0a66c2;
+      font-size: 15px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .profile-link:hover {
+      text-decoration: underline;
+    }
   </style>
 
   <div class="wrap">
     <h1>{t.aboutName}</h1>
     <p>{t.aboutBio}</p>
+    <a class="profile-link" href={linkedinUrl} target="_blank" rel="me noopener noreferrer">{linkedinLabel} ↗</a>
   </div>
 </BaseLayout>
