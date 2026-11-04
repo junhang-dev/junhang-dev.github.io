@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 510" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="510" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="48" y="54" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">레거시 모놀리스와 MSA를 넘어, 모듈형 모놀리스로</text>
+  <text x="48" y="80" font-size="14" fill="#6b7684">코드는 인터페이스로 엄격히 분리해 관리하고, 배포는 단일 서버로 묶되 무거운 작업만 선택적으로 분리합니다</text>
+
+  <!-- ==================== COLUMN 1: LEGACY MONOLITH ==================== -->
+  <rect x="44" y="106" width="248" height="364" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="64" y="126" width="96" height="24" rx="12" fill="#f3f4f6"/>
+  <text x="112" y="142" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">과거의 방식</text>
+  <text x="64" y="176" font-size="18" font-weight="800" fill="#191f28">1. 레거시 모놀리스</text>
+  <text x="64" y="198" font-size="13" fill="#6b7684">칸막이 없이 뒤엉킨 단일 서버</text>
+
+  <!-- Visual Area: Big Ball of Mud -->
+  <rect x="64" y="216" width="208" height="170" rx="12" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="168" y="238" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">단일 서버 (경계 없음)</text>
+
+  <!-- Tangled Lines -->
+  <line x1="120" y1="280" x2="216" y2="336" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="216" y1="280" x2="120" y2="336" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="120" y1="280" x2="216" y2="280" stroke="#ef4444" stroke-width="1.5"/>
+  <line x1="120" y1="280" x2="120" y2="336" stroke="#ef4444" stroke-width="1.5"/>
+
+  <!-- Overlapping / Tangled Nodes -->
+  <rect x="78" y="256" width="84" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="120" y="280" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">주문·결제</text>
+
+  <rect x="174" y="256" width="84" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="216" y="280" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">회원·인증</text>
+
+  <rect x="78" y="316" width="84" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="120" y="340" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">상품·재고</text>
+
+  <rect x="174" y="316" width="84" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="216" y="340" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">영상 처리</text>
+
+  <text x="168" y="374" font-size="11.5" font-weight="600" fill="#dc2626" text-anchor="middle">전역 변수·DB 테이블 직접 참조</text>
+
+  <!-- Takeaway -->
+  <line x1="64" y1="402" x2="272" y2="402" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="64" y="426" font-size="13" font-weight="700" fill="#333d4b">실행 속도는 빠르지만</text>
+  <text x="64" y="446" font-size="12.5" fill="#dc2626">코드 한 줄 고치면 전체가 흔들림</text>
+
+  <!-- ==================== COLUMN 2: OVER-SPLIT MSA ==================== -->
+  <rect x="308" y="106" width="248" height="364" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="328" y="126" width="108" height="24" rx="12" fill="#fee2e2"/>
+  <text x="382" y="142" font-size="11.5" font-weight="700" fill="#dc2626" text-anchor="middle">과도한 분리</text>
+  <text x="328" y="176" font-size="18" font-weight="800" fill="#191f28">2. 세분화된 MSA</text>
+  <text x="328" y="198" font-size="13" fill="#6b7684">모든 기능을 별도 서버로 쪼갠 상태</text>
+
+  <!-- Visual Area: Over-split Containers -->
+  <rect x="328" y="216" width="208" height="170" rx="12" fill="#fff5f5" stroke="#fca5a5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="432" y="238" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">클라우드 네트워크 구간</text>
+
+  <!-- Network Web Lines -->
+  <line x1="384" y1="275" x2="480" y2="275" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="384" y1="335" x2="480" y2="335" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="384" y1="275" x2="384" y2="335" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="480" y1="275" x2="480" y2="335" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="384" y1="275" x2="480" y2="335" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+  <!-- Isolated Microservice Containers -->
+  <rect x="342" y="256" width="84" height="38" rx="6" fill="#ffffff" stroke="#f87171" stroke-width="1.3"/>
+  <text x="384" y="280" font-size="12" font-weight="700" fill="#b91c1c" text-anchor="middle">주문 서버</text>
+
+  <rect x="438" y="256" width="84" height="38" rx="6" fill="#ffffff" stroke="#f87171" stroke-width="1.3"/>
+  <text x="480" y="280" font-size="12" font-weight="700" fill="#b91c1c" text-anchor="middle">회원 서버</text>
+
+  <rect x="342" y="316" width="84" height="38" rx="6" fill="#ffffff" stroke="#f87171" stroke-width="1.3"/>
+  <text x="384" y="340" font-size="12" font-weight="700" fill="#b91c1c" text-anchor="middle">상품 서버</text>
+
+  <rect x="438" y="316" width="84" height="38" rx="6" fill="#ffffff" stroke="#f87171" stroke-width="1.3"/>
+  <text x="480" y="340" font-size="12" font-weight="700" fill="#b91c1c" text-anchor="middle">미디어 서버</text>
+
+  <text x="432" y="374" font-size="11.5" font-weight="600" fill="#dc2626" text-anchor="middle">사소한 대화에도 네트워크 비용 발생</text>
+
+  <!-- Takeaway -->
+  <line x1="328" y1="402" x2="536" y2="402" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="328" y="426" font-size="13" font-weight="700" fill="#333d4b">경계는 나뉘었지만</text>
+  <text x="328" y="446" font-size="12.5" fill="#dc2626">통신 지연·클라우드 비용 폭증</text>
+
+  <!-- ==================== COLUMN 3: MODULAR MONOLITH + SELECTIVE EXTRACTION ==================== -->
+  <rect x="572" y="106" width="304" height="364" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
+  <rect x="592" y="126" width="144" height="24" rx="12" fill="#1b64da"/>
+  <text x="664" y="142" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">빅테크의 현실적 해법</text>
+  <text x="592" y="176" font-size="18" font-weight="800" fill="#191f28">3. 모듈형 모놀리스 + 선택 분리</text>
+  <text x="592" y="198" font-size="13" fill="#4e5968">기본은 한 서버에 묶고, 특수 작업만 분리</text>
+
+  <!-- Main Modular Monolith Box -->
+  <rect x="592" y="216" width="264" height="106" rx="12" fill="#ffffff" stroke="#3182f6" stroke-width="1.5"/>
+  <text x="724" y="238" font-size="12" font-weight="800" fill="#1b64da" text-anchor="middle">단일 서버 (엄격한 인터페이스 칸막이)</text>
+
+  <!-- Clean Modules inside Monolith -->
+  <rect x="606" y="250" width="72" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="642" y="276" font-size="12.5" font-weight="700" fill="#1e40af" text-anchor="middle">주문 모듈</text>
+
+  <rect x="688" y="250" width="72" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="724" y="276" font-size="12.5" font-weight="700" fill="#1e40af" text-anchor="middle">회원 모듈</text>
+
+  <rect x="770" y="250" width="72" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="806" y="276" font-size="12.5" font-weight="700" fill="#1e40af" text-anchor="middle">상품 모듈</text>
+
+  <text x="724" y="312" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">⚡ 메모리 직접 호출 (네트워크 비용 0)</text>
+
+  <!-- Selective Extraction Connector -->
+  <line x1="724" y1="322" x2="724" y2="342" stroke="#3182f6" stroke-width="1.6" stroke-dasharray="3 2"/>
+  <text x="786" y="335" font-size="11" font-weight="600" fill="#1b64da" text-anchor="middle">필요시 분리</text>
+
+  <!-- Extracted Heavy Worker Box -->
+  <rect x="592" y="342" width="264" height="44" rx="10" fill="#ffffff" stroke="#60a5fa" stroke-width="1.4" stroke-dasharray="4 2"/>
+  <text x="724" y="362" font-size="12.5" font-weight="800" fill="#1e3a8a" text-anchor="middle">별도 분리 컨테이너 (선택적 확장)</text>
+  <text x="724" y="378" font-size="11.5" fill="#6b7684" text-anchor="middle">고부하 영상 인코딩 · GPU 추론 워커만 독립</text>
+
+  <!-- Takeaway -->
+  <line x1="592" y1="402" x2="856" y2="402" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="592" y="426" font-size="13" font-weight="800" fill="#1b64da">빠른 성능 + 깔끔한 코드 구조</text>
+  <text x="592" y="446" font-size="12.5" font-weight="600" fill="#333d4b">네트워크 낭비 없이 필요한 곳만 유연하게 확장</text>
+</svg>

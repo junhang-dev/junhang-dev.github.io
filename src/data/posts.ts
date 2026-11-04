@@ -2,6 +2,21 @@
 // src/pages/posts/<slug>.md (한국어)와 src/pages/en/posts/<slug>.md (영어)를 만듭니다.
 export const posts = [
   {
+    slug: '04-beyond-msa-modular-monolith',
+    category: 'Architecture',
+    date: '2026.11.04',
+    ko: {
+      title: "아마존과 구글은 왜 다시 '모놀리스'를 이야기할까?",
+      summary:
+        '왜 우리는 MSA로 쪼갰고, 왜 다시 합치고 있는가? (Prime Video 사례와 내 플랫폼 설계의 고민)',
+    },
+    en: {
+      title: 'Why Are Amazon and Google Talking About Monoliths Again?',
+      summary:
+        'Why We Split into Microservices, Why We Are Merging Back, and Lessons for My Own Platform',
+    },
+  },
+  {
     slug: '03-merchant-prep-jitter',
     category: 'Architecture',
     date: '2026.11.02',
