@@ -6,14 +6,14 @@ export const posts = [
     category: 'Industrial AI',
     date: '2026.11.11',
     ko: {
-      title: "테슬라와 BMW의 로봇은 왜 정유·석유화학 공장에 단 1미터도 들어올 수 없을까?",
+      title: "조립 공장의 휴머노이드와 플랜트 로봇은 왜 전혀 다른 길을 갈까?",
       summary:
-        '시연 영상 너머, 조립 제조와 연속공정 플랜트의 물리적 현실이 만든 세 가지 장벽 (방폭, 밸브 토크, Takt Time)',
+        '테슬라·BMW부터 중국 니오·유비텍까지 — 제조 현장 실증과 정유·석유화학 플랜트의 공학적 제약 비교',
     },
     en: {
-      title: 'Why Can Tesla and BMW Robots Never Enter Petrochemical Plants?',
+      title: 'Why Do Humanoids in Assembly Plants and Robots in Process Facilities Take Completely Different Paths?',
       summary:
-        'Beyond demo videos — the three physical barriers of discrete manufacturing vs continuous process plants',
+        'From Tesla & BMW to NIO & UBTECH — Field trials in manufacturing vs. engineering constraints in petrochemical plants',
     },
   },
   {
