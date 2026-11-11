@@ -99,7 +99,7 @@ Despite these constraints, practical deployments that discard generalized humano
 During plant turnaround (TA) maintenance, non-destructive ultrasonic testing (UT) of massive crude storage tanks is mandatory. Historically, erecting and dismantling heavy scaffolding (staging) inside a single tank required **weeks of labor and hundreds of thousands of dollars in contractor costs**.
 
 <figure>
-  <img src="https://www.flyability.com/hubfs/Elios%203%20-%20Asset%20Inspection.jpg" alt="Flyability Elios 3 caged drone for confined space inspection" loading="lazy" />
+  <img src="/images/elios-3-tank-inspection.png" alt="Flyability Elios 3 caged drone for confined space inspection" loading="lazy" />
   <figcaption>Figure 3. The Elios 3 caged drone with LiDAR SLAM and ultrasonic thickness measurement operating in dark confined storage tanks (Source: <a href="https://www.flyability.com" target="_blank" rel="noopener">Flyability</a>)</figcaption>
 </figure>
 
