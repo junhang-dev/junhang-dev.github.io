@@ -34,15 +34,15 @@ Why can a robotic system proven in automotive assembly not be deployed directly 
   <figcaption>Figure 1. Fundamental comparison of environmental constraints between discrete manufacturing and continuous process plants</figcaption>
 </figure>
 
-The most intuitive analogy is comparing **"Lego brick assembly"** with **"managing a massive industrial commercial kitchen"**:
+The most intuitive analogy is comparing "**Lego brick assembly**" with "**managing a massive industrial commercial kitchen**":
 
 ### ① Discrete Manufacturing (Automotive, Electronics, Battery Cells)
-- Comparable to **"assembling standardized Lego pieces on a clean indoor workbench."**
+- Comparable to "**assembling standardized Lego pieces on a clean indoor workbench.**"
 - Dimensions, geometries, and materials of every workpiece are strictly standardized. Plant floors are level, smooth epoxy concrete. Climate control maintains steady indoor temperature and humidity around the clock.
 - Safety cages and light curtains easily isolate machinery. If a robot drops a part, the component is scrapped or the line pauses briefly. The blast radius of failure is strictly localized.
 
 ### ② Continuous Process Plants (Refinery, Petrochemical, Gas Terminals)
-- In contrast, a process plant is like **"balancing the pressures of volatile liquids and superheated steam across hundreds of kilometers of steel piping."**
+- In contrast, a process plant is like "**balancing the pressures of volatile liquids and superheated steam across hundreds of kilometers of steel piping.**"
 - Hydrocarbon feedstocks continuously react and crack inside distillation towers and reactors. Facilities are 100% exposed to harsh outdoor elements: sub-zero blizzards, typhoons, and 40°C heatwaves.
 - Surfaces are not smooth concrete, but open **steel grating floors**, steep 45-degree steel stairways, and pipe racks suspended 10 meters in the air.
 - Most critically, **a single micro-spark can trigger a catastrophic plant-wide explosion and irreversible loss of human life.**
@@ -59,12 +59,12 @@ These environmental divergences impose three massive engineering barriers on Phy
 </figure>
 
 ### Barrier 1: The 0.2 mJ Explosion-Proof Wall (ATEX Zone 1)
-Core process areas in petrochemical plants are designated as **Zone 1 (hazardous areas where explosive gas atmospheres are likely to occur during normal operation)**. Here, an electrical spark with energy as low as **0.2 mJ (millijoules)**—comparable to mild static electricity from synthetic fabric—is sufficient to ignite flammable hydrocarbon vapors.
+Core process areas in petrochemical plants are designated as **Zone 1** (hazardous areas where explosive gas atmospheres are likely to occur during normal operation). Here, an electrical spark with energy as low as **0.2 mJ** (millijoules)—comparable to mild static electricity from synthetic fabric—is sufficient to ignite flammable hydrocarbon vapors.
 
 Standard non-certified robots (including basic quadrupeds and humanoids) cannot legally enter Zone 1 facilities due to internal battery arcing, brush friction in motors, and processor heat dissipation. Requiring human safety escort with handheld gas monitors for temporary "hot work permits" completely defeats the purpose of autonomous inspection.
 
 This explains why **ANYmal X**, developed by Swiss robotics pioneer ANYbotics (spun off from ETH Zurich), captured global attention across energy leaders like Shell, BASF, and Petronas:
-- Its main computer and battery bays are sealed with **inert nitrogen positive-pressure enclosures (Ex p)**, preventing flammable gas ingress.
+- Its main computer and battery bays are sealed with **inert nitrogen positive-pressure enclosures** (Ex p), preventing flammable gas ingress.
 - Joint actuators are housed in explosion-proof flameproof alloy casings (Ex d), and footpads use conductive carbon-nanotube composites to ground static charges immediately.
 - It became the **world's first quadruped robot certified for ATEX and IECEx Zone 1 hazardous environments.**
 
@@ -78,7 +78,7 @@ Most humanoid and robotic arms max out at 20 to 30 Nm of continuous torque. Atte
 Above all lies a simple economic calculation:
 > *"Rather than purchasing a volatile $250,000 robotic arm to turn manual valves, bolting a $2,500 pneumatic actuator (AOV) or electric motor actuator (MOV) directly to the valve bonnet and controlling it from the DCS is 100 times safer, faster, and cheaper."*
 
-Non-contact **Observation (monitoring and visual telemetry, TRL 8–9)** has achieved full commercial maturity, whereas physical contact **Manipulation (turning valves and repairs, TRL 3–5)** remains strictly within early pilot feasibility.
+Non-contact **Observation** (monitoring and visual telemetry, TRL 8–9) has achieved full commercial maturity, whereas physical contact **Manipulation** (turning valves and repairs, TRL 3–5) remains strictly within early pilot feasibility.
 
 ### Barrier 3: The 37-Second Takt Time Reality Check at BMW
 Even in clean automotive manufacturing, marketing hype meets strict production metrics.
