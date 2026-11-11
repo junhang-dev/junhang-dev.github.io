@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="480" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="48" y="52" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">관찰(Observation)에서 조작(Manipulation)으로 가는 물리적 장벽</text>
+  <text x="48" y="78" font-size="14" fill="#6b7684">왜 '보는 로봇'은 현장에 들어왔지만, '밸브를 잠그는 로봇'은 아직 연구실에 머물러 있을까?</text>
+
+  <!-- Left: Observation (Commercialized) -->
+  <rect x="48" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="118" width="94" height="24" rx="6" fill="#e6fcf5"/>
+  <text x="115" y="135" font-size="12" font-weight="800" fill="#0ca678" text-anchor="middle">상용화 (TRL 8~9)</text>
+  <text x="68" y="172" font-size="19" font-weight="800" fill="#191f28">Observation</text>
+  <text x="68" y="196" font-size="13" font-weight="600" fill="#0ca678">비접촉 순찰 · 설비 진단</text>
+
+  <line x1="68" y1="214" x2="288" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <text x="68" y="240" font-size="13.5" font-weight="700" fill="#333d4b">대표 기체:</text>
+  <text x="68" y="262" font-size="13" fill="#4e5968">• Spot (LNG 터미널 등)</text>
+  <text x="68" y="284" font-size="13" fill="#4e5968">• ANYmal X (Zone 1 방폭)</text>
+  <text x="68" y="306" font-size="13" fill="#4e5968">• Elios 3 (탱크 내부 드론)</text>
+
+  <text x="68" y="340" font-size="13.5" font-weight="700" fill="#333d4b">성공 요인:</text>
+  <text x="68" y="362" font-size="13" fill="#4e5968">• 비접촉 계측 (열화상/음향)</text>
+  <text x="68" y="384" font-size="13" fill="#4e5968">• 측정 실패 시 재촬영 가능</text>
+  <text x="68" y="406" font-size="13" fill="#4e5968">• 설비와 물리적 힘 교환 없음</text>
+
+  <!-- Middle: The 3 Physical Barriers -->
+  <rect x="328" y="96" width="264" height="344" rx="16" fill="#fff5f5" stroke="#ff8787" stroke-width="1.4"/>
+  <rect x="348" y="118" width="94" height="24" rx="6" fill="#ffe3e3"/>
+  <text x="395" y="135" font-size="12" font-weight="800" fill="#e03131" text-anchor="middle">3대 물리적 장벽</text>
+  <text x="348" y="172" font-size="19" font-weight="800" fill="#c92a2a">Physical Barriers</text>
+  <text x="348" y="196" font-size="13" font-weight="600" fill="#e03131">엔지니어링의 거대한 심연</text>
+
+  <line x1="348" y1="214" x2="572" y2="214" stroke="#ffc9c9" stroke-width="1"/>
+
+  <!-- Barrier 1 -->
+  <rect x="348" y="228" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="248" font-size="13" font-weight="700" fill="#c92a2a">1. 방폭 에너지 한계 (0.2mJ)</text>
+  <text x="360" y="270" font-size="12" fill="#495057">고토크 모터 과부하 시 스파크 위험</text>
+
+  <!-- Barrier 2 -->
+  <rect x="348" y="296" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="316" font-size="13" font-weight="700" fill="#c92a2a">2. 고착 밸브 토크 (100~200Nm)</text>
+  <text x="360" y="338" font-size="12" fill="#495057">로봇 팔 한계(30Nm) ➔ 감속기 파손</text>
+
+  <!-- Barrier 3 -->
+  <rect x="348" y="364" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="384" font-size="13" font-weight="700" fill="#c92a2a">3. 경제성 장벽 (AOV/MOV 대비)</text>
+  <text x="360" y="406" font-size="12" fill="#495057">3억 로봇 vs 300만 전동 액추에이터</text>
+
+  <!-- Right: Manipulation (Lab/PoC) -->
+  <rect x="612" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="632" y="118" width="104" height="24" rx="6" fill="#fff9db"/>
+  <text x="684" y="135" font-size="12" font-weight="800" fill="#f59f00" text-anchor="middle">초기 PoC (TRL 3~5)</text>
+  <text x="632" y="172" font-size="19" font-weight="800" fill="#191f28">Manipulation</text>
+  <text x="632" y="196" font-size="13" font-weight="600" fill="#e67700">물리적 접촉 · 밸브 조작</text>
+
+  <line x1="632" y1="214" x2="852" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <text x="632" y="240" font-size="13.5" font-weight="700" fill="#333d4b">현 주소:</text>
+  <text x="632" y="262" font-size="13" fill="#4e5968">• 깨끗한 실내 연구실 데모</text>
+  <text x="632" y="284" font-size="13" fill="#4e5968">• 가벼운 문 손잡이 열기 수준</text>
+  <text x="632" y="306" font-size="13" fill="#4e5968">• 사전 티칭된 레버 조작 PoC</text>
+
+  <text x="632" y="340" font-size="13.5" font-weight="700" fill="#333d4b">해결 과제:</text>
+  <text x="632" y="362" font-size="13" fill="#e03131">• 녹슨 밸브 비틀 때의 스파크</text>
+  <text x="632" y="384" font-size="13" fill="#e03131">• 오조작 시 대형 누출 리스크</text>
+  <text x="632" y="406" font-size="13" fill="#e03131">• 방폭 인증된 로봇 손(Hand) 전무</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="480" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="48" y="52" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">조립 제조(Discrete) vs 연속공정 플랜트(Process) 환경 비교</text>
+  <text x="48" y="78" font-size="14" fill="#6b7684">로봇이 맞닥뜨리는 물리적 현실과 제약 조건의 근본적인 차이</text>
+
+  <!-- Left Card: Discrete Manufacturing -->
+  <rect x="48" y="96" width="396" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="72" y="118" width="84" height="24" rx="6" fill="#f2f4f6"/>
+  <text x="114" y="135" font-size="12.5" font-weight="700" fill="#4e5968" text-anchor="middle">이산 조립 제조</text>
+  <text x="72" y="172" font-size="18" font-weight="800" fill="#191f28">규격화된 레고 조립 (Discrete)</text>
+  <text x="72" y="196" font-size="13" fill="#6b7684">자동차 차체 조립, 전자 기기, 배터리 패키징 라인</text>
+
+  <line x1="72" y1="214" x2="420" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <!-- Item 1 -->
+  <circle cx="82" cy="238" r="4" fill="#3182f6"/>
+  <text x="96" y="242" font-size="13.5" font-weight="700" fill="#333d4b">공간 환경:</text>
+  <text x="168" y="242" font-size="13.5" fill="#4e5968">실내 공조, 수평 에폭시 바닥, 안전펜스 격리</text>
+
+  <!-- Item 2 -->
+  <circle cx="82" cy="272" r="4" fill="#3182f6"/>
+  <text x="96" y="276" font-size="13.5" font-weight="700" fill="#333d4b">다루는 대상:</text>
+  <text x="180" y="276" font-size="13.5" fill="#4e5968">정형화된 고체 규격 부품 (볼트, 시트 메탈)</text>
+
+  <!-- Item 3 -->
+  <circle cx="82" cy="306" r="4" fill="#3182f6"/>
+  <text x="96" y="310" font-size="13.5" font-weight="700" fill="#333d4b">방폭 규제:</text>
+  <text x="168" y="310" font-size="13.5" fill="#4e5968">비방폭 구역 (일반 서보모터·배터리 자유 활용)</text>
+
+  <!-- Item 4 -->
+  <circle cx="82" cy="340" r="4" fill="#3182f6"/>
+  <text x="96" y="344" font-size="13.5" font-weight="700" fill="#333d4b">실패 비용:</text>
+  <text x="168" y="344" font-size="13.5" fill="#4e5968">부품 불량 폐기 또는 라인 일시 정지 (국소 피해)</text>
+
+  <!-- Item 5 -->
+  <circle cx="82" cy="374" r="4" fill="#3182f6"/>
+  <text x="96" y="378" font-size="13.5" font-weight="700" fill="#333d4b">핵심 목표:</text>
+  <text x="168" y="378" font-size="13.5" fill="#4e5968">초(Second) 단위 사이클 타임(Takt Time) 단축</text>
+
+  <!-- Item 6 -->
+  <rect x="72" y="398" width="348" height="28" rx="6" fill="#f8f9fa"/>
+  <text x="82" y="417" font-size="12.5" font-weight="600" fill="#4e5968">대표 로봇: 고정형 다관절 로봇, 바퀴형 AMR, Figure 02</text>
+
+  <!-- Right Card: Process Plant (Highlight) -->
+  <rect x="476" y="96" width="396" height="344" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.6"/>
+  <rect x="500" y="118" width="96" height="24" rx="6" fill="#3182f6"/>
+  <text x="548" y="135" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">연속공정 플랜트</text>
+  <text x="500" y="172" font-size="18" font-weight="800" fill="#1b64da">거대한 혈관과 압력 (Process)</text>
+  <text x="500" y="196" font-size="13" fill="#4e5968">정유·석유화학 플랜트, LNG 터미널, 고압 가스 설비</text>
+
+  <line x1="500" y1="214" x2="848" y2="214" stroke="#bfd7ff" stroke-width="1"/>
+
+  <!-- Item 1 -->
+  <circle cx="510" cy="238" r="4" fill="#1b64da"/>
+  <text x="524" y="242" font-size="13.5" font-weight="700" fill="#191f28">공간 환경:</text>
+  <text x="596" y="242" font-size="13.5" fill="#333d4b">야외 노출, 철골 그레이팅, 45° 계단, 파이프랙</text>
+
+  <!-- Item 2 -->
+  <circle cx="510" cy="272" r="4" fill="#1b64da"/>
+  <text x="524" y="276" font-size="13.5" font-weight="700" fill="#191f28">다루는 대상:</text>
+  <text x="608" y="276" font-size="13.5" fill="#333d4b">보이지 않는 고온·고압 액체/기체 (화학 반응)</text>
+
+  <!-- Item 3 -->
+  <circle cx="510" cy="306" r="4" fill="#1b64da"/>
+  <text x="524" y="310" font-size="13.5" font-weight="700" fill="#191f28">방폭 규제:</text>
+  <text x="596" y="310" font-size="13.5" font-weight="700" fill="#e11d48">Zone 1·2 엄격 적용 (0.2mJ 스파크도 점화원)</text>
+
+  <!-- Item 4 -->
+  <circle cx="510" cy="340" r="4" fill="#1b64da"/>
+  <text x="524" y="344" font-size="13.5" font-weight="700" fill="#191f28">실패 비용:</text>
+  <text x="596" y="344" font-size="13.5" fill="#333d4b">화재·폭발, 인명 사고, 수백억 공정 셧다운</text>
+
+  <!-- Item 5 -->
+  <circle cx="510" cy="374" r="4" fill="#1b64da"/>
+  <text x="524" y="378" font-size="13.5" font-weight="700" fill="#191f28">핵심 목표:</text>
+  <text x="596" y="378" font-size="13.5" fill="#333d4b">인간 진입 제한 구역 무인 순찰 및 설비 이상 조기 감지</text>
+
+  <!-- Item 6 -->
+  <rect x="500" y="398" width="348" height="28" rx="6" fill="#dbeafe"/>
+  <text x="510" y="417" font-size="12.5" font-weight="700" fill="#1b64da">대표 로봇: 방폭 4족보행 로봇(ANYmal X), 밀폐 드론(Elios 3)</text>
+</svg>

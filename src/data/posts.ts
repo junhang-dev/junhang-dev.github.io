@@ -2,6 +2,21 @@
 // src/pages/posts/<slug>.md (한국어)와 src/pages/en/posts/<slug>.md (영어)를 만듭니다.
 export const posts = [
   {
+    slug: '05-physical-ai-manufacturing-vs-plants',
+    category: 'Industrial AI',
+    date: '2026.11.11',
+    ko: {
+      title: "테슬라와 BMW의 로봇은 왜 정유·석유화학 공장에 단 1미터도 들어올 수 없을까?",
+      summary:
+        '시연 영상 너머, 조립 제조와 연속공정 플랜트의 물리적 현실이 만든 세 가지 장벽 (방폭, 밸브 토크, Takt Time)',
+    },
+    en: {
+      title: 'Why Can Tesla and BMW Robots Never Enter Petrochemical Plants?',
+      summary:
+        'Beyond demo videos — the three physical barriers of discrete manufacturing vs continuous process plants',
+    },
+  },
+  {
     slug: '04-beyond-msa-modular-monolith',
     category: 'Architecture',
     date: '2026.11.04',
