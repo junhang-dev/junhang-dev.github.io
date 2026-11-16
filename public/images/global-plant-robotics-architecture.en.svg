@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 556" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow-up-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182f6"/>
+    </marker>
+    <marker id="arrow-up-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6b7684"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Card Background -->
+  <rect width="920" height="556" rx="22" fill="#f2f4f6"/>
+
+  <!-- Header -->
+  <text x="48" y="46" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">Global Reference Architecture: 4-Layer Plant Physical AI Stack</text>
+  <text x="48" y="70" font-size="13.5" fill="#6b7684">Decoupling hardware ingestion (Korial pattern) from contextual DataOps (Cognite pattern)</text>
+
+  <!-- Layer 4 (Top): Applications & Operations -->
+  <rect x="48" y="92" width="824" height="90" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="108" width="116" height="22" rx="6" fill="#f2f4f6"/>
+  <text x="126" y="123" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">LAYER 4 · CONSUME</text>
+  <text x="196" y="124" font-size="15.5" font-weight="800" fill="#191f28">Remote Inspection, Agentic AI &amp; EAM Integration</text>
+  <rect x="668" y="106" width="184" height="24" rx="12" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="760" y="122" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">ADNOC · Equinor InRobot</text>
+  <text x="68" y="150" font-size="12.5" fill="#4e5968">• Process &amp; reliability engineers inspect AI anomaly reports in 3D twins or query via natural language (ENERGYai)</text>
+  <text x="68" y="170" font-size="12.5" fill="#4e5968">• Triggers maintenance work orders inside enterprise EAM (SAP PM) and feeds back optimal next patrol paths</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="460" y1="204" x2="460" y2="186" stroke="#3182f6" stroke-width="2" marker-end="url(#arrow-up-blue)"/>
+  <text x="472" y="198" font-size="11" font-weight="700" fill="#1b64da">REST API / Lightweight JSON + Snapshot URL</text>
+
+  <!-- Layer 3 (Middle-Upper - HIGHLIGHT): DataOps & Contextualization -->
+  <rect x="48" y="208" width="824" height="98" rx="14" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
+  <rect x="68" y="224" width="128" height="22" rx="6" fill="#3182f6"/>
+  <text x="132" y="239" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">LAYER 3 · CONTEXT</text>
+  <text x="208" y="240" font-size="15.5" font-weight="800" fill="#1b64da">Industrial DataOps &amp; Knowledge Graph ('Asset Basket')</text>
+  <rect x="668" y="222" width="184" height="24" rx="12" fill="#dbeafe"/>
+  <text x="760" y="238" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">Equinor · Aker BP × Cognite</text>
+  <text x="68" y="267" font-size="12.5" font-weight="600" fill="#191f28">• Auto-binds raw robot media (RGB, IR, acoustic) ↔ Asset Tags, Smart P&amp;IDs, 3D Twins &amp; Historian time-series</text>
+  <text x="68" y="289" font-size="12.5" fill="#333d4b">• Enriches telemetry with fluid specs, metallurgy, asset age &amp; repair logs to deliver true <tspan font-weight="700" fill="#1b64da">AI Ready Data</tspan></text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="460" y1="328" x2="460" y2="310" stroke="#6b7684" stroke-width="2" marker-end="url(#arrow-up-gray)"/>
+  <text x="472" y="322" font-size="11" font-weight="600" fill="#4e5968">Normalized Media &amp; Telemetry Streams</text>
+
+  <!-- Layer 2 (Middle-Lower): Hardware-Agnostic Middleware -->
+  <rect x="48" y="332" width="824" height="90" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="348" width="128" height="22" rx="6" fill="#e8f3ff"/>
+  <text x="132" y="363" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">LAYER 2 · INGESTION</text>
+  <text x="208" y="364" font-size="15.5" font-weight="800" fill="#191f28">Hardware-Agnostic Fleet Control &amp; Normalization Middleware</text>
+  <rect x="676" y="346" width="176" height="24" rx="12" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="764" y="362" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">Shell Rheinland × Korial</text>
+  <text x="68" y="390" font-size="12.5" fill="#4e5968">• Manages dock-based batch sync across RF dead zones and air-gapped OT security boundaries</text>
+  <text x="68" y="410" font-size="12.5" fill="#4e5968">• Abstracts multi-vendor robot UIs &amp; proprietary payloads into one standard schema, <tspan font-weight="700" fill="#333d4b">preventing vendor lock-in</tspan></text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="460" y1="444" x2="460" y2="426" stroke="#6b7684" stroke-width="2" marker-end="url(#arrow-up-gray)"/>
+  <text x="472" y="438" font-size="11" font-weight="600" fill="#4e5968">Dock Sync</text>
+
+  <!-- Layer 1 (Bottom): Field Edge Hardware -->
+  <rect x="48" y="448" width="824" height="86" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="464" width="110" height="22" rx="6" fill="#f2f4f6"/>
+  <text x="123" y="479" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">LAYER 1 · EDGE</text>
+  <text x="190" y="480" font-size="15.5" font-weight="800" fill="#191f28">Mixed Field Fleet by Zone &amp; Task (Swappable Edge Collectors)</text>
+
+  <rect x="68" y="494" width="256" height="28" rx="6" fill="#fff5f5" stroke="#ffc9c9"/>
+  <text x="196" y="512" font-size="11.5" font-weight="700" fill="#c92a2a" text-anchor="middle">Zone 1 Ex: ExR-2 · ANYmal X · X30</text>
+
+  <rect x="338" y="494" width="234" height="28" rx="6" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="455" y="512" font-size="11.5" font-weight="700" fill="#333d4b" text-anchor="middle">Non-Ex Multi-Level: Spot, etc.</text>
+
+  <rect x="586" y="494" width="266" height="28" rx="6" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="719" y="512" font-size="11.5" font-weight="700" fill="#333d4b" text-anchor="middle">Confined &amp; Aerial: Elios 3 · Drones</text>
+</svg>

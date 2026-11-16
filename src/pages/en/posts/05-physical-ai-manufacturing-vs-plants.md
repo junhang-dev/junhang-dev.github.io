@@ -34,23 +34,18 @@ An intuitive question often comes up: <em>"Semiconductor cleanrooms enforce extr
 
 Cleanrooms prevent particle emissions through non-dusting cable carriers and sealed brushless actuators on flat floors. Process plants, however, contain <strong>hazardous Zone 1 areas</strong> where flammable vapor mixtures can form within explosive limits (LEL) during normal operation or minor leaks. Since even a 0.2 mJ electrostatic spark can ignite hydrocarbon vapors, robots require inert nitrogen positive-pressure purging (Ex p) or flameproof housings (Ex d).
 
-<figure>
-  <img src="/images/discrete-vs-process-plant.en.svg" alt="Discrete Manufacturing vs. Continuous Process Plants" />
-  <figcaption>Figure 1. Fundamental differences in physical constraints between standardized assembly lines and continuous process facilities</figcaption>
-</figure>
-
 Furthermore, manually cranking a seized gate valve requires <strong>100–200 Nm of torque</strong>. Rather than risking stripped gearboxes or friction sparks with a 20–30 Nm robotic arm, bolting a pneumatic (AOV) or motorized (MOV) actuator directly onto the valve stem for remote DCS operation is far safer and more economical.
 
 <figure>
   <img src="/images/observation-vs-manipulation-barrier.en.svg" alt="Physical Barriers from Observation to Manipulation" />
-  <figcaption>Figure 2. Why non-contact Observation is commercialized (TRL 8–9) while Manipulation stays in early R&amp;D (TRL 3–5)</figcaption>
+  <figcaption>Figure 1. Why non-contact Observation is commercialized (TRL 8–9) while Manipulation stays in early R&amp;D (TRL 3–5)</figcaption>
 </figure>
 
 Consequently, while discrete automotive factories test humanoids to shave assembly Takt time, process plants rely on <strong>explosion-proof quadrupeds (ANYmal X, Deep Robotics X30)</strong> and <strong>scaffolding-free caged drones (Flyability Elios 3)</strong> focused squarely on <strong>non-contact inspection (Observation)</strong>.
 
 <figure>
   <img src="/images/elios-3-tank-inspection.png" alt="Flyability Elios 3 caged drone inside a storage tank" loading="lazy" />
-  <figcaption>Figure 3. Flyability Elios 3 performing LiDAR SLAM and ultrasonic thickness (UT) testing inside dark tanks without scaffolding (Source: MFE Inspection Solutions)</figcaption>
+  <figcaption>Figure 2. Flyability Elios 3 performing LiDAR SLAM and ultrasonic thickness (UT) testing inside dark tanks without scaffolding (Source: MFE Inspection Solutions)</figcaption>
 </figure>
 
 ### ② Air-Gapped Networks & Multi-Vendor Fragmentation
@@ -73,7 +68,7 @@ Turning isolated pilots into an operational Physical AI system requires building
 
 <figure>
   <img src="/images/physical-ai-context-loop.en.svg" alt="Asset-Centric Contextualization and Closed Loop for Plant Physical AI" />
-  <figcaption>Figure 4. Connecting asset masters, 3D maps, smart P&amp;IDs, and maintenance history into a closed-loop AI Ready Data architecture</figcaption>
+  <figcaption>Figure 3. Connecting asset masters, 3D maps, smart P&amp;IDs, and maintenance history into a closed-loop AI Ready Data architecture</figcaption>
 </figure>
 
 Once connected, plant inspection data enters a continuous four-stage closed loop:
@@ -90,7 +85,14 @@ Once connected, plant inspection data enters a continuous four-stage closed loop
 
 ## 3. How Global Industrial Leaders Solved This Gap
 
-Leading energy and chemical operators faced these exact hurdles and converged on three proven architectural patterns worth benchmarking.
+Leading energy and chemical operators faced these exact hurdles and separated responsibilities into a clean four-layer architecture across IT and OT boundaries:
+
+<figure>
+  <img src="/images/global-plant-robotics-architecture.en.svg" alt="Global Reference Architecture: 4-Layer Plant Physical AI Stack" />
+  <figcaption>Figure 4. 4-layer industrial reference stack combining hardware-agnostic ingestion (Korial pattern) with DataOps contextualization (Cognite pattern)</figcaption>
+</figure>
+
+Here are the three core benchmark patterns from these deployments:
 
 ### ① The Benchmark for Contextualization: Equinor &amp; Aker BP × Cognite Data Fusion
 Norwegian operators <strong>Equinor</strong> (Mongstad refinery, Sture oil terminal) and <strong>Aker BP</strong> (Skarv FPSO, Valhall offshore platform) stand out for scaling Spot and ANYmal X into daily operations rather than stopping at pilots. Their secret was anchoring robotics onto an Industrial DataOps backbone: <strong>Cognite Data Fusion (CDF)</strong>.

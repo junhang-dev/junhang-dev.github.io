@@ -34,23 +34,18 @@ date: "2026.11.11"
 
 클린룸은 무분진 케이블베어와 브러시리스 모터로 먼지 배출만 막으면 해결됩니다. 반면 플랜트 핵심 구역은 정상 운전이나 누출 시 폭발 한계(LEL) 내의 가연성 혼합기체가 대기 중에 형성될 수 있는 <strong>방폭 구역(Zone 1)</strong>입니다. 로봇 내부 배터리 아크나 정전기 스파크(0.2 mJ 수준)가 곧바로 대형 화재의 점화원이 될 수 있어, 내부를 불활성 질소 가스로 채우는 양압 밀폐(Ex p)나 내압 방폭 하우징(Ex d) 인증이 필수입니다.
 
-<figure>
-  <img src="/images/discrete-vs-process-plant.svg" alt="조립 제조(Discrete) vs 연속공정 플랜트(Process) 환경 비교" />
-  <figcaption>Figure 1. 정형화된 부품 조립 라인과 연속공정 플랜트가 로봇에 요구하는 물리적 제약 조건 비교</figcaption>
-</figure>
-
 여기에 수십 년간 굳어버린 배관 밸브를 돌리는 데 필요한 <strong>100–200 Nm의 거대한 토크</strong>를 생각하면 답이 나옵니다. 20–30 Nm 수준의 휴머노이드 로봇 팔로 밸브를 억지로 돌리는 것보다, 밸브 헤드에 전동 구동기(MOV)나 공압 액추에이터(AOV)를 직결해 제어실(DCS)에서 여닫는 편이 100배 안전하고 경제적입니다.
 
 <figure>
   <img src="/images/observation-vs-manipulation-barrier.svg" alt="관찰(Observation)에서 조작(Manipulation)으로 가는 물리적 장벽" />
-  <figcaption>Figure 2. 비접촉 점검(Observation)은 상용화 단계인 반면, 물리적 조작(Manipulation)이 초기 단계에 머무는 이유</figcaption>
+  <figcaption>Figure 1. 비접촉 점검(Observation)은 상용화 단계인 반면, 물리적 조작(Manipulation)이 초기 단계에 머무는 이유</figcaption>
 </figure>
 
 이 때문에 자동차 조립 라인(BMW Figure 02, 중국 NIO/Zeekr Walker S)에서는 부품 치수와 평탄한 바닥을 활용해 휴머노이드의 택트 타임(Takt Time) 단축을 시험하는 반면, 플랜트에서는 휴머노이드가 아닌 <strong>방폭 4족보행 로봇(ANYmal X, Deep Robotics X30)</strong>과 <strong>비계(족장)를 대체하는 밀폐공간 케이지 드론(Flyability Elios 3)</strong>을 통한 <strong>비접촉 상태 감시(Observation)</strong>가 주류를 이룹니다.
 
 <figure>
   <img src="/images/elios-3-tank-inspection.png" alt="Flyability Elios 3 밀폐공간 검사용 케이지 드론" loading="lazy" />
-  <figcaption>Figure 3. 저장탱크 내부의 철골 비계 설치 없이 LiDAR SLAM과 초음파 두께 측정(UT)을 수행하는 Elios 3 (출처: MFE Inspection Solutions)</figcaption>
+  <figcaption>Figure 2. 저장탱크 내부의 철골 비계 설치 없이 LiDAR SLAM과 초음파 두께 측정(UT)을 수행하는 Elios 3 (출처: MFE Inspection Solutions)</figcaption>
 </figure>
 
 ### ② 폐쇄망 데이터 전송과 이기종 파편화의 벽
@@ -73,7 +68,7 @@ date: "2026.11.11"
 
 <figure>
   <img src="/images/physical-ai-context-loop.svg" alt="에셋 바구니 기반 플랜트 Physical AI 데이터 문맥화 및 선순환 루프" />
-  <figcaption>Figure 4. 설비 마스터·3D 맵·스마트 P&amp;ID가 하나의 바구니로 연결되어 만드는 AI Ready Data 선순환 구조</figcaption>
+  <figcaption>Figure 3. 설비 마스터·3D 맵·스마트 P&amp;ID가 하나의 바구니로 연결되어 만드는 AI Ready Data 선순환 구조</figcaption>
 </figure>
 
 이 구조가 완성되면 데이터는 다음과 같은 4단계 선순환(Closed-Loop)을 타게 됩니다.
@@ -90,7 +85,14 @@ date: "2026.11.11"
 
 ## 3. 글로벌 선도 기업들은 이 구조를 어떻게 풀고 있을까?
 
-우리와 똑같은 고민을 먼저 겪은 해외 에너지·석유화학 기업들은 <strong>'로봇 도입 이후의 데이터 바구니와 연결성'</strong>을 어떤 아키텍처로 구현했을까요? 앞으로 우리가 벤치마킹할 때 참고할 만한 대표적인 3가지 축입니다.
+우리와 똑같은 고민을 먼저 겪은 해외 에너지·석유화학 기업들은 <strong>'로봇 도입 이후의 데이터 바구니와 연결성'</strong>을 어떤 아키텍처로 구현했을까요? 선도 기업들이 IT/OT 망 위에서 역할을 나눈 전체 4계층 구조를 먼저 살펴보면 그림이 명확해집니다.
+
+<figure>
+  <img src="/images/global-plant-robotics-architecture.svg" alt="글로벌 선도사의 플랜트 Physical AI 4계층 참조 아키텍처" />
+  <figcaption>Figure 4. 수집 미들웨어(Korial형)와 산업용 DataOps 문맥화(Cognite형)가 결합된 글로벌 선도사 4계층 참조 아키텍처</figcaption>
+</figure>
+
+앞으로 우리가 벤치마킹할 때 참고할 만한 대표적인 3가지 축입니다.
 
 ### ① [에셋 바구니와 AI Ready Data의 교과서] Equinor · Aker BP × Cognite Data Fusion
 노르웨이의 <strong>Equinor</strong>(Mongstad 정유공장, Sture 원유 터미널)와 <strong>Aker BP</strong>(Skarv FPSO, Valhall 해상 플랫폼)는 Spot과 방폭 로봇 ANYmal X를 가장 적극적으로 현업에 녹여낸 사례로 꼽힙니다. 이들이 수많은 로봇 PoC 중에서도 유독 '실전 운영'까지 간 비결은 산업용 DataOps 플랫폼인 <strong>Cognite Data Fusion(CDF)</strong>으로 데이터 바구니를 먼저 짰기 때문입니다.
