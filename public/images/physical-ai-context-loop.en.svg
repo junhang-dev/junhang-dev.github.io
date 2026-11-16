@@ -1,86 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 550" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
   <defs>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182f6"/>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#4e5968"/>
     </marker>
-    <marker id="arrow-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6b7684"/>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182f6"/>
     </marker>
   </defs>
 
   <!-- Outer Card Background -->
-  <rect width="920" height="550" rx="22" fill="#f2f4f6"/>
+  <rect width="920" height="430" rx="22" fill="#f2f4f6"/>
 
-  <!-- Header -->
-  <text x="48" y="48" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">The Core of Plant Physical AI: Asset-Centric Contextualization &amp; Closed Loop</text>
-  <text x="48" y="72" font-size="13.5" fill="#6b7684">Fragmented asset masters, 3D maps, smart P&amp;IDs, and maintenance history must merge into one context layer</text>
+  <!-- Main Title -->
+  <text x="48" y="44" font-size="20" font-weight="800" fill="#191f28" letter-spacing="-0.4">Asset Context Architecture &amp; Closed-Loop Pipeline at a Glance</text>
 
-  <!-- Step 1: Capture & Sync (Top Left) -->
-  <rect x="48" y="96" width="386" height="126" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
-  <rect x="68" y="114" width="64" height="22" rx="6" fill="#f2f4f6"/>
-  <text x="100" y="129" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">STEP 1</text>
-  <text x="142" y="130" font-size="16" font-weight="800" fill="#191f28">Field Capture &amp; Dock Sync</text>
-  <text x="68" y="158" font-size="12.5" fill="#4e5968">• Quadrupeds &amp; drones patrol paths capturing visual/thermal feeds</text>
-  <text x="68" y="180" font-size="12.5" fill="#4e5968">• Auto-upload to plant/cloud storage upon returning to dock</text>
-  <text x="68" y="202" font-size="12" font-weight="600" fill="#8b95a1">※ Still uncontextualized raw media files at this point</text>
+  <!-- Feedback Loop Arch (Step 4 -> Step 1) -->
+  <path d="M 795 104 L 795 76 Q 795 68 787 68 L 145 68 Q 137 68 137 76 L 137 98" fill="none" stroke="#3182f6" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow-blue)"/>
+  <rect x="342" y="55" width="236" height="24" rx="12" fill="#dbeafe"/>
+  <text x="460" y="71" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">History-Based Route Recommendation</text>
+
+  <!-- Step 1 -->
+  <rect x="48" y="104" width="178" height="106" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="137" y="134" font-size="14" font-weight="800" fill="#191f28" text-anchor="middle">1. Capture &amp; Sync</text>
+  <text x="137" y="160" font-size="12" fill="#4e5968" text-anchor="middle">Drone &amp; quadruped patrol</text>
+  <text x="137" y="180" font-size="12" fill="#6b7684" text-anchor="middle">Batch upload via Dock</text>
 
   <!-- Arrow 1 -> 2 -->
-  <line x1="436" y1="159" x2="480" y2="159" stroke="#6b7684" stroke-width="2" marker-end="url(#arrow-dark)"/>
+  <line x1="226" y1="157" x2="258" y2="157" stroke="#4e5968" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
 
-  <!-- Step 2: Inference (Top Right) -->
-  <rect x="486" y="96" width="386" height="126" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
-  <rect x="506" y="114" width="64" height="22" rx="6" fill="#f2f4f6"/>
-  <text x="538" y="129" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">STEP 2</text>
-  <text x="580" y="130" font-size="16" font-weight="800" fill="#191f28">AI Inference &amp; Checkpoint Flags</text>
-  <text x="506" y="158" font-size="12.5" fill="#4e5968">• Vision/anomaly models process uploaded inspection frames</text>
-  <text x="506" y="180" font-size="12.5" fill="#4e5968">• Proposes suspect defects &amp; checkpoints for engineer review</text>
-  <text x="506" y="202" font-size="12" font-weight="600" fill="#8b95a1">※ Isolated alerts lack operational meaning without asset context</text>
+  <!-- Step 2 -->
+  <rect x="262" y="104" width="178" height="106" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="351" y="134" font-size="14" font-weight="800" fill="#191f28" text-anchor="middle">2. AI Inference</text>
+  <text x="351" y="160" font-size="12" fill="#4e5968" text-anchor="middle">Detect suspect anomalies</text>
+  <text x="351" y="180" font-size="12" fill="#6b7684" text-anchor="middle">Propose checkpoints</text>
 
   <!-- Arrow 2 -> 3 -->
-  <line x1="679" y1="224" x2="679" y2="258" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+  <line x1="440" y1="157" x2="472" y2="157" stroke="#3182f6" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
 
-  <!-- Step 3: Asset Basket / AI Ready Data (Bottom Right - HIGHLIGHT) -->
-  <rect x="486" y="264" width="386" height="148" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
-  <rect x="506" y="282" width="110" height="22" rx="6" fill="#3182f6"/>
-  <text x="561" y="297" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 3 · CORE</text>
-  <text x="626" y="298" font-size="16" font-weight="800" fill="#1b64da">Asset Basket Contextualization</text>
-  <text x="506" y="326" font-size="12.5" font-weight="700" fill="#191f28">Binding Footage + 3D Coords + P&amp;ID + Specs + History</text>
-  <text x="506" y="349" font-size="12" fill="#333d4b">• "Exact pipe rack 3D coordinate, Asset Tag &amp; P&amp;ID location"</text>
-  <text x="506" y="370" font-size="12" fill="#333d4b">• "Process fluid, metallurgy, wall thickness, age &amp; repair logs"</text>
-  <rect x="506" y="382" width="346" height="20" rx="4" fill="#dbeafe"/>
-  <text x="679" y="396" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">▶ Transforms raw footage into true 'AI Ready Data'</text>
+  <!-- Step 3 (Highlighted Core) -->
+  <rect x="476" y="100" width="210" height="114" rx="14" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
+  <text x="581" y="132" font-size="15" font-weight="800" fill="#1b64da" text-anchor="middle">3. Asset Context Binding</text>
+  <text x="581" y="158" font-size="12" font-weight="600" fill="#191f28" text-anchor="middle">Media + 3D + P&amp;ID + History</text>
+  <rect x="498" y="172" width="166" height="24" rx="6" fill="#dbeafe"/>
+  <text x="581" y="188" font-size="12" font-weight="800" fill="#1b64da" text-anchor="middle">▶ AI Ready Data</text>
 
   <!-- Arrow 3 -> 4 -->
-  <line x1="484" y1="338" x2="440" y2="338" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+  <line x1="686" y1="157" x2="714" y2="157" stroke="#3182f6" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
 
-  <!-- Step 4: Action & Closed-Loop (Bottom Left) -->
-  <rect x="48" y="264" width="386" height="148" rx="16" fill="#ffffff" stroke="#3182f6" stroke-width="1.2"/>
-  <rect x="68" y="282" width="64" height="22" rx="6" fill="#e8f3ff"/>
-  <text x="100" y="297" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">STEP 4</text>
-  <text x="142" y="298" font-size="16" font-weight="800" fill="#191f28">Maintenance, Routing &amp; Retraining</text>
-  <text x="68" y="326" font-size="12.5" fill="#333d4b">• Issue work orders in enterprise EAM/SAP with pinned context</text>
-  <text x="68" y="349" font-size="12.5" fill="#333d4b">• <tspan font-weight="700" fill="#1b64da">Route Recommendation:</tspan> Suggest next patrol paths from history</text>
-  <text x="68" y="372" font-size="12.5" fill="#333d4b">• <tspan font-weight="700" fill="#1b64da">Model Retraining:</tspan> Feed verified findings back into AI models</text>
-  <text x="68" y="395" font-size="12" font-weight="600" fill="#6b7684">▶ Continuous closed-loop between operations and AI</text>
+  <!-- Step 4 -->
+  <rect x="718" y="104" width="154" height="106" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="795" y="134" font-size="14" font-weight="800" fill="#191f28" text-anchor="middle">4. Action &amp; Loop</text>
+  <text x="795" y="160" font-size="12" fill="#4e5968" text-anchor="middle">Issue EAM work orders</text>
+  <text x="795" y="180" font-size="12" fill="#6b7684" text-anchor="middle">Retrain AI on verified tags</text>
 
-  <!-- Arrow 4 -> 1 (Feedback Loop) -->
-  <line x1="241" y1="262" x2="241" y2="228" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
-  <rect x="250" y="232" width="152" height="22" rx="11" fill="#dbeafe"/>
-  <text x="326" y="247" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">Recommended Patrol Path</text>
+  <!-- Foundation Merging Lines into Step 3 -->
+  <path d="M 164 294 L 164 264 L 581 264" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="460" y1="294" x2="460" y2="264" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M 756 294 L 756 264 L 581 264" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="581" y1="264" x2="581" y2="220" stroke="#3182f6" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
-  <!-- Foundation Bar -->
-  <rect x="48" y="434" width="824" height="90" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
-  <text x="68" y="458" font-size="13.5" font-weight="800" fill="#191f28">Existing Enterprise Silos That Must Converge Into the Asset Context Basket</text>
+  <rect x="358" y="251" width="204" height="24" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="460" y="267" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">1:1 Asset Tag Contextualization</text>
 
-  <rect x="68" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
-  <text x="159" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">Asset Management Master</text>
+  <!-- Foundation Layer Label -->
+  <text x="48" y="282" font-size="13" font-weight="700" fill="#4e5968">Foundational Plant Data Silos</text>
 
-  <rect x="264" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
-  <text x="355" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">3D Map Coordinates</text>
+  <!-- Foundation Cards -->
+  <rect x="48" y="294" width="232" height="92" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="164" y="328" font-size="14.5" font-weight="800" fill="#191f28" text-anchor="middle">Enterprise EAM Master</text>
+  <text x="164" y="352" font-size="12" fill="#6b7684" text-anchor="middle">Asset Tags · Specs &amp; Wall</text>
+  <text x="164" y="370" font-size="12" fill="#6b7684" text-anchor="middle">Maintenance History</text>
 
-  <rect x="460" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
-  <text x="551" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">Smart P&amp;ID Diagrams</text>
+  <rect x="344" y="294" width="232" height="92" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="460" y="328" font-size="14.5" font-weight="800" fill="#191f28" text-anchor="middle">Plant 3D Map</text>
+  <text x="460" y="352" font-size="12" fill="#6b7684" text-anchor="middle">Spatial Coordinate System</text>
+  <text x="460" y="370" font-size="12" fill="#6b7684" text-anchor="middle">Coordinate Monitoring Points</text>
 
-  <rect x="656" y="472" width="196" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
-  <text x="754" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">Repair &amp; Process Ontology</text>
+  <rect x="640" y="294" width="232" height="92" rx="12" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="756" y="328" font-size="14.5" font-weight="800" fill="#191f28" text-anchor="middle">Smart P&amp;ID Diagrams</text>
+  <text x="756" y="352" font-size="12" fill="#6b7684" text-anchor="middle">Schematic Asset Node</text>
+  <text x="756" y="370" font-size="12" fill="#6b7684" text-anchor="middle">Process Fluid &amp; Line Age</text>
 </svg>

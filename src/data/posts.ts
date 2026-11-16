@@ -6,14 +6,14 @@ export const posts = [
     category: 'Industrial AI',
     date: '2026.11.11',
     ko: {
-      title: "로봇을 들여와도 왜 AI가 못 쓸까? — 플랜트 Physical AI와 'AI Ready Data' 바구니 만들기",
+      title: "로봇을 들여와도 왜 AI가 못 쓸까?",
       summary:
-        '방폭·망분리 제약을 넘어, 3D 맵·스마트 P&ID·정비 이력을 하나로 엮는 글로벌 선도 사례와 아키텍처 방향',
+        '장치 산업의 현실적 제약, 그리고 3D 맵·스마트 P&ID·정비 이력을 잇는 설비 문맥(Asset Context) 설계',
     },
     en: {
-      title: "Why Robots Alone Aren't Enough: Building the 'AI Ready Data' Context Layer for Plants",
+      title: "Why Can't Plant AI Use Robot Data Out of the Box?",
       summary:
-        'Beyond ATEX & air-gapped networks — Connecting 3D maps, smart P&IDs, and maintenance history into a closed-loop Physical AI pipeline',
+        'Asset-heavy plant reality, smart P&IDs, 3D maps, and unified Asset Context design',
     },
   },
   {
