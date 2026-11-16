@@ -70,5 +70,5 @@
   <text x="454" y="512" font-size="12" font-weight="700" fill="#333d4b" text-anchor="middle">비방폭 복합 계단: Spot 등</text>
 
   <rect x="592" y="494" width="260" height="28" rx="6" fill="#f8f9fa" stroke="#e5e8eb"/>
-  <text x="722" y="512" font-size="12" font-weight="700" fill="#333d4b" text-anchor="middle">밀폐·고소 공간: Elios 3 · 상공 드론</text>
+  <text x="722" y="512" font-size="12" font-weight="700" fill="#333d4b" text-anchor="middle">광역·고소·밀폐: 자율·케이지 드론</text>
 </svg>
