@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 550" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182f6"/>
+    </marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6b7684"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Card Background -->
+  <rect width="920" height="550" rx="22" fill="#f2f4f6"/>
+
+  <!-- Header -->
+  <text x="48" y="48" font-size="21" font-weight="800" fill="#191f28" letter-spacing="-0.4">플랜트 Physical AI의 핵심: '에셋 바구니' 기반 데이터 문맥화와 선순환</text>
+  <text x="48" y="72" font-size="13.5" fill="#6b7684">떨어져 있는 설비 마스터·3D 맵·스마트 P&amp;ID·정비 이력이 하나로 연결되어야 AI가 쓸 수 있는 데이터가 됩니다</text>
+
+  <!-- Step 1: Capture & Sync (Top Left) -->
+  <rect x="48" y="96" width="386" height="126" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="114" width="64" height="22" rx="6" fill="#f2f4f6"/>
+  <text x="100" y="129" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">STEP 1</text>
+  <text x="142" y="130" font-size="16" font-weight="800" fill="#191f28">현장 촬영 · 도크 자동 동기화</text>
+  <text x="68" y="158" font-size="13" fill="#4e5968">• 방폭 4족보행·드론이 정해진 경로를 돌며 영상·열화상 수집</text>
+  <text x="68" y="180" font-size="13" fill="#4e5968">• 도크(Dock) 복귀 시 폐쇄망 보안 기준에 맞춰 저장소 업로드</text>
+  <text x="68" y="202" font-size="12.5" font-weight="600" fill="#8b95a1">※ 이 시점까지는 아직 맥락 없는 원시(Raw) 파일 상태</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="436" y1="159" x2="480" y2="159" stroke="#6b7684" stroke-width="2" marker-end="url(#arrow-dark)"/>
+
+  <!-- Step 2: Inference (Top Right) -->
+  <rect x="486" y="96" width="386" height="126" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="506" y="114" width="64" height="22" rx="6" fill="#f2f4f6"/>
+  <text x="538" y="129" font-size="11.5" font-weight="700" fill="#4e5968" text-anchor="middle">STEP 2</text>
+  <text x="580" y="130" font-size="16" font-weight="800" fill="#191f28">AI 인퍼런스 · 체크포인트 추천</text>
+  <text x="506" y="158" font-size="13" fill="#4e5968">• 업로드된 영상·프레임을 AI 결함 판독 모델로 자동 추론</text>
+  <text x="506" y="180" font-size="13" fill="#4e5968">• 이상 징후 의심 구간 및 확인이 필요한 체크포인트 제안</text>
+  <text x="506" y="202" font-size="12.5" font-weight="600" fill="#8b95a1">※ 모델 결과도 설비 맥락이 없으면 단발성 알람에 그침</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="679" y1="224" x2="679" y2="258" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+
+  <!-- Step 3: Asset Basket / AI Ready Data (Bottom Right - HIGHLIGHT) -->
+  <rect x="486" y="264" width="386" height="148" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
+  <rect x="506" y="282" width="118" height="22" rx="6" fill="#3182f6"/>
+  <text x="565" y="297" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 3 · 핵심 구간</text>
+  <text x="634" y="298" font-size="16" font-weight="800" fill="#1b64da">'에셋 바구니' 문맥 결합</text>
+  <text x="506" y="326" font-size="13" font-weight="700" fill="#191f28">영상 + 좌표 + 도면 + 설비 속성 + 정비 이력 매핑</text>
+  <text x="506" y="349" font-size="12.5" fill="#333d4b">• "어느 공장 몇 번 파이프랙(3D 좌표) · 설비번호(Tag) · P&amp;ID 위치"</text>
+  <text x="506" y="370" font-size="12.5" fill="#333d4b">• "내부 유체 · 재질 · 설계 두께 · 설비 연식 · 과거 보수 이력"</text>
+  <rect x="506" y="382" width="346" height="20" rx="4" fill="#dbeafe"/>
+  <text x="679" y="396" font-size="12" font-weight="700" fill="#1b64da" text-anchor="middle">▶ 비로소 AI가 이해하고 활용하는 'AI Ready Data' 완성</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="484" y1="338" x2="440" y2="338" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+
+  <!-- Step 4: Action & Closed-Loop (Bottom Left) -->
+  <rect x="48" y="264" width="386" height="148" rx="16" fill="#ffffff" stroke="#3182f6" stroke-width="1.2"/>
+  <rect x="68" y="282" width="64" height="22" rx="6" fill="#e8f3ff"/>
+  <text x="100" y="297" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">STEP 4</text>
+  <text x="142" y="298" font-size="16" font-weight="800" fill="#191f28">정비 연계 · 경로 추천 · 모델 개선</text>
+  <text x="68" y="326" font-size="13" fill="#333d4b">• 판독 결과 검토 후 기간계 설비관리 시스템으로 정비요청 발행</text>
+  <text x="68" y="349" font-size="13" fill="#333d4b">• <tspan font-weight="700" fill="#1b64da">경로 추천:</tspan> 과거 이력·검사 목적 기반 다음 순찰 경로/포인트 제안</text>
+  <text x="68" y="372" font-size="13" fill="#333d4b">• <tspan font-weight="700" fill="#1b64da">모델 재학습:</tspan> 현업 확정 판정 데이터를 AI 모델 개선에 재투입</text>
+  <text x="68" y="395" font-size="12" font-weight="600" fill="#6b7684">▶ 현업 업무와 데이터 축적이 함께 도는 Closed-Loop 완성</text>
+
+  <!-- Arrow 4 -> 1 (Feedback Loop) -->
+  <line x1="241" y1="262" x2="241" y2="228" stroke="#3182f6" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+  <rect x="250" y="232" width="136" height="22" rx="11" fill="#dbeafe"/>
+  <text x="318" y="247" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">추천 점검 경로 반영</text>
+
+  <!-- Foundation Bar -->
+  <rect x="48" y="434" width="824" height="90" rx="14" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="68" y="458" font-size="13.5" font-weight="800" fill="#191f28">사내에 이미 조각별로 존재하지만, '에셋 바구니'로 연결되어야 할 기반 데이터들</text>
+
+  <rect x="68" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="159" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">통합 설비관리 마스터</text>
+
+  <rect x="264" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="355" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">3D Map 모니터링 좌표</text>
+
+  <rect x="460" y="472" width="182" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="551" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">스마트 P&amp;ID 도면</text>
+
+  <rect x="656" y="472" width="196" height="36" rx="8" fill="#f8f9fa" stroke="#e5e8eb"/>
+  <text x="754" y="495" font-size="12.5" font-weight="700" fill="#333d4b" text-anchor="middle">과거 정비·공정 운전 이력</text>
+</svg>

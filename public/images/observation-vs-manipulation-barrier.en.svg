@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="480" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="48" y="52" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">Physical Barriers from Observation to Manipulation</text>
+  <text x="48" y="78" font-size="14" fill="#6b7684">Why inspection robots are scaling in plants while valve-turning manipulation stays in early pilots</text>
+
+  <!-- Left: Observation (Commercialized) -->
+  <rect x="48" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="68" y="118" width="136" height="24" rx="6" fill="#e6fcf5"/>
+  <text x="136" y="135" font-size="11.5" font-weight="800" fill="#0ca678" text-anchor="middle">Commercial (TRL 8–9)</text>
+  <text x="68" y="172" font-size="19" font-weight="800" fill="#191f28">Observation</text>
+  <text x="68" y="196" font-size="13" font-weight="600" fill="#0ca678">Non-Contact Patrol &amp; Diagnostics</text>
+
+  <line x1="68" y1="214" x2="288" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <text x="68" y="240" font-size="13.5" font-weight="700" fill="#333d4b">Field Platforms:</text>
+  <text x="68" y="262" font-size="12.5" fill="#4e5968">• Spot (LNG &amp; Refineries)</text>
+  <text x="68" y="284" font-size="12.5" fill="#4e5968">• ANYmal X / X30 (Ex Zone 1)</text>
+  <text x="68" y="306" font-size="12.5" fill="#4e5968">• Elios 3 (Confined Tank Drone)</text>
+
+  <text x="68" y="340" font-size="13.5" font-weight="700" fill="#333d4b">Success Factors:</text>
+  <text x="68" y="362" font-size="12.5" fill="#4e5968">• Optical/Thermal/Acoustic capture</text>
+  <text x="68" y="384" font-size="12.5" fill="#4e5968">• Zero physical contact force</text>
+  <text x="68" y="406" font-size="12.5" fill="#4e5968">• Retries carry zero process risk</text>
+
+  <!-- Middle: The 3 Physical Barriers -->
+  <rect x="328" y="96" width="264" height="344" rx="16" fill="#fff5f5" stroke="#ff8787" stroke-width="1.4"/>
+  <rect x="348" y="118" width="110" height="24" rx="6" fill="#ffe3e3"/>
+  <text x="403" y="135" font-size="11.5" font-weight="800" fill="#e03131" text-anchor="middle">3 Core Barriers</text>
+  <text x="348" y="172" font-size="19" font-weight="800" fill="#c92a2a">Physical Barriers</text>
+  <text x="348" y="196" font-size="13" font-weight="600" fill="#e03131">Practical Engineering Constraints</text>
+
+  <line x1="348" y1="214" x2="572" y2="214" stroke="#ffc9c9" stroke-width="1"/>
+
+  <rect x="348" y="228" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="248" font-size="12.5" font-weight="700" fill="#c92a2a">1. Ex Ignition Limit (0.2 mJ)</text>
+  <text x="360" y="270" font-size="11.5" fill="#495057">Motor overload sparks violate Zone 1</text>
+
+  <rect x="348" y="296" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="316" font-size="12.5" font-weight="700" fill="#c92a2a">2. Seized Valve Torque (100–200 Nm)</text>
+  <text x="360" y="338" font-size="11.5" fill="#495057">30 Nm robot arms strip gearboxes</text>
+
+  <rect x="348" y="364" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
+  <text x="360" y="384" font-size="12.5" font-weight="700" fill="#c92a2a">3. Economic Gap vs. MOV/AOV</text>
+  <text x="360" y="406" font-size="11.5" fill="#495057">$250k robot vs. $2.5k fixed actuator</text>
+
+  <!-- Right: Manipulation (Lab/PoC) -->
+  <rect x="612" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="632" y="118" width="128" height="24" rx="6" fill="#fff9db"/>
+  <text x="696" y="135" font-size="11.5" font-weight="800" fill="#f59f00" text-anchor="middle">Early PoC (TRL 3–5)</text>
+  <text x="632" y="172" font-size="19" font-weight="800" fill="#191f28">Manipulation</text>
+  <text x="632" y="196" font-size="13" font-weight="600" fill="#e67700">Physical Contact &amp; Valve Turning</text>
+
+  <line x1="632" y1="214" x2="852" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <text x="632" y="240" font-size="13.5" font-weight="700" fill="#333d4b">Current State:</text>
+  <text x="632" y="262" font-size="12.5" fill="#4e5968">• Structured indoor lab demos</text>
+  <text x="632" y="284" font-size="12.5" fill="#4e5968">• Light latch / lever handling</text>
+  <text x="632" y="306" font-size="12.5" fill="#4e5968">• Pre-taught teleoperation trials</text>
+
+  <text x="632" y="340" font-size="13.5" font-weight="700" fill="#333d4b">Open Hurdles:</text>
+  <text x="632" y="362" font-size="12.5" fill="#e03131">• Friction sparks on rusted stems</text>
+  <text x="632" y="384" font-size="12.5" fill="#e03131">• High leak risk on misoperation</text>
+  <text x="632" y="406" font-size="12.5" fill="#e03131">• Lack of Ex-certified dexterous hands</text>
+</svg>

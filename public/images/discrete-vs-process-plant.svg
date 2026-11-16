@@ -10,7 +10,7 @@
   <rect x="48" y="96" width="396" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
   <rect x="72" y="118" width="84" height="24" rx="6" fill="#f2f4f6"/>
   <text x="114" y="135" font-size="12.5" font-weight="700" fill="#4e5968" text-anchor="middle">이산 조립 제조</text>
-  <text x="72" y="172" font-size="18" font-weight="800" fill="#191f28">규격화된 레고 조립 (Discrete)</text>
+  <text x="72" y="172" font-size="18" font-weight="800" fill="#191f28">정형화된 부품 조립 (Discrete)</text>
   <text x="72" y="196" font-size="13" fill="#6b7684">자동차 차체 조립, 전자 기기, 배터리 패키징 라인</text>
 
   <line x1="72" y1="214" x2="420" y2="214" stroke="#e5e8eb" stroke-width="1"/>
@@ -38,17 +38,17 @@
   <!-- Item 5 -->
   <circle cx="82" cy="374" r="4" fill="#3182f6"/>
   <text x="96" y="378" font-size="13.5" font-weight="700" fill="#333d4b">핵심 목표:</text>
-  <text x="168" y="378" font-size="13.5" fill="#4e5968">초(Second) 단위 사이클 타임(Takt Time) 단축</text>
+  <text x="168" y="378" font-size="13.5" fill="#4e5968">정형화된 공정 내 택트 타임(Takt Time) 단축</text>
 
   <!-- Item 6 -->
   <rect x="72" y="398" width="348" height="28" rx="6" fill="#f8f9fa"/>
-  <text x="82" y="417" font-size="12.5" font-weight="600" fill="#4e5968">대표 로봇: 고정형 다관절 로봇, 바퀴형 AMR, Figure 02</text>
+  <text x="82" y="417" font-size="12" font-weight="600" fill="#4e5968">대표 로봇: 다관절 로봇, AMR, 휴머노이드(Figure 02·Walker S)</text>
 
   <!-- Right Card: Process Plant (Highlight) -->
   <rect x="476" y="96" width="396" height="344" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.6"/>
   <rect x="500" y="118" width="96" height="24" rx="6" fill="#3182f6"/>
   <text x="548" y="135" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">연속공정 플랜트</text>
-  <text x="500" y="172" font-size="18" font-weight="800" fill="#1b64da">거대한 혈관과 압력 (Process)</text>
+  <text x="500" y="172" font-size="18" font-weight="800" fill="#1b64da">연속 유체 및 고압 배관 (Process)</text>
   <text x="500" y="196" font-size="13" fill="#4e5968">정유·석유화학 플랜트, LNG 터미널, 고압 가스 설비</text>
 
   <line x1="500" y1="214" x2="848" y2="214" stroke="#bfd7ff" stroke-width="1"/>
@@ -76,9 +76,9 @@
   <!-- Item 5 -->
   <circle cx="510" cy="374" r="4" fill="#1b64da"/>
   <text x="524" y="378" font-size="13.5" font-weight="700" fill="#191f28">핵심 목표:</text>
-  <text x="596" y="378" font-size="13.5" fill="#333d4b">인간 진입 제한 구역 무인 순찰 및 설비 이상 조기 감지</text>
+  <text x="596" y="378" font-size="13.5" fill="#333d4b">위험 구역 비접촉 순찰 및 설비 이상 조기 감지</text>
 
   <!-- Item 6 -->
   <rect x="500" y="398" width="348" height="28" rx="6" fill="#dbeafe"/>
-  <text x="510" y="417" font-size="12.5" font-weight="700" fill="#1b64da">대표 로봇: 방폭 4족보행 로봇(ANYmal X), 밀폐 드론(Elios 3)</text>
+  <text x="510" y="417" font-size="12" font-weight="700" fill="#1b64da">대표 로봇: 방폭 4족보행(ANYmal X·X30), 드론(Elios 3)</text>
 </svg>

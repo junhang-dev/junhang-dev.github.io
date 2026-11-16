@@ -9,7 +9,7 @@
   <!-- Left: Observation (Commercialized) -->
   <rect x="48" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
   <rect x="68" y="118" width="94" height="24" rx="6" fill="#e6fcf5"/>
-  <text x="115" y="135" font-size="12" font-weight="800" fill="#0ca678" text-anchor="middle">상용화 (TRL 8~9)</text>
+  <text x="115" y="135" font-size="12" font-weight="800" fill="#0ca678" text-anchor="middle">상용화 (TRL 8–9)</text>
   <text x="68" y="172" font-size="19" font-weight="800" fill="#191f28">Observation</text>
   <text x="68" y="196" font-size="13" font-weight="600" fill="#0ca678">비접촉 순찰 · 설비 진단</text>
 
@@ -30,7 +30,7 @@
   <rect x="348" y="118" width="94" height="24" rx="6" fill="#ffe3e3"/>
   <text x="395" y="135" font-size="12" font-weight="800" fill="#e03131" text-anchor="middle">3대 물리적 장벽</text>
   <text x="348" y="172" font-size="19" font-weight="800" fill="#c92a2a">Physical Barriers</text>
-  <text x="348" y="196" font-size="13" font-weight="600" fill="#e03131">엔지니어링의 거대한 심연</text>
+  <text x="348" y="196" font-size="13" font-weight="600" fill="#e03131">현장 도입을 가로막는 공학적 제약</text>
 
   <line x1="348" y1="214" x2="572" y2="214" stroke="#ffc9c9" stroke-width="1"/>
 
@@ -41,7 +41,7 @@
 
   <!-- Barrier 2 -->
   <rect x="348" y="296" width="224" height="58" rx="8" fill="#ffffff" stroke="#ffa8a8" stroke-width="1"/>
-  <text x="360" y="316" font-size="13" font-weight="700" fill="#c92a2a">2. 고착 밸브 토크 (100~200Nm)</text>
+  <text x="360" y="316" font-size="13" font-weight="700" fill="#c92a2a">2. 고착 밸브 토크 (100–200 Nm)</text>
   <text x="360" y="338" font-size="12" fill="#495057">로봇 팔 한계(30Nm) ➔ 감속기 파손</text>
 
   <!-- Barrier 3 -->
@@ -52,7 +52,7 @@
   <!-- Right: Manipulation (Lab/PoC) -->
   <rect x="612" y="96" width="260" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
   <rect x="632" y="118" width="104" height="24" rx="6" fill="#fff9db"/>
-  <text x="684" y="135" font-size="12" font-weight="800" fill="#f59f00" text-anchor="middle">초기 PoC (TRL 3~5)</text>
+  <text x="684" y="135" font-size="12" font-weight="800" fill="#f59f00" text-anchor="middle">초기 PoC (TRL 3–5)</text>
   <text x="632" y="172" font-size="19" font-weight="800" fill="#191f28">Manipulation</text>
   <text x="632" y="196" font-size="13" font-weight="600" fill="#e67700">물리적 접촉 · 밸브 조작</text>
 

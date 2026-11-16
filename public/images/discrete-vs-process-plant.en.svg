@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <!-- Outer Card Background -->
+  <rect width="920" height="480" rx="22" fill="#f2f4f6"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="48" y="52" font-size="22" font-weight="800" fill="#191f28" letter-spacing="-0.4">Discrete Manufacturing vs. Continuous Process Plants</text>
+  <text x="48" y="78" font-size="14" fill="#6b7684">Fundamental differences in physical constraints and operating rules</text>
+
+  <!-- Left Card: Discrete Manufacturing -->
+  <rect x="48" y="96" width="396" height="344" rx="16" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <rect x="72" y="118" width="112" height="24" rx="6" fill="#f2f4f6"/>
+  <text x="128" y="135" font-size="12" font-weight="700" fill="#4e5968" text-anchor="middle">DISCRETE LINE</text>
+  <text x="72" y="172" font-size="18" font-weight="800" fill="#191f28">Standardized Assembly</text>
+  <text x="72" y="196" font-size="13" fill="#6b7684">Automotive welding/assembly, electronics, battery lines</text>
+
+  <line x1="72" y1="214" x2="420" y2="214" stroke="#e5e8eb" stroke-width="1"/>
+
+  <circle cx="82" cy="238" r="4" fill="#3182f6"/>
+  <text x="96" y="242" font-size="13" font-weight="700" fill="#333d4b">Environment:</text>
+  <text x="184" y="242" font-size="13" fill="#4e5968">Indoor HVAC, flat epoxy floor, safety fences</text>
+
+  <circle cx="82" cy="272" r="4" fill="#3182f6"/>
+  <text x="96" y="276" font-size="13" font-weight="700" fill="#333d4b">Workpiece:</text>
+  <text x="184" y="276" font-size="13" fill="#4e5968">Standardized solid parts (bolts, sheet metal)</text>
+
+  <circle cx="82" cy="306" r="4" fill="#3182f6"/>
+  <text x="96" y="310" font-size="13" font-weight="700" fill="#333d4b">Ex Compliance:</text>
+  <text x="196" y="310" font-size="13" fill="#4e5968">Non-hazardous (standard servos &amp; batteries)</text>
+
+  <circle cx="82" cy="340" r="4" fill="#3182f6"/>
+  <text x="96" y="344" font-size="13" font-weight="700" fill="#333d4b">Failure Cost:</text>
+  <text x="184" y="344" font-size="13" fill="#4e5968">Part scrap or localized line pause</text>
+
+  <circle cx="82" cy="374" r="4" fill="#3182f6"/>
+  <text x="96" y="378" font-size="13" font-weight="700" fill="#333d4b">Primary Goal:</text>
+  <text x="186" y="378" font-size="13" fill="#4e5968">Shortening structured line Takt time</text>
+
+  <rect x="72" y="398" width="348" height="28" rx="6" fill="#f8f9fa"/>
+  <text x="82" y="417" font-size="11.5" font-weight="600" fill="#4e5968">Typical Robots: Robotic arms, AMRs, Humanoids (Figure 02, Walker S)</text>
+
+  <!-- Right Card: Process Plant (Highlight) -->
+  <rect x="476" y="96" width="396" height="344" rx="16" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.6"/>
+  <rect x="500" y="118" width="120" height="24" rx="6" fill="#3182f6"/>
+  <text x="560" y="135" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">PROCESS PLANT</text>
+  <text x="500" y="172" font-size="18" font-weight="800" fill="#1b64da">Continuous Fluids &amp; High Pressure</text>
+  <text x="500" y="196" font-size="13" fill="#4e5968">Oil refineries, petrochemical units, LNG terminals</text>
+
+  <line x1="500" y1="214" x2="848" y2="214" stroke="#bfd7ff" stroke-width="1"/>
+
+  <circle cx="510" cy="238" r="4" fill="#1b64da"/>
+  <text x="524" y="242" font-size="13" font-weight="700" fill="#191f28">Environment:</text>
+  <text x="612" y="242" font-size="13" fill="#333d4b">Outdoor weather, grating, 45° stairs, pipe racks</text>
+
+  <circle cx="510" cy="272" r="4" fill="#1b64da"/>
+  <text x="524" y="276" font-size="13" font-weight="700" fill="#191f28">Workpiece:</text>
+  <text x="604" y="276" font-size="13" fill="#333d4b">High-temp/pressure fluids in miles of piping</text>
+
+  <circle cx="510" cy="306" r="4" fill="#1b64da"/>
+  <text x="524" y="310" font-size="13" font-weight="700" fill="#191f28">Ex Compliance:</text>
+  <text x="622" y="310" font-size="13" font-weight="700" fill="#e11d48">ATEX/IECEx Zone 1·2 (0.2 mJ ignition limit)</text>
+
+  <circle cx="510" cy="340" r="4" fill="#1b64da"/>
+  <text x="524" y="344" font-size="13" font-weight="700" fill="#191f28">Failure Cost:</text>
+  <text x="612" y="344" font-size="13" fill="#333d4b">Fire/explosion hazard, costly unit shutdown</text>
+
+  <circle cx="510" cy="374" r="4" fill="#1b64da"/>
+  <text x="524" y="378" font-size="13" font-weight="700" fill="#191f28">Primary Goal:</text>
+  <text x="614" y="378" font-size="13" fill="#333d4b">Non-contact patrol &amp; early anomaly detection</text>
+
+  <rect x="500" y="398" width="348" height="28" rx="6" fill="#dbeafe"/>
+  <text x="510" y="417" font-size="11.5" font-weight="700" fill="#1b64da">Typical Robots: Ex Quadrupeds (ANYmal X, X30), Caged Drones (Elios 3)</text>
+</svg>

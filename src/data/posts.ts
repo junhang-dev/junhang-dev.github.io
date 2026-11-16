@@ -6,14 +6,14 @@ export const posts = [
     category: 'Industrial AI',
     date: '2026.11.11',
     ko: {
-      title: "조립 공장의 휴머노이드와 플랜트 로봇은 왜 전혀 다른 길을 갈까?",
+      title: "로봇을 들여와도 왜 AI가 못 쓸까? — 플랜트 Physical AI와 'AI Ready Data' 바구니 만들기",
       summary:
-        '테슬라·BMW부터 중국 니오·유비텍까지 — 제조 현장 실증과 정유·석유화학 플랜트의 공학적 제약 비교',
+        '방폭·망분리 제약을 넘어, 3D 맵·스마트 P&ID·정비 이력을 하나로 엮는 글로벌 선도 사례와 아키텍처 방향',
     },
     en: {
-      title: 'Why Do Humanoids in Assembly Plants and Robots in Process Facilities Take Completely Different Paths?',
+      title: "Why Robots Alone Aren't Enough: Building the 'AI Ready Data' Context Layer for Plants",
       summary:
-        'From Tesla & BMW to NIO & UBTECH — Field trials in manufacturing vs. engineering constraints in petrochemical plants',
+        'Beyond ATEX & air-gapped networks — Connecting 3D maps, smart P&IDs, and maintenance history into a closed-loop Physical AI pipeline',
     },
   },
   {
