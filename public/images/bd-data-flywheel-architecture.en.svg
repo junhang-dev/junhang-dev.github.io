@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" width="100%" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6b7684"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182f6"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Card Background -->
+  <rect width="860" height="360" rx="22" fill="#f2f4f6"/>
+
+  <!-- Header -->
+  <text x="32" y="42" font-size="20" font-weight="800" fill="#191f28" letter-spacing="-0.4">Boston Dynamics (Orbit) Bidirectional Loop &amp; Data Flywheel</text>
+
+  <!-- OT / Hub / IT Column Zone Badges -->
+  <rect x="32" y="60" width="190" height="26" rx="6" fill="#e5e8eb"/>
+  <text x="127" y="77.5" font-size="11.5" font-weight="700" fill="#333d4b" text-anchor="middle">[OT] Plant &amp; Robot</text>
+
+  <rect x="328" y="60" width="250" height="26" rx="6" fill="#dbeafe"/>
+  <text x="453" y="77.5" font-size="11.5" font-weight="700" fill="#1b64da" text-anchor="middle">[OT/IT Boundary] Bidirectional Hub</text>
+
+  <rect x="666" y="60" width="162" height="26" rx="6" fill="#e5e8eb"/>
+  <text x="747" y="77.5" font-size="11.5" font-weight="700" fill="#333d4b" text-anchor="middle">[IT · AI] Enterprise Use</text>
+
+  <!-- Col 1: OT Field Systems & Robot -->
+  <rect x="32" y="98" width="190" height="66" rx="11" fill="#ffffff" stroke="#d1d6db" stroke-width="1.3"/>
+  <text x="127" y="127" font-size="13.5" font-weight="800" fill="#191f28" text-anchor="middle">PLC · SCADA · Sensors</text>
+  <text x="127" y="148" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Process state &amp; anomaly alerts</text>
+
+  <rect x="32" y="196" width="190" height="84" rx="11" fill="#ffffff" stroke="#d1d6db" stroke-width="1.3"/>
+  <text x="127" y="233" font-size="14" font-weight="800" fill="#191f28" text-anchor="middle">Spot (Mobile Patrol)</text>
+  <text x="127" y="255" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Scheduled + event-driven</text>
+
+  <!-- Bidirectional Connectors Col 1 <-> Col 2 -->
+  <line x1="222" y1="131" x2="322" y2="131" stroke="#6b7684" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+  <text x="275" y="121" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">PLC/mode event</text>
+
+  <line x1="328" y1="220" x2="228" y2="220" stroke="#3182f6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="275" y="210" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">Dispatch trigger</text>
+
+  <line x1="222" y1="258" x2="322" y2="258" stroke="#6b7684" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+  <text x="275" y="248" font-size="11" font-weight="700" fill="#4e5968" text-anchor="middle">Inspection data</text>
+
+  <!-- Col 2: Orbit Platform -->
+  <rect x="328" y="98" width="250" height="182" rx="13" fill="#eaf2fe" stroke="#3182f6" stroke-width="1.8"/>
+  <text x="453" y="126" font-size="16" font-weight="800" fill="#1b64da" text-anchor="middle">Orbit Platform</text>
+
+  <rect x="344" y="140" width="218" height="58" rx="9" fill="#ffffff" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="453" y="164" font-size="13.5" font-weight="800" fill="#191f28" text-anchor="middle">Asset Hierarchy Binding</text>
+  <text x="453" y="185" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Assets &amp; metadata taxonomy</text>
+
+  <rect x="344" y="206" width="218" height="58" rx="9" fill="#ffffff" stroke="#bfd7ff" stroke-width="1.2"/>
+  <text x="453" y="230" font-size="13.5" font-weight="800" fill="#191f28" text-anchor="middle">API · Webhook · MCP</text>
+  <text x="453" y="251" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Two-way dispatch &amp; routing</text>
+
+  <!-- Connector Col 2 -> Col 3 -->
+  <line x1="578" y1="189" x2="660" y2="189" stroke="#3182f6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="622" y="163" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">Asset-Scoped</text>
+  <text x="622" y="179" font-size="11" font-weight="700" fill="#1b64da" text-anchor="middle">Alerts &amp; Data</text>
+
+  <!-- Col 3: IT & AI Consumers -->
+  <rect x="666" y="98" width="162" height="84" rx="11" fill="#ffffff" stroke="#d1d6db" stroke-width="1.3"/>
+  <text x="747" y="133" font-size="13.5" font-weight="800" fill="#191f28" text-anchor="middle">EAM &amp; Engineers</text>
+  <text x="747" y="155" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Work orders &amp; owner alerts</text>
+
+  <rect x="666" y="196" width="162" height="84" rx="11" fill="#ffffff" stroke="#d1d6db" stroke-width="1.3"/>
+  <text x="747" y="231" font-size="13.5" font-weight="800" fill="#191f28" text-anchor="middle">Enterprise AI Agents</text>
+  <text x="747" y="253" font-size="11" font-weight="600" fill="#4e5968" text-anchor="middle">Daily briefings &amp; PdM</text>
+
+  <!-- Bottom Data Flywheel Summary -->
+  <rect x="32" y="298" width="796" height="42" rx="10" fill="#ffffff" stroke="#d1d6db" stroke-width="1.2"/>
+  <text x="430" y="324" font-size="12" font-weight="700" fill="#191f28" text-anchor="middle">
+    Data Flywheel: <tspan fill="#1b64da">Skip multi-year data lakes</tspan> → Start with one unit &amp; one AI workflow, then compound
+  </text>
+</svg>

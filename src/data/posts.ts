@@ -8,12 +8,12 @@ export const posts = [
     ko: {
       title: "로봇을 들여와도 왜 AI가 못 쓸까?",
       summary:
-        '장치 산업의 현실적 제약, 그리고 3D 맵·스마트 P&ID·정비 이력을 잇는 설비 문맥(Asset Context) 설계',
+        '정답 없는 Physical AI 문제 정의부터 해외 플랜트의 OT·IT 아키텍처, 그리고 설비 Context 설계까지',
     },
     en: {
       title: "Why Can't Plant AI Use Robot Data Out of the Box?",
       summary:
-        'Asset-heavy plant reality, smart P&IDs, 3D maps, and unified Asset Context design',
+        'From defining open-ended Physical AI problems to OT/IT boundaries, Data Flywheels, and Asset Context architecture',
     },
   },
   {
